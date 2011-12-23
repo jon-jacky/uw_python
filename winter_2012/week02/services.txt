@@ -1,0 +1,93 @@
+services.txt
++--
+
+Internet services
+
+ Client/server: client (a user) requests service, server provides service 
+  Example: web browser is client, server at www.google.com provides search
+  Client/server is asymmetric: 
+   Client opens, closes temporary session
+   Server runs all the time, waits for clients to connect,
+    handles multiple client sessions simultaneously
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Internet service - Hosts
+
+ Services are identified by host and port
+
+ Hosts are identified by names or IP addresses
+  Uniquely identifies each host on the planet (er, solar system, see DINET)
+  Must be issued by central authority, starting at top with ICANN
+   Names and numbers are hierarchical, so authority can be delegated locally
+  Local machine can always be reached at localhost 127.0.0.1
+   good for developement and debugging
+
+ Domain Name Service - DNS - associates names with IP addresses
+  nslookup command: nslookup staff.washington.edu
+    (then point your browser at the numeric IP address)
+
+
+
+
+
+
+
+
++--
+
+Internet services - Ports
+
+ Services are identified by host and port
+  port numbers distinguish different services at the same host
+ 
+ Ports numbers range from 0 to 65535
+
+ Common services are at well-known port numbers:
+   7 echo, 13 daytime, 22 ssh, 25 email, 53 DNS, 80 web server,  ...
+
+ Use high port numbers for your own custom services
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Internet services - Protocols
+
+ Each service implements a protocol: in effect, a command language
+
+ Telnet client can demo any service that runs on TCP/IP 
+  telnet command opens TCP/IP connection to host and port,
+   then you can just type the protocol commands by hand
+  example: telnet staff.washington.edu 80
+    (type garbage, see what happens.  Then type using HTTP protocol).
+
+ Services to try - 
+  Any web site, port 80, HTTP protocol
+  Very simple: date/time service
+   List of servers at http://tf.nist.gov/tf-cgi/servers.cgi
+    telnet nist1-sj.ustiming.org 13
+      ...
