@@ -1,0 +1,178 @@
+internet.txt
++--
+
+Internet fundamentals
+
+ One of the most significant inventions of the 20th century --- maybe ever!
+
+ All-purpose world-wide fast information storage and communication system
+  person-to-person, broadcasting, everything in between - anyone can join in!
+
+ Designers always intended participation/contribution, not just consumption
+   -- not just a replacement for TV, newspapers, mail-order catalogs ...
+   -- low barriers to participation, almost everyone can join in
+   -- not limited to just adding content -- you can create your own services
+ That's what this course is about - learn about it, program it
+
+ Technology based on several mutually-reinforcing design ideas:
+
+ Packet Switching - moves data around the network, provides communication
+ Protocols - define activities that can occur on the net (email, etc.)
+ Layers - Separate technology into independent parts, enable division of labor
+ APIs - make services accessible, enable everyone to build applications
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++---
+
+ Packet switching
+
+  Moves data around the network, provides communication
+
+  Contrasts with earlier "circuit switching" (old fashioned telephone)
+  Metaphor: USPS with letters (packets), addresses, post offices,...
+  Network is composed of "hosts" or "nodes" each with unique address
+  Hosts communicate by exchanging "packets" with addresses and contents
+  Typical message is divided into many packets,reassembled at destination
+  Typical packet passes through several hosts to reach destination
+  Each packet may take a different route to destination, fault-tolerant
+
+
+
+
+
+
+
+
+
+
+
++--
+
+ Protocols
+
+  Define activities that can occur on the net (email, etc.)
+
+  Rules that allow agents to communicate and cooperate
+  Defined by the messages that can be exchanged (messages may be packets)
+   Defines both message format/contents and message order
+   Message order often described by finite state machine (FSM) diagram
+  Examples: Ethernet (Local), TCP/IP (Internet), SMTP (email), HTTP (web)
+  Internet defined by documents called RFCs, many define protocols
+  Microsoft publishes more than 300 protocols, some specs > 200 pages
+
+
+
+
+
+
+
+
+
+
+
+
++--
+  Layering 
+
+   Separate technology into independent parts, enable division of labor
+
+   System is designed as a vertical stack of layers
+   Each layer uses service of layer below, provides service to layer above
+   Interfaces between layers are well-defined (protocols)
+   Each layer can be substituted (or upgraded) without disturbing others
+   Additional layers can be added (interposed) without disturbing others
+    Encryption, compression, monitoring, testing, ...
+
+     Web Browser (or Web server or ...)
+     HTTP     (requests web pages, sends web pages)
+     TCP      (manages sequences of packets, handles order, lost packets)
+     IP       (tries to send one packet to destination, no guarantees)
+     Ethernet (or WiFi or USB or X.25 or ...., assembles packets)
+     Hardware (connectors, cables or antennas ..., deals with volts)
+
+   Layering makes the network general purpose ---
+    The SAME network handles text, pictures, music, movies ... 
+    All specialization is in the top few layers
+
+
++--
+
+APIs -- Application Programming Interfaces
+
+ Make services accessible, enable anyone to build applications
+
+ Implemented as libraries in Python (and almost any other language)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+History - timeline
+
+ 1962 Licklider (MIT, ARPA) proposes "Galactic Network"
+ 1961-7 Baran (RAND), Kleinrock and Roberts (MIT), Davies and
+   Scantlebury (NPL, UK) independently invent package switching
+ 1966 Roberts (ARPA) proposes ARPANET 
+ 1969 Crocker (UCLA) drafts RFC 1
+ 1969 (September) First two ARPANET nodes connected (UCLA, SRI, with BBN)
+ 1970 Ritchie and Thompson (Bell Labs) create Unix
+ 1972 First public demonstration of ARPANET with email at ICCC
+ 1973 Kahn and Cerf (BBN and Stanford) publish design for TCP/IP
+ 1973 Metcalfe (Xerox PARC) invents Ethernet
+ 1983 (Jan 1) ARPANET switches to TCP/IP (from original NCP)
+ 1980 Joy et al (UCB, DARPA funding) create Berkeley Unix, Socket library
+ 1985 NFSNET begun, civilian alternative to ARPANET, uses TCP/IP
+ 1988 Berners-Lee (CERN) invents HTTP, HTML, web server, browser
+ 1990 ARPANET decommissioned, replaced by NSFNET + commercial TCP/IP nets
+ 1991 Torvalds (unaffiliated, in Finland) releases Linux 
+ 1991 (February) van Rossum (CWI, Netherlands) releases Python 0.9
+ 1991 Berners-Lee (CERN) releases WWW
+ 1993 Andreesen et. al (NCSA) release Mosaic, first popular graphic browser
+ 1995 NFSNET backbone privatized
+ 1999 Google founded (Brin and Page, out of Stanford)
+
++--
+
+History - summary and lessons
+
+ Despite impression of rapid change, foundations are stable and long-lived: 
+
+ 50 years ago - packet switching
+ 40 years ago - ARPANET, email, Unix
+ 30 years ago - TCP/IP, Ethernet, Socket library
+ 20 years ago - WWW, Linux, Python initial versions all released in 1991
+ 15 years ago - WWW as we know it, Mosaic, Netscape, IE browsers, Python 1.4
+ 10 years ago - Google etc. etc. etc.
+
+ Popularity lags invention by years, decades
+
+ "The future arrives at different times for different people"
+                           -- paraphrasing Neal Stephenson (?)
+
+ Layering works. Lower levels are stable, recent innovation is in upper layers
+  1970-80s TCP/IP,  1980-90s HTTP,  1990s - 2000s Applications, Web APIs, ...
