@@ -1,0 +1,157 @@
+strings.txt
++--
+
+Strings - literals and formatting
+
+ Strings are values that represent text: 'Hello, world!'
+
+ 'This string contains "quotes"'
+
+ "This string also contains 'quotes'"  # single or double quotes both work
+
+ """
+ Triple quotes delimit block quotes that can contain linebreaks
+ and 'quotes' and "quotes" - often used for docstrings 
+ """
+
+ 'Special characters are escaped with backslash\nLike newline, for example'
+
+ String formatting expressions often appear in print statements, can go anywhere
+  format string % expressions  # evaluate expressions, put results in format string
+  '%s %s\n' % (23, 'Skidoo')   # format string with % placeholders, then values
+  '%s %s\n' % (x, s)           # can be used to format variables at runtime
+  '%6.2f%8.3f' % (42,42)       # can do C-style numeric format with columns etc.
+
+ Block quotes with format make a simple templating engine:
+  Create whole page with % placeholders, then % (...) provides values to fill in
+
+
+
++--
+
+String type
+
+ str is a collection type - values have parts that can be individually accessed
+
+ string parts are characters - not a separate type, just strings of length 1
+
+ str is a sequence type - access characters by integer indices s[0], s[1], ...
+
+ Zero-indexed, s[0] is first.  Can index backward from end, s[-1] is last etc.
+
+ Slice notation for segments of a sequence: s[i:j] i inclusive, j exclusive
+
+ Slice shortcuts: s[:n] means s[0:n], first n, s[-n:] means last n
+
+ sequences are iterables, for ... iterates over each element in turn
+
+   for c in s:
+     ... c ...      # loop body processes each chacter in turn
+
+ This is NOT necessary:    If you need the index also, use enumerate:
+
+   for i in len(s):           for i, c in enumerate(s): # multiple assignment
+     ... s[i] ...               ... i ... c ...
+ 
+
++--
+
+Strings are immutable
+
+ Immutable means values cannot be changed
+
+   c    = s[i]  # OK - can read a character from a string
+
+   s[i] = c     # ERROR - can NOT set a character in a string!
+
+ We always have to create a new string.  String operators return new values.
+
+   s  = 'Hello '     # What is s now?
+
+   s + 'world'       # Now?
+      
+   t  =  s + 'world' # Assign t to capture the results of the expression
+
+   s += 'world'      # What is s now?   What happened?  
+ 
+
+
+
+
+
++--
+
+String operators and library
+
+ s, t, n = 'supercalifragilistic', 'expealidocious', 3  # sample data
+
+ s + t, s * n  # concatentation, replication
+
+ s == t        # test equality (not identity)
+
+ s < t, s <= t, s > t  # test order (alphabetic)
+
+ len(s) # length
+
+ 'ist' in s  # test substring occurence
+
+ s.find('ist')   # search for substring, return index or -1 if not found
+
+ s.find('ist', n)  # search for substring starting at index n, etc.
+
+ s.split('i') # break at 'i', return list of strings (often break at ' ' or '\n')
+
+ 'i'.join(ss) # join list of strings into one with separator char (often ' ', '\n')
+
+ ... and many, many more ...
+
+
++--
+
+Regular expressions
+
+  Regular expressions are a mini-language for describing string patterns
+   Can search or match patterns that have many possible matches, not just one
+   Complicated, use only when the Python string library is not powerful enough
+   
+  Motivation: I'd like to search for any....
+    IP address - 128.95.181.12  10.0.0.1  etc.
+    email address - jon@uw.edu  jon@u.washington.edu etc.
+    URL - http://staff.washington.edu/jon/index.html  file:///Users/jon/index.html
+
+  A regular expression is an ordinary Python string that contains metacharacters:
+   a  etc. matches only itself (most characters are not metacharacters)
+   .  match any character
+   [abc] match any one of these characters (defines a character class)
+   * match zero or more more repetitions of the previous character class
+   ?, +  match zero or one, one or more repetitions 
+   {n,m} match at least n but at most m repetitions of the previous class
+   .. etc ...
+
+ Use Python re library functions to match sample text against the regular expr.
+
+ Demo: Python re library with BioPython
+
+
+
+
+
+
++--
+
+Unicode
+
+ Ordinary Python 2.x str type can only contain 8-bit bytes (ASCII, English ...)
+
+ Cannot represent foreign alphabets, accents or other diacritical marks, math, ...
+
+ Unicode - "universal code" - can represent all this and more
+
+ Python 2.6 does support Unicode strings with unicode type, u prefix: u'....' 
+   u'...' strings can include bytes encoded like this: u'...\x...\x..'
+
+ It's a long story -  see the HOW-TO at python.org, other refs.
+
+ Python 3 str type is like Python 2.x unicode type, encode/decode is streamlined
+
+

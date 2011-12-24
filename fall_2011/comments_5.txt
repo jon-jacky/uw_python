@@ -1,0 +1,28 @@
+Comments on assignment due week 5, Nov 8: sorted_string and sorted_list
+
+In sorted_string, many students wrote a loop to copy the characters c
+in string s to list l:
+
+ l = []
+ for c in s:
+   l.append(c)
+
+This works, but it is easier to just convert the type: l = list(s)
+
+Likewise, in sorted_list, many students wrote a loop to copy list l1 to list l2.
+Any of these alternatives requires less code:
+
+ l2 = list(l1)
+
+ l2 = l1[:]
+
+ l2 = copy(l1) # after from copy import copy
+
+In Python, you usually don't need to write a loop to do simple
+operations on collections.
+
+Some students printed the string (or list) in the function body of
+sorted_string (or sorted_list).  The problem statement specified that
+the module (not the function) should print the strings (lists).  In
+general, library functions that transform data should not print nor do
+any other input/output - that should be left to the caller.

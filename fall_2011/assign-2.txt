@@ -1,0 +1,18 @@
++--
+
+Assignment due week 2, Tues Oct 18, bring exercise to turn in (hardcopy)
+
+  Reading: Ch (1), 2, 3, (4), 5, 6, 7 - 1,4 optional but recommended
+
+  Exercise: Similar, but not identical, to Downey Ex 3.5 (Ch 3, Ex 5)
+     
+     Write a function print_grid that takes one integer argument,
+     that prints a grid like the picture in Downey's exercise,
+     BUT the size of the grid is given by the argument.  
+     For example, print_grid(11) prints the grid in Downey's picture.
+
+     This problem is underspecified.  Do something reasonable.
+
+     Hints (from 2.8): A character is a string of length 1
+     s + t is string s followed by string t
+     s * n is string s replicated n times

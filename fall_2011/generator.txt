@@ -1,0 +1,37 @@
+generator.txt
++--
+
+Generators
+
+  Computation that you can pause, get results, and resume later
+  Like a function that remembers where it was when it last returned
+  Can perform "lazy" computations where items are generated only when needed
+  Can provide "infinite" data structures 
+
+ Motivation
+  Demo range vs. xrange, show delay (or worse!) with range but not xrange
+   (sizes chosen to demo memory/speed limitations, different on your computer)
+  range is eager - computes all the elements in the range first
+  xrange is lazy - computes each element as needed (to execute loop body once).
+
+ Coding a generator
+  Like a function, but with "yield" instead of "return"
+  Resumes after yield when you next call it
+  Remembers values of local variables between calls 
+   calling the generator again resumes the calculation where it left off
+  Raise StopIteration to indicate generator is done - no more elements 
+  May NEVER raise StopIteration - can simulate infinite data structures!
+
+
+
+
+
++--
+
+ Generator expression
+
+  Shorthand for some generators
+  Notice how sum works with generator as well as list
+  'sum' (and many other functions), like 'for', work with any iterable 
+  Iterables include sequences (str, list, tuple, dict) and now, generators
+

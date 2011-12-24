@@ -1,0 +1,13 @@
+route.txt
++--------
+
+    Bremerton <---  Seattle      puget = (('Seattle', 'Bremerton'),
+       |              |                   ('Seattle', 'Tacoma'),
+       |              V                   ('Tacoma', 'Olympia'),
+       |       +-- Tacoma                 ('Tacoma', 'Shelton'),
+       V       |      |                   ('Bremerton', 'Shelton'), 
+     Shelton <-+      |                   ('Shelton', 'Olympia'))
+          |   +-------+
+          |   |
+          V   V
+         Olympia

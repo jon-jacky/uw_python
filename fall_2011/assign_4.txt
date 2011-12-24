@@ -1,0 +1,10 @@
+
+Assignment due week 4, Tues Nov 1, bring exercise to turn in (hardcopy)
+
+ Required reading: Ch. 10, 12, 13, 14
+
+ Exercise: 12.3 in Downey - write the function most_frequent that takes a string
+ and prints the letters in decreasing order of frequency. ...
+
+
+

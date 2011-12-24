@@ -1,0 +1,25 @@
+Exercise for week 10, Tues Dec 13, bring exercise to turn in (hardcopy)
+
+Reading: see course web page
+
+Exercise: Find and install a Python package and report your
+experience.  Report these items:
+
+ 1. The name of the package 
+
+ 2. Location where you found the package (the URL for the website, the
+ entry in package manager registry, etc.)
+
+ 3. The format of the downloaded package, if any (.msi, .dmg, .tar.gz, ...
+    or 'none' if installation method doesn't use one)
+
+ 4. The installation program you used (distutils, pip, easy_install,
+     apt, Synaptic, macports ...)
+
+ 5. Whether the installation was successful 
+
+If the installation was not successful, you don't have to fix it if
+you don't want to -- just report that it didn't work.  If you do fix
+it, report that.
+
+ 

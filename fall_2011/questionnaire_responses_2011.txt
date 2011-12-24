@@ -1,0 +1,80 @@
+Entry Questionnaire results --- Programming in Python  Fall 2011
+
+
+1. Reasons for taking this course (circle as many as you wish, or none):
+
+ use in present job: 22
+
+ prepare for future jobs (or education): 25
+
+ personal use: 20
+
+
+2. Programming experience (circle as many as apply):
+
+ None: 1   Courses: 23   Personal: 16   Professional: 14
+
+
+3. Python experience (circle one):
+
+ None: 7   Beginner: 21   Intermediate: 2   Expert
+
+
+4. Other programming languages you have used (name as many as you wish, or None):
+
+C, shells (bash etc.), Fortran, Pascal, Basic (VB etc.), Perl,
+Assembler (various), C++, Java, e, Verilog, LabView, Prolog, MATLAB,
+Ada, Mathematica, GNU Make, SQL, Javascript, PHP, Forth, C#, Ruby,
+AML, Lisp, Scheme, Haskell, ...
+
+
+5. Operating systems you have used (circle as many as you wish):
+
+ Windows: 31   Mac:20  Linux: 20  Other: 7 (FreeBSD, Solaris, Unixen)  None:0
+
+
+6. Version control systems you have used (name as many as you wish, or None)
+
+None: 17  svn: 7  git: 5  cvs: 4  hg: 2, Bazar, Source Depot, Perforce,
+                                         RCS, SCCS, Clear Case: 1 each
+
+7. Unit test frameworks you have used (name as many as you wish, or None)
+
+None: 29   Qt Unit Test, Python unittest, Eclipse, VS, JUnit: 1 each
+
+!!! Which topics would you like to see covered in this course? (Fall 2011 only) !!!
+
+syntax 
+development environments
+BioPython
+Object-oriented programming and abstractions
+IDLE
+Packages
+SQLite3
+What is Python used for in the commercial world?
+Demand for Python programmers
+object-oriented aspects of Python
+list, tuple, class etc.
+Unicode in version 2.x
+GUIs 
+GUI/Web-based applications
+Mapping applications - clip, export map to pdf
+Gluing stuff together, e.g. C/Fortran called from Python and vice-versa (SWIG?)
+Iterators, decorators, packaging, MPI, multithreading, parallel proceessing
+Flavors of Python - what does that mean?
+Automating system administration tasks
+git
+Libraries and interfacing with hardware (serial port, parallel port)
+Python with database migration
+Parsing JSON
+Website scripting, getting data off a website
+Best practices for development
+Basic algorithms/common type functionality (strings, ints, lists, dicts, ...)
+ via awesome examples
+object-oriented strategies
+regular expressions
+database programming in Python
+installation automation
+Python as a scripting and extension language
+Python in IBM WebSphere
+Everything

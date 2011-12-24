@@ -1,0 +1,69 @@
+files.txt
++--
+
+Files
+
+ Files, yes they're on disk, persistent, known to OS.  BUT also...
+
+ Files are a type - have structure and operations
+
+   fd = open('ceru_human.sp')
+
+ Files are iterable: 
+
+   for line in fd:
+      print line
+
+ Many things are made to work like files: also processes, web pages, ...
+
+   import os
+   pd = os.popen('ls')
+
+   import urllib
+   wd = urllib.urlopen('http://staff.washington.edu/jon/')
+
+ Python usually treats different types as similarly as possible 
+
+
+
++--
+
+Exceptions
+
+ Allow recovery from errors, other exceptional conditions
+
+ Exceptions are typical Python style, "easier to ask forgiveness than permission"
+
+ try/except is another control structure like for... or if...
+
+    try:
+      fd = open('missing.txt')
+    except IOError:
+      print "couldn't open missing.txt"
+
+ 
+  book 14.5 163, better: except IOError  Don't mask other errors!
+
+
+
+
+
+
+
++--
+
+Operating system functions and scripting
+
+ import sys
+
+ sys.argv is array of strings, command line arguments
+
+ import os
+
+ dir(os)  # many operating system functions
+
+ os.getcwd() # like Unix pwd command
+  
+ pd = os.popen('ls -l') # run system command and collect output
+
+

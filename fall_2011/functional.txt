@@ -1,0 +1,88 @@
+functional.txt
++--
+
+Sets
+ Collections without order and repetition
+ We just want to record whether some element is present (at least once, anywhere)
+ Example: testing for legal file names (drawn from a limited character set)
+ See set.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Map and Filter
+
+ Compare map and filter patterns, comprehensions vs. built-in functions
+ Comprehensions are more versatile, Pythonic
+ Functions support functional programming style, like Lisp, Haskell, F#, ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Conditional expressions
+
+ Comprehensions can only contain expressions, not statements - how to handle 'if' ?
+ If statement: if p: x = v1 
+               else: x = v2
+ Conditional expression (on right-hand-side): x = v1 if p else v2
+  can use conditional expression WITHOUT assignment: v1 if p else v2
+ Another example of statement vs. expression, mutation vs. functional style
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Reductions
+
+ See product.py
+ Built-in reductions: sum, max, min, all, any
+ reduce function: motivate operator module and lambda expressions
+ operator module makes operators available as named function where syntax requires
+  use operator.mul instead of * etc.
+  alternatively, can use lambda expression - compare to product2 named function
+ lambda is used heavily with map and filter - but not needed with comprehensions
+  

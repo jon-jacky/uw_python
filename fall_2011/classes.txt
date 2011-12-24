@@ -1,0 +1,260 @@
+classes.txt
++--
+
+Classes, objects, object-oriented programming
+
+ Classes define new types
+ 
+ A type is a set of values, with operations
+  int type: values are ... -1, 0, 1, 2, ... operations are +, -, *, / ...
+  list type: values are all lists [..], operations are + etc., also sort() ...
+  
+ Python has lots of built-in types: int, float, tuple, list, dict, str, ...
+
+ Standard libraries (in Python install) add more types: file, ...  
+
+ Other libraries (in separate installs) add still more types: array ...
+
+ Writing classes extends the Python language by adding new types
+
+ Python itself is made out of classes - built-in types and library types are classes
+ 
+
+
+
+
+
+
+
+
+
+
++--
+
+Classes, objects, object-oriented programming
+
+ A typical Python programmer uses the built-in classes all the time
+
+ BUT defining new classes is optional
+
+ Classes add new types, Python already has plenty --- do you really need more?
+
+ Python is UNLIKE Java, C# - where classes do everything, you MUST use them
+
+ Python made another choice: different constructs for different purposes
+
+  standalone variables and functions (not part of classes) for storage, behavior
+  
+  modules (without classes) building programs from parts
+   separate namespaces
+   related variables and functions together
+  
+  versatile built-in types (get lots done without defining your own types)
+
+ Whether or not to write classes is a design decision -- maybe you don't need them
+
+
+
+
+
++--
+
+Classes, objects, object-oriented programming: nomenclature, notation
+
+   Class - a type defined with a class statement
+
+   Class names are usually capitalized, but names of modules that define them are not.
+
+   Object - In Python, any value of any type (not just a class).  An int is an object.
+
+   Instance - a value of a class type 
+    Often called 'object' in other languages.  In Python, all values are objects
+    'Instance' distinguishes objects of class types from other objects
+
+   Instances are composite objects with addressable parts
+    similar to string, tuple, list, dictionary, ... (but not similar to int, float, ...)
+
+   Attributes - parts of an instance: data attributes and methods
+    Data attribute - like a variable (like instance variable in Java etc.)
+      Class attributes - shared by all instances, assigned at class level:  x = ...
+      Instance attributes - specific to each instance, assigned in methods:  self.x = ...
+    Method - callable attribute, acts like a function, defined with def like a function
+    
+   Access attributes of instance c with dot:  variable c.x, call method c.f()
+    Dot notation for attribute, analogous to index for sequences or key for dictionaries
+    Dot notation for instance looks just like dot notation for module
+    Each instance is a name space (like a module), so c.x and d.x are separate variables
+
+  
+
+
+
+
+
+
+
+
++--
+
+When should you write classes?
+
+ When do new data types really help?
+
+ When you extend the language
+   numpy seamlessly adds array and matrix ... for science!
+   vector.py example - next week
+
+ When you provide many similar components that are not exactly the same
+  GUIs: windows, panels, menus, buttons, ...
+  System software: files, processes, sockets, URLs all with open/read/write/close
+  Simulations
+
+ When you distinguish a identity from equality
+  Equality: equal values are indistinguishable, interchangeable: 42 is 42
+  Identity: "equal" values are distinguishable, NOT interchangeable,
+   maybe 'John Smith' is not 'John Smith'
+  Instances are not equal, even when all their attributes are equal
+  Identity is often related to persistence
+
+ When you express a particular style or psychology: active agents, not passive data
+
+
+
+
+
+
+
+
+
++--
+
+Advantages of classes
+
+ Inheritance
+  Define new types from old
+  Only describe the differences
+  Eliminates duplicated code
+
+ Polymorphism
+  Same operators (symbols) and methods (names) do the right thing with different types
+  Eliminates if..elif..else branching on data type 
+
+ Usually gain advantages only if you define several/many related classes
+
+ Case study: traffic simulation + animation (in 1-d ascii graphics)
+  Contrast to traffic.py queue simulation a few weeks ago
+  This study shows the typical way to use objects: create all attributes with __init__
+
+
+
+
+
+
+
+
++--
+
+Traffic simulation case study: vehicle class
+
+ Module vehicle.py contains definition for vehicle class
+  class vehicle, derives from/is a subclass of object - inherits only the basics
+  census class attribute is shared among all objects
+  methods - self must be first arg of every one
+
+ To create an instance, call class with function syntax, __init__ is called.
+  __init__ uses special method syntax - means something special to python interpreter:
+  if someone calls the class, create an empty object, then execute this method
+  recall we create attributes by assignment (not declaration as in Java, C#, ...)
+   __init__ puts all those assignments in one place
+   __init__ defines/assigns attributes - typical style.
+   __init__ does not return the new object - in fact it must return None.
+   note use of optional args with defaults using keywords - typical style
+
+ __str___ defines print representation
+
+ move - note use of attributes self.x, self.v
+  move - signals arg for passing in environment - what driver might see out windshield
+  move - one time step, we're integrating a de here, simulation integrates system of de's
+
+ draw - takes the view (into which we draw this object) as a parameter
+ if __name__ == '__main__': ... test code
+
+
+
+
++-- 
+
+Traffic simulation case study: framework
+
+ Module simulator.py: (initally comment out safe_vehicle, pedestrian lines)
+  Creates, coordinates objects defined in vehicle.py
+  Not a class, just ordinary module-level variables and statements
+  This pattern is ubiquitious everywhere from scientific simulations to computer games
+  We need all the objects in some collection - so create them with a list comprehension
+  Also create stoplight and view
+  Simulation outer loop: time steps, inner loop: objects
+  Each outer loop iteration clears, populates, draws view
+  Inner loop moves, then draws every object
+
+ (demonstrate simulator)
+  Notice print statements from if __name__ ... do not appear when we import here
+  Explain graphic output, x across page, time down page, high velocity/more slant
+  Stoplight at right edge - we're not using it yet but we will
+  Identity of vehicles is preserved when paths cross
+
+ We could have programmed the same thing in less code without classes
+  Only one class - does not fully realize the advantages of classes and objects
+
+
+
+
+
+
+
++--
+
+Traffic simulation case study: Inheritance
+
+ Module vehicle.py also defines class safe_vehicle
+  Inherits from vehicle
+  Redefines move method to observe/obey signal, everyting else is the same
+  Method signature (name and params) is the same but method body is different
+
+ (Demo)
+ uncomment line that creates/adds safe_vehicle
+ no changes to main loop, no if ... else ... branch on vehicle type, Python finds method
+ polymorphism - same operation 'move' behaves differently, depending on type
+ show how behavior differs, responds to stoplight
+ 
+ This demonstrates the advantages, couldn't do this as easily without classes/inheritance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Traffic simulation case study: polymorphism, "duck typing"
+
+ Module pedestrian.py defines pedestrian class
+  pedestrian class does NOT inherit from vehicle
+   does not have any of the same attributes
+   BUT has same interface (method signatures) so it also can be invoked from simulator
+   This is called "duck typing" - if it quacks like a duck etc, ...
+   Typical python style, not even allowed in some languages 
+  
+ "Duck typing" enables more flexibilty
+   Add classes ad lib, needn't anticipate in design
+ 
+ (demo)
+  in simulator, uncomment pedestrian line, demo

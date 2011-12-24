@@ -1,0 +1,151 @@
+protocol.txt
++--
+
+Protocols
+
+  An organizing principle for designing families of types (classes) in Python
+
+  A collection of methods that a type might have is called a PROTOCOL
+
+  Any types that provide those methods is said to observe that protocol
+
+  Any types that observe the protocol can be called by the same code
+
+  These types might be, but might NOT be, related by inheritance
+
+  Our vehicle, safe_vehicle, and pedestrian classes all provide 'move' and 'draw'
+
+  We could say move and draw constitute our 'traffic protocol',
+   
+  Our traffic simulator can use any objects that observe our traffic protocol
+  
+  Protocols have some similarities to interfaces in Java, C#, ...
+   BUT there is no construct in the Python language to define a protocol
+   To see if a type observes a protocol, use dir to see if the methods are present
+   (Recent Python versions have  Abstract Base Classes ...  ?)
+
++--
+
+Python built-in protocols: http://docs.python.org/c-api/abstract.html
+
+  Used to build Python itself, but you can define your own types that observe them
+   'special methods' in these protocols are all have names of the form: __foo__
+   http://docs.python.org/reference/datamodel.html#special-method-names 
+
+  Objects - all types - attribute access as in f.x, printing, ...
+    __getattribute__, __str__, __repr__, ...
+
+  Numbers - int, float, etc. - arithmetic
+    __add__, __sub__, ... bound to +, -, ....
+
+  Sequences - str, list, tuple etc. - ordered collections with indices, slices, ...
+    __getitem__, __getslice__, __add__, ... bound to a[i], a[i:j], a + b, etc.
+
+  Maps - dict - collections with keys and values
+   __getitem__, keys, values, ...  bound to d['x'], etc.
+
+  Iterators - sequences, files etc. - for x in foo: ...
+   __iter__ etc.
+
+  Buffers - strings, arrays etc. - internal, used for efficient access
+
+
++--
+
+Iterator protocol - how it is used
+
+  The iterator protocol is used by several different language constructs
+
+  Here s is an iterable (str, list, tuple, dict, set, file, socket, process, ...)
+
+  Membership test:  x in s  
+
+  Iteration: for x in s: ...
+
+  Reduction: sum(s), min(s), max(s) 
+   
+  Construction (or type conversion): list(s), tuple(s), set(s), dict(s), ...
+
+
+
+
+
+
+
+
+
+
++--
+
+Iterator protocol - how it works
+
+  for x in foo: ... 
+
+  foo can be can be any *iterable*
+   a sequence type (str, list, tuple, dict, their subclasses)
+   a file, a process, a socket ...
+
+  An iterable is any object with an __iter__ method
+    call it with iter(foo) or foo.__iter__()
+    returns an *iterator* object
+
+  An iterator is any object with a next method.
+    call it with next(foo_iterator) or foo_iterator.next()
+
+  'for x in foo: S' is equivalent to:
+
+  temp_iterator = iter(foo)
+  while True:
+   try: x = temp_iterator.next()
+   except StopIteration: break
+   S
+
+
++--
+
+Generators are Iterators
+
+  Calling a generator creates an iterator
+
+  Python creates the __iter__ and next methods -- so you don't have to
+
+   my_xrange is not an iterator,  but my_xrange(100) is, has __iter__ and next
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Design principles
+
+ Build up complex operations from simple building blocks (protocol methods)
+  Building blocks are versatile: can be used in different ways
+  Building blocks are composable: can be combined in different ways
+
+ Use the same building blocks again and again
+  Many types can observe the same protocols
+  Many language constructs, libraries, and applications can use the same protocols
+
+ Use what is already there
+  New types can observe existing protocols, will work with existing constructs etc.
+
+ Apply these same principles with lesser or greater original invention
+  First - use library functions and types instead of writing your own
+  Then - create your own libraries and types that define or use protocols
+ The first level is sufficient for many purposes
+
+ Python is a *programmable* programming language
+  Makes Python rewarding for experts as well as beginners

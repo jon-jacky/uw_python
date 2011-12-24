@@ -1,0 +1,150 @@
+sequence.txt
++--
+
+Lists and tuples
+
+Along with dictionaries, the heart of Python!
+ We'll have go beyond the book in lectures, readings
+
+Like strings, lists and tuples are sequences and iterables
+ sequence: s + t, and s * n operators, indices s[i], s[i:j]
+ iterable: for x in s:...
+
+Unlike strings, lists and tuples can have any type in each element, can be nested
+ [ 1, "two", [2, "three", (4, "five")] ]
+
+Like strings, tuples are immutable
+
+UNLIKE strings, lists are mutable.  LISTS ARE MUTABLE!!
+  s[i] = x # works for lists
+  s + t returns a new list, leaves s and t unchanged (like strings)
+  s.extend(t), s.append(t), s.sort() all return None and mutate list s
+
+Lists and strings
+  s.split(c) splits string s on separator c, returns list of strings
+  c.join(l) joins list of strings l, returns one string with separator c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Lists: aliasing, sharing, copy
+
+  l2 = l1 makes l2 an alias for l2, both see same list object, updating l1 changes l2
+  l3 = copy(l1) or l3 = l1[i:j] or l3 = [:] makes a separate, distinct copy
+  Can mutate list contents from within a function
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Lists: queues
+
+ Lists can model queues
+   Add items at end, remove items from front (see traffic.py)
+
+ Use list of strings to model line of vehicles - 
+  functions for arrive, depart, notice we can update list from within functions.  
+
+ In main simulator, note use of arrive and depart function objects -
+  Can do other things with functions besides call them
+  Can put in tuples, assign to variables, test equality, look up names
+
+ Review __name__ == '__main__' convention
+
+ Review default args
+ 
+ Run it with several values of n
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--- 
+
+Lists of tuples: relational database
+
+ List of tuples is a ubiquitous data structure
+
+ Relational database (see phones.py)
+
+ List comprehensions make a mini query language
+
+ In general
+  [ pattern for item in source if condition ]
+
+ Example: find the names of all the people who have phones in the physics dept
+
+  [ name for (name, phone) in phones if physics_dept(phone) ]
+
+  Conditon: physics_dept returns True or False if phone number in range
+  Note tuple assignment: (name, phone) in phones
+
+
+
+
+
+
+
++--
+
+List of tuples: graphs
+
+  Network data structure (see route.py, traverse.py)
+
+  Nodes, edges are pairs of nodes (tuples), edge list defines graph
+
+  Directed graph, edges point one way, draw arrows
+
+  check path by checking that successive pairs of nodes are in graph
+
+  route.py:
+   *graph parameter gathers however many arguments into a tuple (see 12.4,136)
+    path[i:i+2] is slice within path
+
+  traverse.py
+    find path through graph
+    list comprehensions here are just scratch data
+
+
+  

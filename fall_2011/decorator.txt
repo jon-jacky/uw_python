@@ -1,0 +1,45 @@
+decorator.txt
++--
+
+Decorators
+
+ Transform/generate code programmatically at load time
+
+ See decorator.py
+
+ Recall there are usually two passes of computation:
+  1. first: import the module - usually execute def + class, but can do anything
+  2. later: use vars, fcns, classes defined at import time
+ You can do arbitrary computations at import time
+  including computations that transform or create code so you can call it later
+
+ You can define a new function *in a function* and return that function
+ addn in decorator.py
+
+ You can pass a function as an argument and use that to construct the
+ new function you return
+ sieve in decorator.py
+
+ The decorator construct formalizes that
+ @sieve in decorator.py
+ We can call *any* function a seive by prefixing @sieve
+
+
++--
+
+Decorator example
+
+ memoize - a realistic example - see decorator.py
+
+ motivation: some fcns take a long time to compute, so save results to use over
+  store in dict whose keys are function args and values are function results
+  before call, look up args in dict and either retrieve or call and store
+ Need separate dict for each function, seems like a lot of repetitious coding
+ Decorators to the rescue!
+
+ How can we use decorator to store information?  
+ Can't just have the result of decoration be a function - no permanent storage
+ A decorator can also be a class because classes and objects are callables too
+  call a class to execute its __init__, call an object to execute its __call__
+
+

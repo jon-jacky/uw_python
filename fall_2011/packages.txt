@@ -1,0 +1,147 @@
+packages.txt
++--
+
+Review modules and import 
+
+Given module foo with attribute x, x could be variable, function, class, ...
+
+import foo       # loads all contents of foo module file into foo module object
+... foo.x ...    # module name prefix distinguishes x, foo.x, bar.x, ...
+                 
+import foo as f  # 'nickname': loads contents of foo into f module object
+... f.x ...      # maintains prefix, but saves space (and your fingers)
+
+from foo import x  # loads x from foo into current module
+... x ...          # NO prefix, but what if there was an x here already?
+
+from foo import *  # puts all contents of module foo into current module
+... x ...          # NOT recommended in module, can be OK in interactive session
+
+
+
+
+
+
+
+
++--
+
+Finding modules
+
+Python can tell you where it found a module.  For example, the regular
+expression module re
+
+>>> import re
+>>> re
+<module 're' from '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/re.pyc'>
+
+Python looks for the module in all the directories in sys.path
+
+>>> import sys
+>>> sys.path
+['', '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python27.zip', '/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7', ...
+... 
+
+sys.path is set by several things, including the PYTHONPATH environment variable
+(but PYTHONPATH is only a subset of sys.path)
+
+
+
+
++-- 
+
+Loading modules with the python -m option
+
+You can start a Python session by loading a module with -m.
+
+Python will search sys.path for the module.  For example, regular expressions:
+
+Jonathans-MacBook-Pro:fall_2011 jon$ python -i -m re
+...
+>>> dir()
+['DEBUG', 'DOTALL', 'I', 'IGNORECASE', 'L', 'LOCALE', 'M', 'MULTILINE', 'S', 'Scanner', 'T', 'TEMPLATE', 'U', 'UNICODE', 'VERBOSE', 'X', '_MAXCACHE', '__all__',
+...
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Packages 
+
+Packages provide dotted (hierarchical) module names
+
+import Bio.Entrez               # import package (a module in another package)
+import Bio.Entrez.Parser        # import module from package
+from Bio.Entrez import Parser   # import module from package into current module
+import Bio.Entrez.Parser as ep  # import module from package with nickname
+
+A package is a module that contains other modules (and maybe more packages)
+
+Modules are files, packages are directories + contents
+
+A package P is a directory named P that contains a file named __init__.py
+
+Other modules in directory P are the modules of package P
+
+Some of those modules can themselves be packages (dirs with own __init__.py)
+
+
+
+
+
+
+
+
++--
+
+Inside a package
+
+Sample: BioPython /Library/Python/2.7/site-packages/Bio on my system
+
+__init__.py can be empty or just a docstring, or can include any code
+
+Modules in package can import other modules in same package without package prefix
+
+So you can easily turn a directory containing modules into a package at any time, 
+just add __init__.py (which can be empty)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Installation
+
+Where do installed packages live?  Usually in .../site_packages
+
+There might be several
+
+ Windows: C:\Python26\lib\site-packages
+
+ Mac: /Library/Python/2.6/site-packages, but also
+/opt/local/Library/Frameworks/Python.framework/Versions/2.6/lib/python2.6/site-packages
+
+How does the python interpreter find site-packages?  sys.path
+
+Installation should put packages in the right place, update sys.path as needed
+

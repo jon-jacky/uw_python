@@ -1,0 +1,44 @@
+
+Notes on the textbook, Downey, Python for Software Design (printed),
+also Think Python (online).
+
+I like the book very much but there are a few examples where a
+different style is usually considered better, or where additional
+explanation would be helpful.
+
+Exercise 3.5
+
+Downey's solution at thinkpython.com/code/grid.py does not use loops
+because he has not yet introduced them in the book.  A more typical
+solution would use a 'for' loop, which is shorter, and easier to
+generalize to different sized grids.
+
+
+Section 10.3
+
+ for i in range(len(numbers)):
+     numbers[i] = numbers[i] * 2
+
+It is usually better style to use enumerate to get the index number:
+
+ for i, n in enumerate(numbers):
+     numbers[i] = n * 2  # here n == numbers[i]
+
+
+Section 14.5
+
+  try 
+    fin = ...
+    ...
+  except:
+    ...
+
+It is usually better style to make the expected exception
+explicit, to avoid masking unexpected exceptions:
+
+  try
+    fin = ...
+    ...
+  except IOError:
+    ...
+

@@ -1,0 +1,57 @@
+Comments on assignment due week 4, Nov 1: most_frequent
+
+Some students had most_frequent return the sorted list, in addition to
+printing it.  The problem statement did not ask for this, but did not
+forbid it either.  In fact, it's usually good for functions to return
+something useful.
+
+Some students noticed the problem statement said "letters", not
+"characters", so they removed non-letter characters and converted all
+letters to the same case (upper or lower).  I didn't expect this; it
+shows scrupulous attention to the exact wording of the problem
+statement.
+
+Some students chose particularly informative strings to confirm their solution
+was correct, before using it to check samples of natural language.  In this string,
+a has frequency 1, b has frequency 2 etc.
+
+ test = 'abbcccddddeeeee' # etc. ...
+
+Some students created additional alternative solutions, besides the ones in
+my most_frequent.py:
+
+- Instead of reversing the tuples derived from the histogram
+dictionary and sorting those, build a new dictionary where they keys
+are the frequencies and the values are lists of all the letters that
+have the same frequency, for example:
+
+ collect = dict() # create empty dictionary
+ for letter in freqs: # freqs is dict returned by histogram
+   freq = freqs[letter]
+     if freq not in collect:
+       collect[freq] = [letter] # start list with one element
+     else:
+       collect[freq].append(letter) # add letter to list
+
+-  Instead of deriving a list of tuples from the histogram dictionary by d.items()
+ and then reversing them, build the list of reversed tuples directly from the dictionary:
+
+   inverted = []
+   for letter in freqs:
+     inverted.append((freqs[letter], letter))
+
+- Instead of using ts.sort(...) to mutate the same list of tuples, use
+  sorted(ts, ...) to return a new list
+
+- Instead of using Downey's histogram function to build a dictionary, use
+  the string count method as in s.count(c) to count each character c in string s, 
+  and build a list of tuples (freq,c).  Then sort that list and remove the duplicates.
+
+- Instead of using a dictionary and then sorting tuples, use the
+ Counter class from the collections module (new in Python 2.7), which
+ does all the work for you: its constructor creates the frequency
+ histogram, and its most_frequent method does the sor ting.
+
+- etc. ...
+
+I am impressed by the number of useful variations, even in this simple exercise!

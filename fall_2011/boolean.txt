@@ -1,0 +1,73 @@
+boolean.txt
++--
+
+Booleans
+
+ bool type has values True, False
+
+ Used in  if b: ...  # do body once,  while b: ...  # do body repeatedly
+
+ Other types are interpreted as True, False in boolean context (tests)
+  nonzero, zero    # numeric types
+  nonempty, empty  # collection types
+  (other), None    # any types
+
+ assert statement tests Boolean expression, exits program with message if False
+   assert isinstance(s, list) and len(s) > 0 # document assumptions, intent
+
+ assert can be turned off with python -o switch
+
+ (aside: assertions can be the basis for a proof of correctness)
+
+
+
+
+
+
++--
+
+Block structure
+
+ Block starts after colon, indent indicates block, outdent exits:
+
+   if b:
+      ...  # execute indented section only if b is True
+      ...
+   ...     # jump here if b is False
+   ...
+
+ Used for all block structure in Python: alternative to begin, end, {, }, ;, ...
+
+ Line break ends statement, use \ to extend line, not needed inside (...), [...]
+
+ 
+
+
+
+
+
+
+
+
++--
+
+Booleans -- style
+
+ Booleans are values!  You can return bool variables etc.
+
+ Style
+ 
+   Unnecessary         Sufficient
+   -----------         ----------
+
+   if b == True:       if b:
+    ...                 ...
+
+
+
+   Maybe wrong         Correct
+   -----------         -------
+   ...                 ...
+   if b:               return b
+     return True 
+

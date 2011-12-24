@@ -1,0 +1,137 @@
+collections.txt
++-
+
+List comprehensions
+
+ See phones.py, comprehensions.py
+ Generate a new list from an existing collection
+ Review little tuple database from last week
+ Show for loop to build up list, compare to list comprehension
+ Show more elaborate pattern/expr (aside: string formating is not just for print)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Dictionaries
+
+ Key/value pairs with unique keys.
+ For databases, lookup tables.  Much computing is looking things up.
+ Keys must be hashable (immutable) - numbers, strings, tuples but not lists
+ Chapter 13 word frequency example is very nice
+ Case studies: Juhasz' Roman numeral converter, Norvig's spelling corrector
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Dictionary example: Juhasz' Roman numeral converter
+  
+  Code in roman.py
+  Nice combo of dict, comprehension, list
+  digits: list comprehension turns Roman numeral string into list of integers
+  numerals: dictionary is lookup table from Roman numerals to integers
+  while ... because we don't know in advance how many digits
+  handle special case when digit < max(digits)
+  pop removes next integer from list and returns it
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Dictionaries: Norvig's spelling corrector 
+
+  Code in corrector.py, sample data in big.txt
+  A miniature masterpiece, every line is worth studying
+  Uses everything we've seen so far, including regexp
+  Lots of good snippets you can copy and use in your own code
+  Sample data in big.txt - my version is full of weird punctuation and non-words
+  words - turns a string of messy text into cleaned-up list of lowercase words
+   uses regular expression, converts all text to lowercase so case insensitive
+  train - makes a word count histogram, using built-in defaultdict type
+  NWORDS - histogram of words in big.txt
+   uses file type as callable to open file, alternative to open function
+  edits1(word) - uses comprehensions to generate likely misspellings of word
+   whole chain of comprehensions where each is the source for the following one
+   finally returns set to eliminate duplicates
+  correct(word) = c1(word) or c2(word) or ... selects first non-empty collection
+
+
+
+
+
+
+
++--
+
+Natural language processing
+
+ Lots of interesting projects and research - consider for Spring term project
+
+ Downey, Ch 13, Markov Analysis etc.
+
+ Context Free Grammars (CFGs), used to humorous effect in snarXiv
+ http://davidsd.org/2010/03/the-snarxiv/
+
+ Natural Language Toolkit (NLTK) (in Python)
+ http://www.nltk.org/
+ 
+ Natural Language Processing with Python (book, uses NLTK, free online version)
+ http://www.nltk.org/book

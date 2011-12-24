@@ -1,0 +1,48 @@
+Comments on week 3 examples:
+
+ A module that uses sys.argv, such as command_line.py from week 3,
+can't be usefully run in the IDLE interpreter, since there is no easy way
+to provide the command line arguments.
+
+Comments on assignment due week 3, Oct 25: concordance
+
+Problem statement: http://staff.washington.edu/jon/uw_python/fall_2011/assign_3.txt
+
+My solution: http://staff.washington.edu/jon/uw_python/fall_2011/concordance.py
+
+See also points 1 - 3 in comments_2.txt (on week 2 homework).
+
+1.  File objects vs. file names - here "myfile.txt" is file name, fi is file object:
+
+    fi = open("myfile.txt")
+
+Pass the file objects to concordance, not the names - so open is
+outside concordance, function, not inside
+
+2.  After file = open(filename) all you need is
+
+ for line in file: 
+   ... now line is a string ...
+
+You don't need file.read() in the for loop body
+file object is an iterable, it knows how to get the next element, read is implicit
+
+3.  Can use enumerate to get line count automatically, no need to maintain counter 
+
+ for i, line in enumerate(file):
+    .. i is line number, line is a string ...
+
+4.  I expected if str in line: ...  , but if re.search(str, line):...  works fine too.
+    So does if line.find(str) > -1: ...
+
+5. Don't forget to close the files!  Nothing may appear in output file until close.
+
+6.  In general, unless I ask, don't worry about exceptions (missing
+  file, invalid args, ...).  The usual expectation in Python is that
+  the function docstring states a "contract" that the caller is
+  expected to honor; if not, the function may not work and is not
+  obligated to try to recover.  If you want to check args and handle
+  exceptions, this is usually done in the caller (script), not in the
+  function.  In small scripts, it is usual to just let it crash
+  (rather than try ... except ...), crash message is sufficiently
+  informative.

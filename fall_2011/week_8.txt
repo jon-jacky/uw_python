@@ -1,0 +1,125 @@
+week_8.txt
++--
+
+Week 8, Nov 29
+
+ Lecture 1
+  Review classes and objects
+  Atom exercise - due last week
+  Bag exercise - due this week
+
+ Lab 1
+  In-class exercise on classes and inheritance
+  Speakers try out projector, etc.
+  Return Atom exercise
+
+ Lightning talks
+
+ Lecture 2
+  Decorators
+  Debugger (if there is time)
+  Explain next exercise
+
+ Lab 2
+  Get started on next exercise
+
+
+
++--
+ 
+Atom exercise - due last week
+
+ Requires more invention than previous exercises
+
+ Good strategy: first write skeleton (with placeholders) from problem statement
+  placeholders can be empty class/method bodies (just a pass statement)
+  placeholders can be comments 
+
+ Once again, read entire problem statement, implement everything
+  placeholders at least! they show you understood the problem
+
+ Every requirement in my problem statement affects the solution
+   (real-life problem statements are less clear, usually include some redundancy)
+  unique identification for atoms - all atoms must be distinct, not aliases
+  printing ids checks for aliases
+  some atoms were present but not bonded - checks for unintended side effects
+  Could do more - problem statement didn't ask to test attempting too many bonds
+
+ Understand the whole problem
+  Tension: get partial solution working quickly 
+   BUT anticipate path to full solution
+
+
+
+
+
+
+
++--
+
+Atom exercise
+
+ Design variations (just a few, many others are possible too)
+
+  Separate bond method vs. optional list of atoms to bond in __init__
+  Bond method bonds both ends (call once)
+  Bond method bonds just one end (must call both atom's bond methods)
+  Bond method bonds one end then calls other end's bond method (just call first)
+  Bond method takes multiple atoms to bind at once, using *args
+  Can use __add__ for bond method, so you can write o0 + h0 to make bond - neat!
+
+  Error checking -- exceed maxbonds -- how to indicate?  
+   Printing not recommended, better to use return value 
+
+  ... and more ...
+
+
+
+
+
+
+
+
+
++--
+
+Atom exercise - Inheritance
+
+ Inheritance really works - no kidding!  
+  No need to duplicate __init__ or anything else - that's the whole point!
+  If method def is missing from subclass, automatically use superclass method
+  If method def is present in subclass, it *overrides* (replaces) superclass method
+  To use both - use base class method *also* - call base class explicitly as in:
+  
+   class H(atom):
+      def __init__(...):
+        Atom.__init_(...) 
+        ... more code specific to subclass ...
+
+
+  Multiple inheritance, here C inherits from both A and B
+
+    class C(A, B):
+      ....
+
+  Method Resolution Order 
+    What if superclasses A and B both define a method m ?
+    Resolve in left-to-right order, use A.m not B.m
+     so C(A,B) behaves differently from C(B,A)
+
+
+
+
+
+
++--
+
+Bag exercise
+
+ The dictionary *encodes* the bag: not [a,a,b,b,b] but { a:2, b:3 }
+  Encodings like this are pervasive in computing
+
+ bag inherits dict so it still has all the familiar dictionary operations
+  we just added + , the bag union operator.  dict has no + operator.
+
+   

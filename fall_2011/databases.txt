@@ -1,0 +1,96 @@
+databases.txt
++--
+
+Databases 
+
+ Motivations
+  Separate permanent data storage from any particular program or language
+   Same data can be accessed by multiple programs in multiple languages
+   Alternative to ad-hoc collection of files managed by one or a few programs
+  Provide better data integrity, security, concurrency control
+   ACID: Atomicity, Consistency, Isolation, Durability
+  Provide large scale and high performance through specialized engineering
+
+ Milieu
+  Database design is a science (really, not just a figure of speech)
+  Database design, programming, administration is a career path
+  Dominated by several big relational database products (OSS and commercial)
+   MySQL, PostgreSQL, SQLite, Oracle, ...
+  Recently, non-relational "NoSQL" databases appearing: Redis, MongoDB, ...
+
+ Databases and Python
+  Can create and/or access databases from a Python program
+   BUT the databases exist outside of, independent of, any Python program
+  Python library for each database product (SQLite, MySQL, PostgreSQL, ...)
+  Python as "glue" to script and connect existing components
+
+
+
+
+
++--
+
+Relational databases
+
+ THE dominant database organizing principle since 1970 (40+ years!)
+ Rigorous mathematical foundations
+ A relational database is a collection of tables
+ A table is a set of tuples (much like Python tuples)
+  All tuples in a table have the same shape, described by column headings
+  Set of tuples: no order, no duplicates
+  Each tuple has a key (element or group of elements) that uniquely identifies it
+ Tables are related by keys
+  Primary Key in one table matches Foreign Key in others
+  Join operation creates new table from other tables by matching keys
+ Normalization
+  Systematic method for allocating data to tables, choosing keys
+  Minimizes redundancy
+ SQL - standard language for defining and using relational databases
+ Products, OSS and commercial: SQLite, MySQL, PostgreSQL, Oracle, ...
+  Each supports standard SQL core + nonstandard extensions
+ Python libraries
+  Separate library for each product: sqlite3 (SQLite), psycopg2 (PostgreSQL), ...
+  Most libraries are similar, conform to Python DB-API standard
+ 
+
++--
+
+Relational database demo - mailing list in SQLite
+
+ SQLite
+  Most lightweight relational database product
+  OSS, free, included in Python --- no separate install
+  No separate server, just a library
+  Each database (all tables) is just a single file, here mailing_list.db
+  
+ Interpreter, sqlite3
+  Database has its own interpreter, sqlite3 here, each product has its own
+   So database can be used without writing a Python (etc.) program
+  Two kinds of commands
+   SQL statements - portable, would work with any relational database product
+   dot commands - .tables etc. - sqlite-specific directives, not portable
+
+ Python library, also called sqlite3
+   conn = sqlite3.connect('mailing_list.db') # open database, return connection
+   c = conn.cursor()                         # get cursor from connection
+   c.execute('select * from mailing_list')   # execute SQL command on cursor
+   for row in c:                    # now cursor is an iterator with query results
+       print row                    # can use query results in Python program
+
+
++--
+
+Databases
+
+  ORM -  Object-relational Mapper 
+   Hides database inside classes, objects, methods - no visible SQL
+   Used by web frameworks: Django, etc.
+   (I am skeptical, but many like them)
+
+  NoSQL - un-relational databases
+   Motivated by web applications with other data models, very large data sets
+   Other data models: key/value, triples, trees, networks (graphs), ...
+   Very large data sets: distributed, relax ACID, ...
+   Some products: Redis, MongoDB, CouchDB, Neo4J, ...
+   ORM may make more sense here - closer to data model
+

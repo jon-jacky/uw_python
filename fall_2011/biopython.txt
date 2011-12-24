@@ -1,0 +1,25 @@
++--
+
+BioPython demo - packages, files, strings, regular expressions
+
+ Problem: find a pattern in a protein
+   - ceru_human is human ceruloplasmin (see refs in file itself)
+   - PS00079 is a prosite pattern, "Multicopper oxidases signature"
+
+ Data in file format called SwissProt (after database)
+
+ Usee BioPython package to help analyze it (must be installed)
+ 
+ BioPython has modules to read SwissProt files and many many others
+
+ Open the file, get fd
+
+ Use SwissProt.read to get record with attributes
+  this read is defined in BioPython.SwissProt, not same read as book 14.8, 166
+
+ We're interested in r.sequence, a string, that's what we'll search
+
+ Using re in Python: compile, then search returns match object with m.start etc.
+
+ A (one-off) script: ad-lib programming in interpreter, 
+   then save in module.  No functions are defined.

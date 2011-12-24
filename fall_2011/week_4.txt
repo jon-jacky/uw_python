@@ -1,0 +1,150 @@
+week_4.txt  Nov 1, 2011
++--
+
+ Lists, tuples, dictionaries - heart of Python! - next 2 or 3 weeks
+  Now it gets interesting - we'll go beyond the books in lectures, reading
+
+ Our story so far
+  modules, python command, IDLE
+  values (objects), types, expressions, variables,
+   statements, print, assignment, for, while, 
+   function def and call, import, files, exceptions,
+   strings (str type, library, regex, unicode)
+   
+
+ But first - some midcourse corrections
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+ Midcourse corrections: more time working on / dicussing exercises in class
+
+   lecture 1     - 45 min   6:00 pm
+   lab/q&a 1     - 30 min   6:45 
+   student talks - 30 min   7:15
+   lecture 2     - 45 min   7:45 
+   lab/q&a 2     - 30 min   8:30
+   dismiss                  9:00 
+
+ Lecture: 2 x 45 min = 90 min
+
+ Student lightning talks: 4 x 5 min + scene changing <= 30 min
+ 
+ Lab + Q&A: 2 x 30 min = 60 min
+  
+ I will assign an exercise or other activity before labs
+
+ Weekly homework exercise will cover preceding readings, lectures
+
+
+
+
+
+
+
+
+
+
++--
+
+Homework assignments - mechanics
+
+ Hand in hardcopy in person on due date - even if not done
+  Use email, github etc. only if you can't be here (excused absence)
+  Late is better than never, still prefer hardcopy
+  I will only return hardcopy (I do record email etc.) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Homework assignments - general guidance
+
+ Follow directions
+   I will usually specify function name and arguments - do just that!
+
+ Important distinctions
+  function def vs. function call - usually exercise requires both
+  library module vs script - usually exercise is library module
+
+ Unless I ask, don't worry about exceptions (missing file, invalid args, ...)
+  Function docstring states "contract" that caller is expected to honor
+  Usually check args and handle exceptions in caller (script), not function
+  In small scripts, just let it crash (rather than try ... except ...)
+ 
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Homework review
+
+ See posted solutions and comments linked to web page
+ 
+ Week 2: print_grid
+  Downey's problem did not require grid size argument
+  Downeys solution did not use loop, difficult to generalize
+  Small change in requirements can require large change in solution!
+
+ Week 3: concordance
+  Pass file objects, not file names, to function
+  Open file to get file object before calling function, close after
+  Library design: make it as general purpose as possible
+  Passing objects means you can also use it on web pages, processes, ...
+  File object is an iterator, 'for line in file:' implicitly reads next line
+
+
+
+
+
+
+
+
+
+
++--
+
+Homework - this week - most_frequent
+
+ Make histogram, then sort(reverse=True)
+  Copy histogram from Downey, returns dictionary
+  Get list of tuples from dictionary with d.items()
+  Tuples are in wrong order, we want to sort by values, not keys
+  Several approaches
+   reverse pairs by loop or list comprehension
+   OR use key= arg to dictionary with lambda or itemgetter

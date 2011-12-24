@@ -1,0 +1,108 @@
+python.txt
++-
+
+Python language: ecosystem
+
+ Used for -- 
+  CS education (this course!)  
+  Application scripting (GIS, GNU Radio, ...)
+  Systems administration and "glue"
+  Web applications (Django etc. etc. etc.)
+  Scientific/technical computing (a la MATLAB, Mathematica, also BioPython etc. ..)
+  Software tools (automated software testing, distributed version control, ...)
+  Research (natural language, graph theory, distributed computing, ...)
+
+ An unusually large number of niches -- versatile
+
+ Used by --
+  Beginners
+  Professional software developers, computer system administrators, ...  
+  Professionals OTHER THAN computer specialists: biologists, urban planners, ....
+
+ It is unusual for the same language to be popular among all these -- versatile
+   
+ You can be productive in Python WITHOUT full-time immersion!
+
+
+
+
+
+
++-
+
+Python Language: features
+ 
+ Gets many things right --
+  Readable - looks nice, makes sense, usually matches expectations, intuitions
+  No ideology about best way to program: 
+   object-oriented programming,  functional, etc. all supported, but optional
+  No platform preference - works as well in Windows, Mac, Linux, ...
+  Easy to connect to other languages - C, Fortran - essential for science/math 
+  Countless conveniences, large and small, make it pleasant to work with
+
+ Features
+  Unlike C, C++, C#, Java ... More like Ruby, Lisp, Perl, Matlab, Mathematica ...
+  Dynamic - no type declarations - programs are shorter
+  Interpreted - no separate compile, build steps - programming process is simpler
+
+ Versions
+  This class uses Python 2.x not Python 3 -- usually 2.6, 2.7, earlier would work
+
+ Interpreter implementations
+  I use CPython from python.org. Jython (JVM), Iron Python (.NET), PyPy also work
+
+
+
+
+
+
++-
+How to write and run a Python program
+
+   0. Maybe you don't need a program at all - just start Python and type ad lib
+
+   $ python 
+   >>> print 'Hello, world!' 
+   Hello, world!
+
+   module - a file that contains Python code, filename ends with .py
+   Create module hello.py that contains: print 'Hello, world!'  Then ---
+ 
+   1. python hello.py  # must be in current working directory
+
+   2. python -m hello  # any module on PYTHONPATH anywhere on the system
+
+   3. hello.py         # associate .py extension with python command (Windows)
+
+   4. hello            # put #!/usr/env/python at top of module
+   
+   5. python
+   >>> import hello    # importing a module executes its contents
+
+   6. python -i hello.py  # import module, remain in interactive session 
+   ...
+   >>>
+   
+
++-
+
+Python interpreter and Interactive Development Environments (IDEs) 
+
+  Python interpreter
+    Can only import module into python interpreter ONCE (Why?) (demo)
+
+  IDLE
+   IDE included with Python from python.org
+   Interpreter - much like command-line Python
+   Editor - Python-aware - knows about indentation, keywords
+   Can reload revised module into interpreter without exit, restart 
+   
+  In IDLE editor, F5 (run this module) is like python -i module.py
+   but without restarting IDLE  
+   
+  Others
+   IPython - popular for scientific computing, includes graphics a la MATLAB,
+    can reload modules without losing context (variables, etc.)
+   BPython, ... many others ...
+
+

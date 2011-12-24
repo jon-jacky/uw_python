@@ -1,0 +1,100 @@
+week_10.txt
++--
+
+Week 10 - Dec 13
+
+ Announcements
+  Seattle Python Interest Group (SeaPIG) This Thurs 12/15 Lighting Talks
+
+ Lecture 1
+  Review decorator-generator exercise
+  Database lecture, part 1
+
+ Lab 1
+  List comprehension vs. database exercise
+
+ Lightning talks: Ben Bloss, Maryam Afkarian, Brittany Nelson 
+
+ Lecture 2
+  Review lab exercise
+  Database lecture, part 2
+  Preview winter quarter
+
+ Lab 2 
+  Course evaluations
+
+
+
+
+
++--
+
+Decorator-generator exercise
+
+ Problem-solving method: write the skeleton that the problem statement determines
+
+   def generator(f):  # decorator takes function argument, f argument is scalar x
+       def gen(s):    # decorator defines a function, argument is iterable s
+         ....
+         yield ....   # a generator uses yield not return
+       return gen     # decorator returns the function it defines
+   
+  Then fill in the body ... then try it on the test case ... it works!
+
+      def gen(s):
+        for x in s:    # s is an iterable, so iterate
+           yield f(x)  # now we have x, apply f and yield the result
+
+  Alterntively, can return generator expression, no yield needed
+
+    def gen(s):
+       return (f(x) for x in s) # (...) not [...] makes generator
+
+
++-- 
+
+Decorator-generator
+
+ "wraps" decorator *in the decorator* - optional, preserves docstring in f etc.
+
+   from functools import wraps
+   def generator(f):
+        @wraps(f)
+        def gen(s):  
+           ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Preview Winter quarter
+
+Internet Programming in Python
+
+ Starts Tues Jan 3, three weeks from tonight!  
+
+ Syllabus and first week reading assignment already online
+   http://staff.washington.edu/jon/uw_python/winter_2012/
+
+ Survey many topics:
+  Build up from sockets through web applications
+  Not just Django web framework, though we'll spend time on it
+
+ Not just Python
+  Learn tools that are currently popular (essential, really)
+   might require a lot of time, effort in itself
+  Git at GitHub - for storing and handing in assignments
+  Linux VMs at Blue Box Group - remote hosts for running network applications
+  Get started by installing Git on your computer (also ssh, scp on Windows)
+  We will spend the first class meeting on this, BUT be prepared

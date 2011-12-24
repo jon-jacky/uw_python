@@ -1,0 +1,24 @@
+lightning.txt
++-
+
+ Demo: Schedule the lightning talks
+
+  Read class list from file into Python list
+
+  Shuffle to randomize order
+
+  Week numbers * n, as many as needed for all students
+
+  Zip to associate week numbers with names
+
+  Sort to collect together all talks for same week
+
+  Open file, print with for name, week in ... print ...
+  (preview next course: reading/writing web site not much harder than file)
+
+  Save statements in a module so we can repeat as needed
+
+  import the module into session, demo dir and help, note docstring
+   docstrings can occur in many python constructs.  Not just comments, but better
+
+  We've just demonstrated a crude but often effective programming method!

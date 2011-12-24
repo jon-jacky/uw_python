@@ -1,0 +1,23 @@
+Database lab:
+
+Here is a transcript from an sqlite session, showing three queries:
+
+sqlite> select * from mailing_list;
+philg@mit.edu|Philip Greenspun
+ogrady@fastbuck.com|Michael O'Grady
+
+sqlite> select * from phone_numbers;
+ogrady@fastbuck.com|work|(800) 555-1212
+ogrady@fastbuck.com|home|(617) 495-6000
+philg@mit.edu|work|(617) 253-8574
+
+sqlite> select * from mailing_list, phone_numbers
+   ...>  where mailing_list.email = phone_numbers.email;
+ogrady@fastbuck.com|Michael O'Grady|ogrady@fastbuck.com|work|(800) 555-1212
+ogrady@fastbuck.com|Michael O'Grady|ogrady@fastbuck.com|home|(617) 495-6000
+philg@mit.edu|Philip Greenspun|philg@mit.edu|work|(617) 253-8574
+
+Write a python program that achieves the same effect without using any
+database libraries.  Use an in-memory database consisting only of
+built-in data Python structures (sets and tuples), and queries
+consisting only of ordinary Python expressions (list comprehensions).

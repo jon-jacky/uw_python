@@ -1,0 +1,49 @@
+Entry Questionnaire --- Programming in Python  Fall 2011
+
+0. NAME (first, last name you would like me to use in class):
+
+   
+ email (for announcements etc. from instructor):
+
+
+
+1. Reasons for taking this course (circle as many as you wish, or none):
+
+ use in present job
+
+ prepare for future jobs
+
+ personal use
+
+ other (write details if you wish)
+
+
+2. Programming experience (circle as many as apply):
+
+ None   Courses   Personal   Professional
+
+
+3. Python experience (circle one):
+
+ None   Beginner   Intermediate   Expert
+
+
+4. Other programming languages you have used (name as many as you wish, or None):
+
+
+
+5. Operating systems you have used (circle as many as you wish):
+
+ Windows  Mac  Linux  Other   None
+
+
+
+6. Version control systems you have used (name as many as you wish, or None)
+
+
+
+7. Unit test frameworks you have used (name as many as you wish, or None)
+
+
+
+!!! Which topics would you like to see covered in this course? (Fall 2011 only) !!!

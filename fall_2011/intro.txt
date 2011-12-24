@@ -1,0 +1,191 @@
+intro.txt - Python class introduction
+
++-
+
+UW Python Program - Orientation
+
+Fall - Programming in Python - Jon Jacky
+
+ Python itself, self-contained, OS-agnostic
+ ~2 hours lecture / presentation, ~1 hour in-class lab, discussion
+
+Winter -  Internet programming in Python -  Jon Jacky
+ 
+ Not at all self-contained, requires knowledge of environment and
+  tools beyond Python, will do some work on Linux VMs, familiarity with
+  Linux and HTML will help, might review if needed.
+ ~2 hours lecture / presentation, ~1 hour in-class lab, discussion
+
+Spring - System Development in Python - Michalis Avram
+
+ Studio/Lab/Project course - quarter-long project, singly or in groups
+ Emphasize applying what you've learned, rather than introducing new material
+ ~1 hours lecture / presentation, ~2 hour in-class lab, with individual meetings
+
+ Start thinking about / preparing for a project now!
+
+
+
+
+
++-
+
+PROGRAMMING IN PYTHON - Fall 2011
+
+ http://staff.washington.edu/jon/uw_python/fall_2011/
+  Check weekly for announcements, assignments, etc.
+  Each week's lecture notes/examples (including these) will be posted after class
+
+ Reaching me - email jon@uw.edu - put [UW PYTHON] in subject
+
+ Grades - credit/no credit - "reasonable effort" in all activities earns credit
+
+ Attendance required, <= 2 unexcused absences, contact me in advance for excused
+
+ Instructor - Jon Jacky
+  UW research/scientist engineer, PhD Physiology and Biophysics,
+  30+ years professional software developer: UW Med Center, MS Research, startups..
+  Scientific programming, embedded controls, automated testing, also teaching
+
+ Students - experienced, prepared for brisk pace, advanced viewpoint
+  Work and/or study in biology (5), other science (2), QA/testing (4), GIS(4), 
+   web/design (4), system/network admin (4), EE/embedded (3), databases (3)
+  Coded quiz in Python (16), C (4), C++ (2), Javascript (2), PHP(2), Perl(2), VB(2)
+
+
+
+
+
+
+
++-
+
+ Required activities
+
+  Readings in the book (or online version - they are the same)
+
+  Exercises
+   Some kind of written/printed/hardcopy assigment each week
+   That's how I take attendance, so turn in *something*, even blank page + name
+   Do as much as you can - "reasonable effort" gets credit
+   Usually programming exercises from the book, about that week's readings
+   We'll spend time in class on those or similar exercises
+
+  Do the reading and try the exercises in the week BEFORE class
+  
+  Quizzes
+   2, 3, or 4 through the term, in class, closed book, based on textbook readings
+   Mostly for diagnostic purposes - so I can spot problems. But you must do it!
+  
+  Lightning talks
+   5 minutes (including setup) - no kidding!
+   Every student will give one
+   Purposes: introduce yourself, share interests, also show Python applications
+   Any topic you like, that is related to Python -- according to you!
+
+
+
+
+
+
+
++-
+
+What will we learn?
+
+  Language -- syntax (appearance), semantics (meaning), structure
+
+  Literature -- applications and libraries written in the language
+
+  Methodology -- design, tools, testing, version control for the language
+
+  Foundations -- computer science principles expressed in the language
+
+ This course (Fall) emphasises language, next courses emphasize other aspects.
+
+ Three levels of understanding programming: 
+
+  Imitative: copy examples, change them around until they work
+
+  Operational: understand what happens as computer executes each statement
+
+  Deductive: analyze global properties such as correctness, performance, ...
+
+ This course aims for operational understanding.
+
+
+
+
+
+
++--
+
+Textbook
+
+  Downey, PYTHON FOR SOFTWARE DESIGN (printed) or THINK PYTHON (online)
+
+  Printed and online versions are the same, with same section and exercise numbers
+
+  Best of the Python introductions -- really explains what is actually going on
+
+  Axiomatic: simple explanations and examples build up understanding incrementally 
+
+  Axiomatic approach starts from zero, assumes nothing, omits nothing
+   Presents elementary material from advanced viewpoint "like a computer scientist"
+
+  Axiomatic approach requires patience with "trivial" examples -- humor him!
+
+  Operational: describes what happens in the computer it when executes your program
+
+  Operational description is abstract, uses state diagrams, stack diagrams 
+
+  Makes no attempt to discuss literature (libraries, applications), seek elsewhere
+
+ We will go beyond the book!  Other readings, my lecture notes
+
+
++--
+
+Python language, labs ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Lab 
+
+ Entry questionnaire
+  Fill out, turn in
+  DON'T FORGET TO WRITE YOUR NAME!!  This is your attendance record!
+
+Assignment due week 2, Tues Oct 18, bring exercise to turn in (hardcopy)
+
+  Reading: Ch (1), 2, 3, (4), 5, 6, 7 - 1,4 optional but recommended
+
+  Exercise: Similar, but not identical, to Downey Ex 3.5 (Ch 3, Ex 5)
+     
+     Write a function print_grid that takes one integer argument,
+     that prints a grid like the picture in Downey's exercise,
+     BUT the size of the grid is given by the argument.  
+     For example, print_grid(11) prints the grid in Downey's picture.
+
+     This problem is underspecified.  Do something reasonable. Hints at
+     http://staff.washington.edu/uw_python/fall_2011/assign-2.txt

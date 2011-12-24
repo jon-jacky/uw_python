@@ -1,0 +1,55 @@
+review_2.txt - week 2 review
++--
+
+Python
+
+ Distinguish capital-P Python language, small-p python interpreter (program)
+
+ Several Python language versions (we use 2.x not 3), python interpreters (CPython)
+
+ python interpreter can be interactive calculator/prototyper with built-in help
+  dir()  help()  dir(x)  help(x) 
+
+ python interpreter can execute Python programs non-interactively (lots of ways)
+
+ Python programs are stored in modules: files that end in .py, contain Python code
+
+ Python import statement loads, executes modules into python interpreter
+  works the same in interactive session or non-interactive command
+
+ Python development uses python interpreter and Python-aware editor for modules
+
+ Integrated development environment (like IDLE) integrates both, adds conveniences
+
+
+
+
+
+
+
+
++--
+
+Values, types, expressions, statements
+
+ Values are pieces of data: 42, 'Hello, world' ...
+
+ In Python all values are objects (lots going on behind the curtain!)
+
+ Values belong to types (examples: string vs. int, can be subtle, int vs. float)
+
+ Expressions combine values with operators, compute new values, no other effects
+   2+2    2*3  'Hello ' + 'world'   'Hello'*3
+
+ Statements (print, assign) contain expressions, have effects (output, storage)
+   print 2+2 # effect is output     x = 2+2  # effect is storage
+
+ Syntax errors - appearance - checked at compile time
+   2 + ((3)
+
+ Type errors - meaning - types not consistent with operators - checked at run time
+   2 + '3'
+
+ Python functions for types: 
+  queries: type(2)  type('3')  tests: isinstance('3',int)  conversions: 2+int('3')
+

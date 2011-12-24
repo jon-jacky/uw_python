@@ -1,0 +1,23 @@
+week_7.txt
++--
+
+Review unlisted_words exercise
+ Careful about types: input, local, return
+   String s, list(s) is list of char not strings, s.split(' ') is list of strings (words)
+ Types are our theme this evening!
+ Return results, don't print them in function body
+ Print returned result from caller, not function body
+
+Review atom exercise
+ Unique id, could use census class attriute (like in vehicle), I used id
+ Bonds: list of objects 
+
+Lecture 1: vector class, motivate bags, next exercise
+
+Lab 1: speakers get set up, others work on lab exercise
+
+Talks: Stefan Coe, Martin Coots, Lotus Lin 
+
+Lecture 2:  Review lab exercise, Generators, Protocols
+
+Lab 2: get started on bag exercise

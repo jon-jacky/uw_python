@@ -1,0 +1,94 @@
+assign.txt - introduce assignment
++--
+
+Variables and assignment
+
+ Value (data) vs. variable (name with value)
+
+ A variable is a name that refers to a value
+
+ Assignment associates a value with a variable (the name)
+   x = 2
+
+ Box diagram shows effect of assignment on memory contents (sects 2.2, 7.1, etc.)
+
+   x ---> 2  All Python variables are references, like pointers (but no arithmetic)
+
+ Assignment creates a variable if it doesn't already exist (no declarations)
+  Pitfall: if you misspell on left-hand side, you get a new variable!
+
+ Equality vs identity - not the same - for some types this matters
+   x --> 2        x --> 2
+   y --> 2   vs.  y _-^     What happens to x and y if you change right-hand side?
+
+ = assigns, == checks equality, is checks identity, id queries identity
+
+
++--
+
+Memory management
+
+ Python automatically allocates and reclaims memory
+
+  s = 'x'*1000000  # Python allocates lots of memory for big string 'xxx...'
+
+  s = 'y'*1000000  # Again for 'yyy...'
+
+ Now 'xxx....' is still in memory but it is unreachable - it is "garbage"
+
+ Python automatically performs "garbage collection" to reclaim memory
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Assignment statements 
+
+ Assignments are statements (not expressions), right-hand side is expression 
+
+  x = 2 + 2  # rhs is expression
+
+ A variable is a kind of expression -- it evaluates to its value
+  so a variable can appear in an expression, can appear on rhs of assignment
+   
+  x = x + 1  # variable x on rhs is expression
+
+ Assignment syntax shortcuts
+
+  x += 1  # same as x = x + 1, similar for -= *= etc.
+
+ (aside: C style, RIP DMR, CPython, Cython ...)
+
+ Python is dynamically typed (unlike statically typed C, C++, Java, ...)
+  Values have types, but variables do not
+  Can assign values with different types to the same variable
+  Tradeoff: dynamically typed programs are shorter BUT compiler does less checking 
+
+
+
++--
+
+Multiple assigment
+
+ Can assign multiple variables from multiple expressions in one statement
+
+   i, j = 2 + x,  3 * y   # commas separate variables on lhs, exprs on rhs
+
+ Python evaluates all the expressions on the right before doing any assignments
+
+   i, j = j, i            # parlor trick: swap in one statement
+
+ These are just tricks, but multiple assignment is more helpful in other contexts
+
+
+

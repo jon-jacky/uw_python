@@ -1,0 +1,184 @@
+functions.txt
++--
+
+Functions: definition vs. use
+
+ Definition with def ...: vs. use (calls or invocations)
+
+ Definition: function body indicated by block structure, indentation
+  Can define functions on one line with ...: ...; ...
+
+ def is a statement that is executed when the module is executed or imported
+  Its effect is to create a function and store the body of the function
+  def is like an assigment: def f(): body is like f = body
+
+ The body of the function is not executed when the function is defined
+  The body is only executed when the function is called
+
+ Executing def does check syntax of function body, but not types
+  This is an important difference from statically typed C, Java, ...
+  In Python types are only checked at run time (demo)
+
+ Library: module that contains only definitions (def, also other kinds)
+
+ Import sample library module, dir and help, note docstrings (demo)
+
+
++--
+
+Import: how it works
+
+  At the top of most Python modules there are some import statements
+
+  import foo
+   Checks to see if module has already been imported, if so, do no more
+   Searches the system for the module: in install dirs, on PYTHONPATH, ...
+   Compiles it if necessary, creates .pyc (checks dependencies like make)
+   Loads compiled module into Python session (interpreter or standalone program)
+   Executes its contents - definitions, and all other statements too
+   Definitions (functions etc.) in the module are now available in the session
+
+  Can only import a module once in each session - import is "unipotent"
+   edit module, then import it again has no effect
+   prevents problems from circular imports where A imports B, B imports A etc.
+
+  Module contents are executed at two different times:
+   Definitions and ordinary statements are executed at import time
+   Contents of definitions are (maybe) executed later (only if they are called)
+
+  Opportunities for program transformations at import time: decorators
+
+
++--
+
+Import: different forms
+
+ import foo         # import the module named foo
+ ...
+ foo.g(x)           # must use prefix, module name foo, to access its contents
+ foo.h(y)         
+
+ import foo as f    # import the module named foo with alias f (shorter)
+ ...
+ f.g(x)             # must use prefix, alias name f, to access its contents
+ f.h(y)
+
+ from foo import g  # import function g from module foo into present module
+ ...
+ g(x)               # need not prefix g because it is already in present module
+
+
+ from foo import *  # import everything from module foo into present module
+ ...
+ g(x)               # need not prefix anything because it's all in present module
+ h(x)               # usually not a good idea - namespace pollution!
+                    # BUT this is what python -i ... and IDLE F5 do 
+
++--
+
+Module roles
+
+  You can use the same module as a library OR as a main program
+
+  To execute code in a module ONLY WHEN it is NOT imported,
+   only when it is invoked by Python at top level as the "main program"
+
+    def foo(): ...
+
+    if __name__ == '__main__'
+       foo()
+
+ Frequently used to include test or demo code with a library module
+
+
+
+
+
+
+
+
+
++--
+
+Functions: parameters and arguments, local and global variables, return
+
+ Parameters (in definitions) vs. arguments (in calls)
+
+ Variables and parameters are local!  box diagram p. 29 etc.
+  Parameter variables: created, assigned to args on function call, vanish on return
+  Variables in function body vanish on return
+  Locals can have same names as globals (outside function), but they are distinct
+  Usually cannot assign (change) global variables in function body
+  mutable variables (lists, dictionaries) elements can be assigned in function body
+
+ Global variables are outside function bodies, at module level
+
+ global statement: names global variables that appear in function body, can assign
+
+ Use return statement to pass result ("return value") back to caller
+  Downey: "Fruitful function" has return statement, returns a value
+  Downey: "Void function" has no return, returns None
+    void functions work by side-effects, must contain statements to do anything
+  Can return x,y,z  multiple values to be captured by multiple assignment in caller
+
+ Function calls are expressions (not statements), can be embedded in expressions
+
+
+
+
+
+
+
++--
+
+Functions: kinds of arguments
+
+ Argument passing, matching arguments (in calls) to parameters (in definitions)
+
+ Positional arguments
+  Similar to other languages
+  *s in calls allows you to build up positional argument list programatically
+
+ Keyword arguments
+  syntax name=value, alternative to positional arguments
+  makes arguments self-documenting
+  in def's, can define keyword parameters with defaults, so arguments are optional
+
+ List arguments
+  In def's, *args parameter declares variable-length argument lists
+  arguments are bound to list elements (explain more in a few weeks)
+
+ Dictionary arguments
+  In defs, **kwargs parameter declares dictionary of keywords to values
+  keyword arguments are bound to dictionary elements
+
+
+
+
+
+
+
++--
+
+Functions: in depth
+
+ Functions are first-class objects: 
+   Can be assigned to variables
+   passed to other functions
+   returned from functions
+
+ Functions are first-class objects! FUNCTIONS ARE FIRST-CLASS OBJECTS!!!
+
+ Functions can be local, just like any other local variables
+
+ This means function bodies are values - must they have names?
+
+ No! lambda expressions are nameless function bodies, can be useful
+
+ def square(x): return x * x    -- or --    (lambda x: x * x)
+
+ Restriction: lambda body must be a single expression.  Boo! Hiss!
+
+ Functions, lambda expressions are both examples of callables - there are others
+  In f(x,y), parentheses are an operator: "call this callable f on these args x,y"
+  What other callables besides functions and lambdas have we seen already?

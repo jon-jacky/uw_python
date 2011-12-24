@@ -1,0 +1,58 @@
+Comments on assignment due week 2, Oct 18: print_grid
+
+Problem statement: http://staff.washington.edu/jon/uw_python/fall_2011/assign-2.txt
+
+My solution: http://staff.washington.edu/jon/uw_python/fall_2011/print_grid.py
+
+1. Printed is better than handwritten -- it is easier for me to read.
+
+2. Better to turn in the program output too - to show that it works (or how it doesn't)
+
+3. Be sure to follow the directions: 
+
+    Write a function print_grid that takes one integer argument ...
+
+  This means your solution should include the line:
+
+    def print_grid(n):
+
+  you could use a different name than n for the parameter, but everything else on the line 
+  should look exactly like this.
+
+  To produce output (to test the solution) you need at least one other
+  line of code that calls this function with some particular argument value for n, 
+  for example:  
+
+    print_grid(11)
+
+  Some of you did not write a function, but instead wrote a script with statements 
+  to print the grid at module level (not in a function).  This does print the grid
+  but is not a solution to the problem as I posed it.
+
+  Some of the purposes of this exercise are to demonstrate the distinction 
+  between a function and a script, and the distinction between defining a function
+  and calling the function.
+
+4. Some of your solutions were based on the author's solution to his 
+   similar exercise at thinkpython.com/code/grid.py.  
+
+   This does not work well because his solution does not easily generalize -
+   it is not intended to print different sized grids, depending on a parameter.
+
+   Sometimes small changes to the problem statement can result in large changes in the 
+   solution!
+
+   Also, the author's solution is awkward and verbose because he doesn't use loops -- 
+   because his exercise is in chapter 3 but he doesn't introduce 'for' until chapter 4,
+   and 'while' in chapter 7.  But those chapters were included in the reading assignment, 
+   and the solution is simpler and easier to generalize to different sized grids if 
+   you use 'for' or 'while'.
+
+4a. Some of your solutions use the parameter to change the width of the grid,
+    but not the height.  These were usually solutions based on the author's,
+    which doesn't work here.
+
+5.  Some of your solutions make grids larger than 11 by adding more panes (not just
+    four like in Downey's example).  Not what I expected, but that's fine -- I 
+    said "do something reasonable".
+

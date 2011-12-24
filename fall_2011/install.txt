@@ -1,0 +1,59 @@
+install.txt
++--
+
+Installation - finding and installing packages
+
+Installation puts package contents in the right place, updates sys.path etc.
+ Several methods, in order of increasing automation:
+
+DIY, your own bunch of modules
+  Copy them to somewhere convenient, assign PYTHONPATH by hand
+
+Python distutils
+ You must find, download, unpack .tar or .zip, then sudo python setup.py install
+
+Binary installers (different for each OS): Windows .msi or .exe, Mac .dmg
+ You must find and download, then just open (run) the binary package 
+
+Package managers for OS: Debian/Ubuntu apt/Synaptic, Red Hat rpm, Mac macports, ...
+ Most convenient, uses Internet database of available packages, local registry
+ Package manager itself finds and downloads package,automatically gets dependencies
+ Package manager automatically executes any installation steps (python setup.py...)
+
+Python distutils rivals and successors: pip, easy-install, distutils2 ...
+ Functionality similar to operating system package managers, but Python-aware  
+ May try to deal with multiple Python versions/installations on local system
+ Bleeding edge, ever-changing ecosystem, lots of controversy
+
+
+
+
+
+
++--
+
+distutils, PyPI, and setup.py
+
+Adds automation/convenience/configurability for installation 
+Defines, encourages standard metadata for describing Python packages
+ Helps publicize packages, makes them discoverable
+Supports, encourages standard package contents, directory organization
+distutils rivals and successors usually retain much of the philosophy
+
+distutils is part of the standard library
+
+Co-evolved with PyPI, Python Package Index (aka CheeseShop) at pypi.python.org
+
+distutils + setup.py: same tool handles publicity, distribution, installation, etc.
+
+ python setup.py register # upload metadata (publicity) to PyPI (or elsewhere ...)
+ python setup.py sdist    # make distribution, .tar and/or .zip file
+ python setup.py upload   # upload distribution to PyPI (or ...)
+ sudo python setup.py install  # install distro. on local system in standard place
+ python setup.py install --user (or --home=... or --prefix=...) # install elsewhere
+ python setup.py build    # build extension modules 
+ ... etc. ...             # ... other operations possible ...
+
+ Package authors write setup.py including code for each supported operation
+  (not much code - most work is done by modules imported from distutils)
+

@@ -1,0 +1,79 @@
+iteration.txt
++---
+
+Iteration: for
+
+ for x in s: # executes body for each element x drawn from collection s
+  ...
+
+ Counting (like for in C, other languages) is a special case:
+  x in range(n): ... the collection of consecutive integers [0, ..., n-1]
+  x in range(m,n): ...  [m, ..., n-1], includes m, excludes n
+
+ xrange(n) is similar but uses generator, saves memory, use for large n
+
+ xrange(n) is not really a collection - it's an iterable, even more general
+
+ Pythonic generalization: a list is a collection is an iterable ...
+
+ Use 'for' when you know in advance how many repetitions (which elements)
+
+ Examples: counters, process all of the items in a collection, ...
+
+ Guaranteed to terminate (well, almost guaranteed ...)
+
+ Style: +=, *= etc. augmented assigment very common in loop bodies
+
+
+
+
+
+
+
++--
+
+Iteration: while
+
+ while p:  # executes body as long as condition tested by p is true
+   ...
+
+ Use while when you do NOT know in advance how many repetitions
+
+ Examples: successive approximation (square root in textbook)
+
+ while is more general than for 
+  Can always express 'for' as 'while', but not always vice-versa
+
+ while is more error-prone, requires some care to terminate
+  loop body must make progress, so p can become False
+  potential error: infinite loops
+
+ Shortcuts: recall number 0 or empty collection is False
+    while x:  # terminates if x >= 0 on entry
+      ...     # do something with x
+      x -= 1  # make progress toward 0
+
+
+
++--
+
+Recursion
+
+ Alternative to iteration with for or while
+
+ Most general - we don't need loops at all!
+  Could always express any repetition by recursion
+  Style: "functional programming"
+
+ You must have a base case to break the recursion!
+  recursive case must make progress toward base case,
+  potential error: infinite recursion 
+
+ (Demo animation)
+  All calls are pending before base case returns
+  No local variables needed
+  Temporary data is in args in stack of pending calls
+
+ Most helpful with nested data structures, trees, graphs...      
+  Can be simpler, clearer, easier than iteration
+  (we'll see examples in a few weeks)

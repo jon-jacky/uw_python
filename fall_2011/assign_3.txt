@@ -1,0 +1,17 @@
+
+Assignment due week 3, Tues Oct 25, bring exercise to turn in (hardcopy)
+
+ Required: Ch. 8, 9, 14
+ Optional: http://docs.python.org/library/stdtypes.html#string-methods
+            http://docs.python.org/howto/regex.html
+            http://docs.python.org/howto/unicode.html
+	    http://farmdev.com/talks/unicode/
+
+ Exercise: Write a function named concordance that takes three
+  arguments: a string, a file object for a file that is open for
+  reading, and a file object for a file that is open for writing.  The
+  function writes in the output file the line numbers and contents of all the lines
+  in the input file where the string occurs.  Write the function in a module
+  concordance.py that also opens the input and output files, calls the function,
+  and closes the files.
+

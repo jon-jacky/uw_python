@@ -1,0 +1,28 @@
++--
+Assignment due week 5, Tues Nov 8, bring exercise to turn in (hardcopy)
+
+ Required reading:
+  Python Tutorial, lists and data structures
+   http://docs.python.org/tutorial/introduction.html#lists
+   http://docs.python.org/tutorial/datastructures.html
+  Spelling corrector
+   http://www.norvig.com/spell-correct.html   
+
+ Exercise 5A - Write a function sorted_string that takes one string
+  argument and returns a string with the same characters but sorted in
+  lexical (alphabetic) order.  You may use the list sort method, but
+  you may NOT use the built-in library function 'sorted' in your
+  solution.  Write your function in a module also named sorted_string
+  that defines at least two test strings.  In your module, call your
+  function on each of these strings and print the results.
+
+ Exercise 5B - Write a function sorted_list that takes one list
+  argument and returns a list with the same elements but sorted.  This
+  function must NOT change the list in the caller.  You may use the
+  list sort method, but you may NOT use the built-in library function
+  'sorted' in your solution.  Write your function in a module also
+  named sorted_list that defines at least two test strings.  In your
+  module, call your function on each of these lists and print the
+  results.  Also, print both lists after calling the function to show
+  that they have not changed.
+

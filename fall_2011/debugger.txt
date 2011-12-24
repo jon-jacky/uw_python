@@ -1,0 +1,50 @@
+debugger.txt
++--
+
+Debugger
+
+ Debugging *activity* is much more than using the debugger *tool*.
+  Texbook has lots of good advice about debugging, nothing about debugger tool.
+
+ Python debugger tool pdb is, in effect, an enhancement of the interpreter
+  You should be familiar with using the interpreter to investigate behavior
+  BUT interpreter only works at top level - can't access local variables in fcns
+  Debugger is an interpreter that works in any local environment,
+   can use debugger *inside* a function call, read/set local variables  
+
+ Debugger tool can be an alternative to adding lots of print statements
+
+ pdb occasionally useful but I usually resort to print statements
+
+ Assertions are also useful: assert <boolean expression>, raise exception if false
+
+
+
+
+
+
+
+
+
+
++--
+
+Debugger method/commands
+
+ Demo:  
+  $ python -i repetition.py
+  >>> import pdb
+  >>> pdb.run('fact_recurse(3)')
+  > ... status ...
+  (Pdb) 
+
+ At (Pdb) prompt:
+
+  b foo.py:99  - set breakpoint in file:line
+  c - continue to next breakpoint
+  w - where, print stack, names and locations in all pending function calls
+  p x - print value of variable or expression x (disambiguate from Pdb commands)
+  s - step, execute next statement, steps into functions
+  n - next, excecute next statement, execute entire function call
+
+  ... or any other Python statement, if different from Pdb command ...

@@ -1,0 +1,83 @@
+values.txt
++--
+
+Values, expressions, and types
+
+ Values (data) vs. variables (names with values): box diagram p. 2.2 etc
+
+ Values are pieces of unnamed data: 42, 'Hello, world', ...
+
+ In Python, all values are objects
+  Try dir(42) - lots going on behind the curtain! (demo)
+
+ An expression is made up of values and operators, is evaluated to produce a value
+  2 + 2, etc.
+
+ Python interpreter can be used as a calculator to evaluate expressions (demo)
+
+ Every value belongs to a type: integer, float, str, ...  (demo)
+
+ Integer vs. float arithmetic (demo)
+
+ Type errors - checked at run time only (demo)
+  
+ Type conversions (demo)
+
+
+
+
++--
+
+Expressions vs. statements
+
+  2 + 2        # expression
+
+  print 2 + 2  # statement
+
+ Expressions have values
+
+ Statements do not have values, but they have effects
+
+ Statement where expression is expected is an error (demo)
+
+ Python interpreter prints value of expression - expression doesn't print itself
+
+ Interpreter and print statement sometimes display the values differently (demo)
+
+ Expressions in scripts have no effect - must use print statement to show value
+
+
+ (In Python 3, print is an expression, not a statement!  They broke Hello, world!) 
+
+
+
+
++--
+
+Variables and assignment
+
+ Values (data) vs. variables (names with values): box diagram sects 2.2, 7.1, etc.
+
+ A variable is a name that refers to a value
+
+ Assignment associates a value with a variable (the name)
+
+ =, ==, is, id 
+
+ Assignment creates a variable as needed (no declarations)  (demo)
+  Pitfall -  if you misspell on left-hand side, you get a new variable
+
+ Assignments are statements (not expressions), right-hand side is expression
+
+ A variable is a kind of expression -- it evaluates to its value
+  so a variable can appear in an expression, can appear on rhs of assignment
+
+ Python is dynamically typed (unlike statically typed C, C++, Java, ...)
+  Values have types, but variables do not
+  Can assign values with different types to the same variable
+  Tradeoff: dynamically typed programs are shorter BUT compiler does less checking 
+
+
+
+
+

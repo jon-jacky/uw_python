@@ -1,0 +1,12 @@
+-- from http://philip.greenspun.com/sql/introduction.html
+
+create table mailing_list (
+        email           varchar(100) not null primary key,
+        name            varchar(100)
+);
+
+create table phone_numbers (
+        email           varchar(100) not null references mailing_list(email),
+        number_type     varchar(15) check (number_type in ('work','home','cell','beeper')),
+        phone_number    varchar(20) not null
+);

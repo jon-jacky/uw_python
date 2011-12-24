@@ -1,0 +1,41 @@
+entrance.txt
++-
+
+Lab 
+
+ Make and run a Python module, for example, your solution to the entrance exam:
+
+   "Write a program IN PYTHON that takes a single array parameter and
+    returns the decimal average of the input values"
+
+ ... or some other example
+ 
+ Not to turn in - the point is to just begin working with the language and tools
+
+ IDLE is recommended but not necessary - you can use your favorite editor
+
+
+
+
+
+
+
+
+
+
+
++--
+
+ Discuss Lab
+
+  Vague requirements: "program"?  "array parameter"? "returns"? "decimal average"?
+
+  Show several different solutions 
+
+  Script? Function?
+
+  Problem "takes an integer array parameter"  function arg? command line arg?
+
+  Pitfall: integer arithmetic
+
+  for ... vs. sum(...)

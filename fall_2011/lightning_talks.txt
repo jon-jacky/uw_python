@@ -1,0 +1,9 @@
+  Lightning talks
+
+   5 minutes or less (including setup) - no kidding!
+
+   Every student will give one
+
+   Purposes: introduce yourself, share interests, also show Python applications
+
+   Any topic you like, that is related to Python -- according to you!

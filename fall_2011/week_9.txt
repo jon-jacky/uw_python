@@ -1,0 +1,138 @@
+week_9.txt
++--
+
+Week 9 - Dec 6 
+
+ Annoucements
+  Seattle Python Interest Group (SeaPIG) Next Thurs 12/15 Lighting Talks
+
+ Lecture 1
+  Review bag exercise - lots to discuss!
+  Review decorator/generator exercise
+
+ Lab 1
+  Lab exercise: is-a, has-a relations in object-oriented programming
+  Speakers check equipment
+  Return bag exercise
+
+ Lightning talks - Maryam Afkarian, Guillermo Rivera, Dmitri Verkolashin
+
+ Lecture 2
+  Python ecosystem: Packages, Installation, Distribution, Other languages
+
+ Lab 2
+  Start on assignment: find and install a package
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Bag exercise - turned in last week
+
+1. Inheritance really works, no kidding!  Let it do the heavy lifting for you.
+
+    You don't need an __init__ method - but many of you did something like this:
+    
+       class bag(dict):
+          def __init__(self, mydict):   # mydict is argument to constructor
+              self.mydict = mydict      # now self has a dict
+   
+    This is does not use inheritance!  self already is a dictionary, due to 
+    inheritance - you already have all the dictionary machinery for self 
+    available in the body of the bag class, you don't need to add self.mydict
+
+     You don't need to do this:           You can simply do this:
+
+       def __add__(self, other)              def __add__(self, other)
+          union = copy(self.mydict)             union = copy(self) # self is a dict
+          ... union[k] = ...                    ... union[k] = ...
+    
+    Philosophy / ontology: inheritance creates "is a" relation with superclass,
+      assigning an attribute creates "has a" relation.
+
++-- 
+
+Bag exercise
+
+ 2.  b1 + b2  should return a new bag, should not alter b1
+
+    This will alter b1 (self):
+
+     def __add_(self, other):
+        ...
+          self[k] = ...
+        ...
+        return self
+          
+    So will this:
+        ...
+         union = self         # union is an alias for self
+         ... union[k] = ...   # changes to union also change self
+        return union
+
+    You have to do this:
+         union = copy(self)
+    or this:
+         union = dict(self)
+ 
++--
+
+Bag exercise
+
+  3.  Logic - Be sure to iterate over ALL elements
+
+     If you copy self to union first, then you only have to iterate over other 
+
+     def __add__(self, other):
+       union = copy(self)
+       for k in other:
+       	  if k in union:
+ 	      union[k] += other[k]
+           else
+              union[k] = other[k]
+   
+      BUT if you start with empty union, you have to iterate over both:
+       ...
+        union = bag()
+        for k in self:
+           ...
+        for k in other: 
+           ...
+
+
+
++--
+
+Bag exercise
+
+ Updating a dictionary - must handle case where key is not already in dict
+
+  if k in union:
+    union[k] += other[k]
+  else:
+    union[k] = other[k]
+
+ Or use try...except... 
+
+  try:
+    union[k] += other[k]
+  except:
+    union[k] = other[k]
+
+ Or use get... method, second argument is value to return if key not in dict:
+
+  for k in set(self) + set(other):                 # set union on keys
+     union[k] = self.get(k,0) + other.get(k,0)     # dig the symmetry!

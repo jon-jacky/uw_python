@@ -1,0 +1,40 @@
+vector.txt
++--
+
+Extending Python 
+
+ Python is a *programmable* programming language
+
+ Python itself is built from classes and objects
+
+ Extend the language seamlessly by definining new classes with special methods
+
+ type means class, including the built-in types like list and int
+  note constructor syntax: instead of [] or {}, can use list() or dict()
+
+ object means instance (of a class)
+  including even 2, try dir(2), sys.getsizeof(2)
+
+ operator means  special method
+  2 + 2  means int('2').__add__(int('2'))
+  Dozens of special methods, including index and slicing for data structures
+
+ 'class' is just another type, you could define your own: javaclass or ...
+  This is called a metaobject protocol
+
+
+
+
++--
+
+Add a new type: vector
+
+ vector.py: inspired by numpy array and matrix types
+
+ (Demo: explain vectors - built in list + does the wrong thing, * crashes)
+
+ vector inherits from list - yes, we can inherit from built-in types!
+
+ Special methods: __repr__ redefines print etc, __add__, __mul__ redefine +, *
+
+

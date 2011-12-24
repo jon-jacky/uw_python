@@ -1,0 +1,22 @@
+week_5.txt Nov 8, 2011
++--
+
+Week 5  Nov 8 2011 
+
+ Group, blog for students' discussion:
+
+  http://groups.google.com/group/uw_python  (Daniel)
+  
+  http://pythonfall2011.wordpress.com/  (Shashi)
+
+ Re Exercise due last week: most_frequent.py
+   Surprising number of variations
+   See .../fall_2011/comments_4.txt 
+   Test case: 'abbcccddddeeee'
+   Some students used built-in Python machinery to solve the problem: 
+     s.count(c) counts character c in string s
+     collections.Counter class new in 2.7 does almost everything
+       initializer creates histogram, most_frequent method does the sorting
+
+
+ Lightning talks: Diana Martinez, John McRae, Tony Mince, Michele Wickham 

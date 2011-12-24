@@ -1,0 +1,77 @@
+other_languages.txt
++--
+
+Python with other programming languages (especially C)
+
+Best of both worlds: convenience of Python, performance of compiled code
+
+One of Python's super powers!
+ Essential to Python's versatility and popularity
+ Enables Python to do production scientific/technical computing
+ Leverages decades of C (etc.) development, stand on the shoulders of giants
+
+How: use the usual Python import statement to import *extension modules*:
+ Written in other languages
+ Compiled (to .so in Unix, .dll in Windows, etc.)
+
+Extensions must be coded, built in a Python-aware way, using special tools
+ Can be wrappers for already-written C, Fortran, ....
+ Build is usually automated in setup.py, similar to Makefile 
+
+Available languages and tools depend on which Python you are using:
+CPython (C, C++), Jython (Java), Iron Python (C#, .NET), PyPy ("other")
+
+
+
+
+
+
+
++--
+
+Python with C
+
+C-API - Extension modules - program in C - how Python, NumPy itself are built 
+         - for C and Python internals experts
+
+ Extending Python with C or C++
+ http://docs.python.org/extending/extending.html
+
+
+SWIG - used in some big important systems: wxPython, GNU Radio, ...
+         - complicated, steep learning curve
+
+ Python C++ and SWIG
+ http://wxpython.org/OSCON2008/Python C++ and SWIG.pdf
+
+
+Cython (forked from Pyrex) - newest and easiest - Seattle connection (SAGE)
+         - new language, superset of Python with optional C-like declarations
+           entire programming language with its own compiler for Python extensions!
+	 - wrap C code or write new code
+
+ Cython: C extensions for Python
+ http://cython.org/
+
+
+
++--
+
+Cython how-to:
+
+ - install cython
+ - write foo.pyx, similar to foo.py but with optional declarations
+ - write setup.py that runs cython to build extension module foo.o
+ - python setup.py build_ext --inplace # compile cython,then compile c and link
+ - put foo.o on your PYTHONPATH
+ - in Python: import foo
+
+>>> integrate.integrate_f(0,1.5,20000000) # takes > 10 sec
+0.77823777512908388
+
+integratex.... takes < 1 sec
+
+Better than 10x speedup
+
+
+
