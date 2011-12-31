@@ -2,57 +2,57 @@ Lightning talks from Programming in Python, Fall 2011
 
 Week 2, Oct 18
 
-Deborah Chang: mMass: open source mass spectroscopy tool in Python
-Gregg Cain: Encounter with Python while traveling in Mexico and Guatemala
-Shruti Mukhtyar: Python and Geographic Information Systems: ArcGIS, MapNik
-Ted Stern: Generating and managing strong passwords with Python and Sudoku
+Deborah C: mMass: open source mass spectroscopy tool in Python
+Gregg C: Encounter with Python while traveling in Mexico and Guatemala
+Shruti M: Python and Geographic Information Systems: ArcGIS, MapNik
+Ted S: Generating and managing strong passwords with Python and Sudoku
 
 Week 3, Oct 25
 
-Noah Glusenkamp: Databases and GIS for political campaigns, open source hardware
-Chris Kraft: Using Perl and Python to support school district IT and industry products
-Mark Price: Django web application framework, model-view-controller architecture, in Python
-Conor Ryan: Investigating predator-prey dynamics with SciPy and Matplotlib
+Noah G: Databases and GIS for political campaigns, open source hardware
+Chris K: Using Perl and Python to support school district IT and industry products
+Mark P: Django web application framework, model-view-controller architecture, in Python
+Conor R: Investigating predator-prey dynamics with SciPy and Matplotlib
 
 Week 4, Nov 1
 
-Jenny Liang: Software for fitness machines, testing Qt graphics with the Squish framework
-Andy Norton: GIS and geodatabase development, integration, and customization with Python
-Shashi Prabhakar: High availability computing and parallel processing with Python
-Kamal Shifow: Learning programming from the beginning, starting with Python
+Jenny L: Software for fitness machines, testing Qt graphics with the Squish framework
+Andy N: GIS and geodatabase development, integration, and customization with Python
+Shashi P: High availability computing and parallel processing with Python
+Kamal S: Learning programming from the beginning, starting with Python
 
 Week 5, Nov 8
 
-Diana Martinez: Using GIS data to calculate elevation gain as you travel, in Python
-John McRae: Surveying the number and growth rate of employment opportunities involving Python
-Tony Mince: Adopting open-source software for IT, network administration, databases, point-of-sale.
-Michele Wickham: Web application frameworks in Model-View-Controller style, comparing Ptyhon and PHP
+Diana M: Using GIS data to calculate elevation gain as you travel, in Python
+John M: Surveying the number and growth rate of employment opportunities involving Python
+Tony M: Adopting open-source software for IT, network administration, databases, point-of-sale.
+Michele W: Web application frameworks in Model-View-Controller style, comparing Ptyhon and PHP
 
 Week 6, Nov 15
 
-Bob Arima: Large-scale database administration, Python and Oracle 
-Scott Boyd: Python for software testing, builds, and installation
-Anton Fechtmeir: Symbolic programming with SymPy, infinite sets with Python generators
-Daniel Miller: Experiences with academic computer science, PyCamp and Startup Weekend
+Bob A: Large-scale database administration, Python and Oracle 
+Scott B: Python for software testing, builds, and installation
+Anton F: Symbolic programming with SymPy, infinite sets with Python generators
+Daniel M: Experiences with academic computer science, PyCamp and Startup Weekend
 
 Week 7, Nov 22
 
-Stefan Coe: ArcGIS, Emme, UrbanSim, Python scripting to get data into a model
-Martin Coots: Tracking Python popularity at the TIOBE web site
-Lotus Lin: Brain images from MEG, MRI, DTI, the NIPY Neuroimaging package
+Stefan C: ArcGIS, Emme, UrbanSim, Python scripting to get data into a model
+Martin C: Tracking Python popularity at the TIOBE web site
+Lotus L: Brain images from MEG, MRI, DTI, the NIPY Neuroimaging package
 
 Week 8, Nov 29
 
-Gregg Lamb: Automated testing with Selenium, record activity then write out Python unittest
-Alex Wallace: Scripting GIS in Python, mapping the spread of an invasive species
-Josh West: Innovations in data representation and storage: NoSQL, RDF
+Gregg L: Automated testing with Selenium, record activity then write out Python unittest
+Alex W: Scripting GIS in Python, mapping the spread of an invasive species
+Josh W: Innovations in data representation and storage: NoSQL, RDF
 
 Week 9, Dec 6
 
-Dimitry Verkolashin: Debugging, subprocesses, Python 3
+Dimitry V: Debugging, subprocesses, Python 3
 
 Week 10, Dec 13
 
-Ben Bloss: Engineering oceanographic instrumentation at NOAA, National Geophysical Data Center, Ocean Explorer sites
-Maryam Afkarian: Researching kidney disease from diabetes, analyzing large multidimensional data sets
-Brittany Nelson: Analytical chemistry, quantitative biology, and bioinformatics inside and outside academia
+Ben B: Engineering oceanographic instrumentation at NOAA, National Geophysical Data Center, Ocean Explorer sites
+Maryam A: Researching kidney disease from diabetes, analyzing large multidimensional data sets
+Brittany N: Analytical chemistry, quantitative biology, and bioinformatics inside and outside academia
