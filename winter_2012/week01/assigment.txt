@@ -1,10 +1,10 @@
 week01/assignment.txt
 +--
-Week 1 assignment
+Week 1 assignment, follow directions.txt
 
   1. Get a VM host, log in, change password
 
-  2. Set up GitHub and VM, do echo assignment, follow directions.txt:
+  2. Set up GitHub and VM, do echo assignment
     Clone instructor's course page repo into your local repo www_uw_python/
     Create an account at GitHub, for example your-name
     Create your own assignments repo git@github.com:your-name/uw_python.git
