@@ -1,0 +1,21 @@
+vm.txt
++--
+
+Virtual machines 
+
+ Donated by Blue Box Group LLC - many thanks!
+
+ Ubuntu 10.04, Python 2.6.5, 0.5 CPU cores, 1 GB RAM, 20 GB disk
+
+ Your VM has a hostname of the form
+
+   block3350NN-XXX.blueboxgrid.com
+
+where the NN-XXX part will be assigned to you.  Log in, like:
+
+ ssh class@block335026-fa5.blueboxgrid.com
+
+The password will be given in class, change it immediately with the
+passwd command.
+
+For questions/problems, please contact me, NOT Blue Blox tech support.

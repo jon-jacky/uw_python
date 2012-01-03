@@ -1,22 +1,176 @@
 week01/directions.txt
 +---
 
-1. Get a VM host, log in, change password
+I. Get a VM host, log in, change password
 
-2. Set up GitHub and VM, do echo assignment
-Clone instructor's course page repo into your local repo www_uw_python/
-Create an account at GitHub, for example your-name
-Create your own assignments repo git@github.com:your-name/uw_python.git
- and your local repo uw_python/ for your work on localhost
- Follow organization of https://github.com/uw-student/uw_python
-Copy echo_server.py and echo_client.py from www_uw_python into uw_python
-Get instructor's echo_server.py and echo_client.py working on localhost
-Modify echo_server.py to prefix its reponse with your-name
-Get modified echo_server.py and echo_client.py working on localhost
-Push your echo_server.py, echo_client.py to your remote GitHub repo
-On your VM host, set up ssh and clone your assignments repo
-On your VM, test your server, test from your local client
-On your VM, run your server using nohup... log out and leave it running
+Your VM has a hostname of the form
+
+ block3350NN-XXX.blueboxgrid.com
+
+where the NN-XXX part will be assigned to you in class.  Log in with ssh (or putty),
+with the username class, for example
+
+ ssh class@block335026-fa5.blueboxgrid.com
+
+It may ask, Are you sure you want to continue connecting (yes/no)?  Answer yes.
+
+Then it will prompt: ... password: Use the password PUk3G6ba.  The
+first thing you must do is choose a new password for yourself and
+change the password by typing the passwd command, then follow the
+prompts.
+
+ $ passwd
+ .... follow the prompts ...
+
+II. Set up GitHub and Blue Box VM, do the echo assignment
+
+In these directions I show the commands you would use in Linux or Mac OS X.
+The commands for Windows are similar.
+
+In these directions I use the github username uw-student, but you
+should use choose your own github username (which is different from
+uw-student).
+
+
+1. Create an account for yourself at GitHub, http://github.com.
+
+Follow the directions at http://help.github.com/linux-set-up-git/ (for Linux)
+or .../mac-set-up-git (for Mac) or win-set-up-git (Windows).
+
+You must repeat the "Set up SSH keys" section of these instructions on
+each computer where you use github, before you can clone any
+repositories from github on that computer.
+
+2. Create a repository at github, along with a local repository on your
+computer, for your assignments and projects.  Follow the directions at
+http://help.github.com/create-a-repo/ I recommend you name your
+repository uw_python.  Your repository page at github should resemble
+the example for uw-student at https://github.com/uw-student/uw_python
+(but with your github username instead of uw-student).
+
+3. Clone the instructor's course page repo into your local repo www_uw_python/
+using this command:
+
+$ git clone git@github.com:jon-jacky/uw_python.git www_uw_python
+
+Then change to the new directory www_uw_python and issue this git checkout command:
+
+$ cd www_uw_python
+$ git checkout gh-pages
+
+From now on you can download all additions and revisions to the course pages 
+into this local repo by simply using the command:  git pull
+
+4.  Copy the echo sample code from your local course pages repository, www_uw_python. into your
+local assignments repository, uw_python.   Create a subdirectory uw_python/echo.  In it add a README
+file.  Then copy www_uw_python/week01/echo_server.py and echo_client.py into uw_python/echo.
+
+5.  Demonstrate the echo sample on your computer.   In one terminal window, 
+start the server:
+
+ $ python echo_server.py
+
+In another terminal window, run the client:
+
+ $ python echo_client.py
+
+Run the client several times.  Observe the output in both windows each
+time you run the client.  Notice that the output from the client
+includes "uw-student", not your own username.
+
+Stop the server by typing ^C in its terminal window.  Now run the
+client and observe what happens.  Then restart the server with a
+different port number from the default, for example
+
+  $ python echo_server.py 9999
+
+Run the client as before and observe what happens.  Run the client again, using the same 
+same port number as the server (you have to put localhost before the port number).
+
+ $ python echo_client.py localhost 9999
+
+6, Commit the new echo directory and its contents into your local repository.
+Change to the uw_python directory above the new echo directory, then 
+
+ $ git add echo
+ $ git commit -a -m "add echo directory with sample code"
  
-3. Email instructor with your VM host name, your GitHub repo URL
-Instructor will make web page with all students' VMs and GitHub repos
+7. Push the new contents to your repository on github
+
+ $ git push
+
+View your remote repository content in the github web page.  It should
+now resemble the sample at https://github.com/uw-student/uw_python
+
+8. On your computer, revise the echo sample so that when you run the
+client, it prints your git username, instead of uw-student.
+Demonstrate it as before to confirm it is working.
+
+9.  Commit the revised sample to your local repository, the push it to github.
+View the repository contents at github to confirm it includes your revised code.
+
+10. Log in to your VM and set up SSH Keys for github, again following
+that part of the directions at
+http://help.github.com/linux-set-up-git/ (or mac- or win-)
+
+11. Clone your assignments repository from github to your VM:
+
+ $ git clone git@github.com:uw-student/uw_python.git  
+
+(but with your github username instead of uw-student)
+
+(This time, you don't need to use a git checkout command.)
+
+From now on you can download all additions and revisions to your github assignments repo
+into this local repo by simply using the command:  git pull
+
+12. While logged in on your VM, confirm the echo server and client are working
+locally on the VM, as you did in on your own machine in step 5 above.
+
+13. Leave the server running on your VM.  Then run the client on your own machine,
+naming your VM, for example
+
+ $ python echo_client.py block335026-fa5.blueboxgrid.com
+
+But use your own VM host name instead of this one (but try this one
+too - what happens?)  If your server is not running at the default
+port 50000, you must give the port number on the command line also.
+
+14.  On the VM, stop the server with ^C.  Run the local client again
+and observe what happens.
+
+15. On the VM, start the server with this command, to ensure that it keeps running
+after you log out:
+
+ $ nohup python echo_server.py > echo_server.log &
+
+Run the client on your local machine again to confirm the server is running.
+Then log out of your VM and run your local client again, to confirm the server is still
+running.
+
+16. If you want to stop the server on your VM, log into the VM and type
+this command to find the process id of your server process:
+
+ $ ps ax | grep echo
+
+The output should look something like this:
+
+22106 ?        S      0:00 python echo_server.py
+23730 pts/0    S+     0:00 grep echo
+
+Here 22106 is the echo server's process id.  Stop the server with this command:
+
+$ kill -9 22106 
+
+(but with your server's process id instead of 22106)
+
+
+III  Report your work
+
+1. Email the instructor with your VM host name and your GitHub repo URL.
+The instructor will make a web page with all students' VMs and GitHub repos
+
+2. Email the instructor when you get your modified echo server running
+on your VM, so the instructor can test it.  Be sure the echo client
+prints your github username when it connects to your server.
+

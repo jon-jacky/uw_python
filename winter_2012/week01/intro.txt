@@ -7,7 +7,6 @@ The Internet
 
  All-purpose world-wide fast information storage and communication system
   person-to-person, broadcasting, everything in between - anyone can join in!
-  (a Good Thing?  "Too soon to tell")
 
  Designers always intended participation/contribution, not just consumption
    -- not just a replacement for TV, newspapers, mail-order catalogs ...
