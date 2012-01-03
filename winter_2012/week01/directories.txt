@@ -1,0 +1,43 @@
+directories.txt
++--
+
+Instructor's course page directory in your local repository, create by
+
+ git clone git@github.com/jon-jacky/uw_python.git www_uw_python
+
+update every week by: git pull
+
+ ~/www_uw_python/
+   README
+   index.html
+   fall_2011/
+     ... all fall quarter web pages, lecture notes, and sample files ...
+   winter_2012/
+     README
+     index.html
+     week01/
+       intro.txt, directories.txt, ...  (lecture notes)        
+       echo_server.py, echo_client.py   (sample code)
+     week02/
+       ...
+
++--
+
+Student's assigments directory structure, build up incrementally
+
+ Structure used by https:github.com/uw-student/uw_python
+
+ start with instructions at help.github.com: Create a repo
+ then repeat git add ..., git commit -a -m "....", 
+
+ uw_python/
+   README
+   echo/
+     README
+     echo_client.py, echo_server.py, ...
+  
+   (other assignments...)
+
+Subdirectories are assignments/projects, not weeks.  Take as long as
+you need on each assignment
+ 

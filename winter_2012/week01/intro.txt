@@ -1,0 +1,64 @@
+intro.txt
++--
+
+The Internet
+
+ One of the most significant inventions of the 20th century --- maybe ever!
+
+ All-purpose world-wide fast information storage and communication system
+  person-to-person, broadcasting, everything in between - anyone can join in!
+  (a Good Thing?  "Too soon to tell")
+
+ Designers always intended participation/contribution, not just consumption
+   -- not just a replacement for TV, newspapers, mail-order catalogs ...
+   -- low barriers to participation, almost everyone can join in
+   -- not limited to just adding content -- you can create your own services
+
+ On the Internet, you use and provide services - web sites are just one kind
+  Services are sort of like Python libraries - data, functions you can use 
+
+ Any Python program can be turned into an Internet service (web site or ...)
+
+ Any Internet service (web site or ...) can be used like a Python library 
+
+
+
+
++--
+
+"Internet Programming in Python" course content
+  Most content is generic, would not be much different in Ruby, Java, ... 
+
+ Emphasize the Internet as a collection of programmable services 
+  Many services these days are web sites, but not all
+  Learn to use services: treat a service as if it were a Python library
+  Learn to provide services: make a Python program or library into a service
+
+ Bottom up, work up the protocol stack - axiomatic, operational approach
+  Start with sockets - lowest level convenient and commonly used interface
+  Then HTTP, then screen scraping and web APIs, then CGI, WSGI, Web framework
+
+ Web Frameworks
+  Simple and complex - probably Flask, definitely Django
+  Learn to be critical, choose an appropriate framework, use it "a la carte"
+
+ Survey course, not in-depth, must omit some important topics
+  Emphasize server-side, minimal clients, no CSS or Javascript programming
+  Almost nothing on security, authentication - all your work is totally public
+   ALL YOUR WORK IS TOTALLY PUBLIC! No passwords, credit cards, patient names
+
+
++--
+
+Technology and tools
+
+ Much emphasis on technology and tools, especially --
+  Linux operating system: Internet hosts are Linux VMs from Blue Box group 
+  Git distributed version control system: GitHub stores and displays your work
+
+ Learning Linux and Git
+  First class is mostly a lab to get your workflow going with Linux and Git
+   Learn typical workflow by rote, from examples. Should be sufficient.
+  Later: answer questions during in-class labs, maybe some lecture if needed
+  
+ See directories.txt, workflow.txt, directions.txt, assignment.txt

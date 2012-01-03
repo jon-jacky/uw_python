@@ -1,0 +1,23 @@
+week01/assignment.txt
++--
+Week 1 assignment
+
+  1. Get a VM host, log in, change password
+
+  2. Set up GitHub and VM, do echo assignment, follow directions.txt:
+    Clone instructor's course page repo into your local repo www_uw_python/
+    Create an account at GitHub, for example your-name
+    Create your own assignments repo git@github.com:your-name/uw_python.git
+     and your local repo uw_python/ for your work on localhost
+     Follow organization of https://github.com/uw-student/uw_python
+    Copy echo_server.py and echo_client.py from www_uw_python into uw_python
+    Get instructor's echo_server.py and echo_client.py working on localhost
+    Modify echo_server.py to prefix its reponse with your-name
+    Get modified echo_server.py and echo_client.py working on localhost
+    Push your echo_server.py, echo_client.py to your remote GitHub repo
+    On your VM host, set up ssh and clone your assignments repo
+    On your VM, test your server, test from your local client
+    On your VM, run your server using nohup... log out and leave it running
+ 
+  3. Email instructor with your VM host name, your GitHub repo URL
+    Instructor will make web page with all students' VMs and GitHub repos

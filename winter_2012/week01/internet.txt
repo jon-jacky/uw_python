@@ -1,23 +1,13 @@
 internet.txt
+internet.txt
 +--
 
-Internet fundamentals
-
- One of the most significant inventions of the 20th century --- maybe ever!
-
- All-purpose world-wide fast information storage and communication system
-  person-to-person, broadcasting, everything in between - anyone can join in!
-
- Designers always intended participation/contribution, not just consumption
-   -- not just a replacement for TV, newspapers, mail-order catalogs ...
-   -- low barriers to participation, almost everyone can join in
-   -- not limited to just adding content -- you can create your own services
- That's what this course is about - learn about it, program it
+Internet technology fundamentals
 
  Technology based on several mutually-reinforcing design ideas:
 
  Packet Switching - moves data around the network, provides communication
- Protocols - define activities that can occur on the net (email, etc.)
+ Protocols - define activities that can occur on the net (email, www, etc.)
  Layers - Separate technology into independent parts, enable division of labor
  APIs - make services accessible, enable everyone to build applications
 
@@ -63,7 +53,7 @@ Internet fundamentals
 
  Protocols
 
-  Define activities that can occur on the net (email, etc.)
+  Define activities that can occur on the net (email, www, etc.)
 
   Rules that allow agents to communicate and cooperate
   Defined by the messages that can be exchanged (messages may be packets)

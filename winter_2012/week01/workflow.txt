@@ -1,0 +1,37 @@
+workflow.txt
++------------
+
+[Instructor's course web pages and sample files
+ Remote repository at GitHub (public)
+ http://jon-jacky.github.com/uw_python/winter_2012/  (web page)
+ git@github.com:jon-jacky/uw_python.git              (repository) ]
+  |                              |
+  | git clone ..(to create,once) | git pull (every week, when new content)
+  V                              V
+[Student's clone of course web pages and sample files
+ Local repository on student's computer
+ ~/www_uw_python/  (recommended, any other location would work) ]
+                                 |
+                                 |  copy .... (get code samples when needed)
+                                 V 
+[Student's assignments and projects
+ Local repository on student's computer - do most of your work here
+ ~/uw_python/ (recommended, any other location would work) ]
+   in local repository: edit, test on localhost: python echo_server.py, ...
+  then git add ..., git commit -a -m "..msg..",  
+  ^                              |
+  | (create just once   )        |
+  | (see help.github.com)        | git push (when ready to show, run on VM)
+  V                              V
+[Student's assignments and projects
+ Remote repository at GitHub  (public) instructor views your work here!
+ git@github.com:uw-student/uw_python.git  - but your-name not uw-student ]
+  |                              |
+  | git clone ..(to create,once) | git pull (to run on VM)
+  V                              V
+[Student's assignments and projects
+ Local repository on student's VM - run your servers here
+ For example at block335026-fa5.blueboxgrid.com
+  in local repository:  nohup python echo_server.py > echo_server.log
+ ~/uw_python/  (recommended, any other location would work) ]
+
