@@ -3,7 +3,7 @@ directories.txt
 
 Instructor's course page directory in your local repository, create by
 
- git clone git@github.com/jon-jacky/uw_python.git www_uw_python
+ git clone git@github.com:jon-jacky/uw_python.git www_uw_python
 
 update every week by: git pull
 
