@@ -15,7 +15,7 @@ where the NN-XXX part will be assigned to you.  Log in, like:
 
  ssh class@block335026-fa5.blueboxgrid.com
 
-The password will be given in class, change it immediately with the
+The password is (tbd), change it immediately with the
 passwd command.
 
 For questions/problems, please contact me, NOT Blue Blox tech support.
