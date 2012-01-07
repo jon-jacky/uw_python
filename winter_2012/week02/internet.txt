@@ -1,13 +1,18 @@
 internet.txt
-internet.txt
 +--
 
 Internet technology fundamentals
 
+ All-purpose world-wide fast information storage and communication system
+  person-to-person, broadcasting, everything in between - anyone can join in!
+
+ On the Internet, you use and provide services - web sites are just one kind
+  Services are sort of like Python libraries - data, functions you can use 
+
  Technology based on several mutually-reinforcing design ideas:
 
  Packet Switching - moves data around the network, provides communication
- Protocols - define activities that can occur on the net (email, www, etc.)
+ Protocols - define services that can occur on the net (email, www, etc.)
  Layers - Separate technology into independent parts, enable division of labor
  APIs - make services accessible, enable everyone to build applications
 
@@ -53,7 +58,7 @@ Internet technology fundamentals
 
  Protocols
 
-  Define activities that can occur on the net (email, www, etc.)
+  Define servcies (activities) that can occur on the net (email, www, etc.)
 
   Rules that allow agents to communicate and cooperate
   Defined by the messages that can be exchanged (messages may be packets)
