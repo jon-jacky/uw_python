@@ -1,0 +1,17 @@
+Laboratory for week 2
+
+1. In your echo project from last week, the client just sends the
+string 'Hello world'.  Modify your client to prompt for the string to
+send.  Test on localhost to confirm that the client receives the same
+string it sends.  Then run your modified echo client on your server.
+
+2. Create a new project recho (repeat echo).  Write an recho
+client/server pair where the client repeatedly prompts for a string,
+sends it, the server echoes it, and the client receives and prints the
+response, repeating the send/echo/receive/print cycle until the user
+enters an empty string at the prompt (by just typing RETURN but
+nothing else).  Test on localhost, then run on your server.  On the
+server, use different port numbers for the echo server and the recho
+server, and run both at once.
+
+
