@@ -1,0 +1,11 @@
+Assignment 2:
+
+Run echo_server_select on localhost and test with two or more simultaneous
+recho clients (from lab 2) in different terminal windows.
+
+In a new chat subdirectory, write a chat server based on
+echo_server_select.  When any client sends a message, that message is
+echoed to all clients, prefixed by the identification of the client
+that sent the message (as well as the server that sent the message).
+Test your chat server with two or more recho clients on localhost,
+then run it on your server.
