@@ -3,6 +3,7 @@
 # To execute this script in the bash shell: source students.sh
 # After than, can login by (for example) ssh class@$uwstudent
 #  and can contact echo server by python echo_client.py $uwstudent
+# Something similar for Windows could be done with its SET command
 
 export uwstudent="block335026-fa5.blueboxgrid.com"  # uw-student (sample)
 

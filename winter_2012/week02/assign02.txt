@@ -7,5 +7,9 @@ In a new chat subdirectory, write a chat server based on
 echo_server_select.  When any client sends a message, that message is
 echoed to all clients, prefixed by the identification of the client
 that sent the message (as well as the server that sent the message).
-Test your chat server with two or more recho clients on localhost,
-then run it on your server.
+
+Test your chat server with two or more recho clients on localhost.
+Will these servers work as intended with the recho client?  Why not?
+If not, write a chat client, test your chat server with two or more
+chat clients on local host, then run them on your VM.
+
