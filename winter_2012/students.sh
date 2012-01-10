@@ -7,8 +7,10 @@
 
 export uwstudent="block335026-fa5.blueboxgrid.com"  # uw-student (sample)
 
+export arimar="block335036-6hf.blueboxgrid.com"  # Bob A.
 export bbloss="block335027-tng.blueboxgrid.com"  # Ben B.
 export scboyd="block335037-mrw.blueboxgrid.com"  # Scott B.
+export stefancoe="block335047-cly.blueboxgrid.com"  # Stefan C.
 export cushride="block335051-khm.blueboxgrid.com"  # Chris K.
 export glamb="block335044-q6t.blueboxgrid.com"  # Gregg L.
 export jennyliang="block335052-4ym.blueboxgrid.com"  # Jenny L.
@@ -20,6 +22,7 @@ export mukhtyar="block335030-p73.blueboxgrid.com"  # Shruti M.
 export abdulabulbulamir="block335049-vpv.blueboxgrid.com"  # Andy N.
 
 export uwshashi="block335043-vhh.blueboxgrid.com"  # Shashi P.
+export mark665="block335033-uxr.blueboxgrid.com"  # Mark P.
 export grivera="block335054-unf.blueboxgrid.com"  # Guillermo R.
 export ctryan3="block335032-t4f.blueboxgrid.com"  # Conor R.
 export shifow="block335055-hnc.blueboxgrid.com"  # Kamal S.
