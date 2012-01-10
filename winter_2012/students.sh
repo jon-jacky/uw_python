@@ -19,6 +19,7 @@ export diamar="block335048-dnh.blueboxgrid.com"  # Diana M.
 export dalanmiller="block335042-abq.blueboxgrid.com"  # Daniel M.
 export mincet="block335046-zme.blueboxgrid.com"  # Tony M.
 export mukhtyar="block335030-p73.blueboxgrid.com"  # Shruti M.
+export buttastick="block335038-2ly.blueboxgrid.com"  # Shruti M.
 export abdulabulbulamir="block335049-vpv.blueboxgrid.com"  # Andy N.
 
 export uwshashi="block335043-vhh.blueboxgrid.com"  # Shashi P.
