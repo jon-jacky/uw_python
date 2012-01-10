@@ -10,6 +10,7 @@ export uwstudent="block335026-fa5.blueboxgrid.com"  # uw-student (sample)
 export arimar="block335036-6hf.blueboxgrid.com"  # Bob A.
 export bbloss="block335027-tng.blueboxgrid.com"  # Ben B.
 export scboyd="block335037-mrw.blueboxgrid.com"  # Scott B.
+export debbie3="block335031-sll.blueboxgrid.com"  # Debbie C
 export stefancoe="block335047-cly.blueboxgrid.com"  # Stefan C.
 export cushride="block335051-khm.blueboxgrid.com"  # Chris K.
 export glamb="block335044-q6t.blueboxgrid.com"  # Gregg L.
