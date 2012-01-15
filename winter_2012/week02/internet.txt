@@ -166,8 +166,8 @@ History - summary and lessons
 
  Popularity lags invention by years, decades
 
- "The future arrives at different times for different people"
-                           -- paraphrasing Neal Stephenson (?)
+ "The future is already here.  It's just not evenly distributed yet."
+                                                /Users/jon/uw_python/winter_2012 -- William Gibson
 
  Layering works. Lower levels are stable, recent innovation is in upper layers
   1970-80s TCP/IP,  1980-90s HTTP,  1990s - 2000s Applications, Web APIs, ...
