@@ -1,0 +1,12 @@
+Optional laboratory for week 2 - 3
+
+Experiment with socket buffers.  Review the Socket Programming HOWTO,
+http://docs.python.org/howto/sockets.html, the section Using a Socket,
+especially paragraph 3, "Now we come (to) the major stumbling block
+..."  Try sending buffers of various lengths, including some very long
+ones.  Try receiving with different values for the bufsize argument.
+You can experiment by just typing into the python interpreter at the 
+client and server ends, or write fragments of code and import them.
+Examine the behavior when both client and server are on localhost, 
+and then when the server is on your VM.
+
