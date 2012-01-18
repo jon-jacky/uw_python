@@ -1,0 +1,83 @@
+
+Have a look at the instructor's solutions to the recho lab exercise on
+the class web page (in the cell in the schedule for Jan 10, 17, they
+are recho_client.py and recho_user.py).
+
+The instructor's solutions show the typical way to handle this, which
+are different from most students' solutions, in an important way.
+The instructor's recho client connects to the server only once, then
+repeatedly sends and receives, then closes only once.  In most students'
+solutions, the client connects to the server again and again, once for
+each line of text.  The connection and main loop in the instructor's
+solution looks like this, notice that the s.connect call comes before
+entering the loop, so it only happens once:
+
+# ... from instructor's recho_client.py ...
+s.connect((host,port)) 
+print 'Connection accepted by (%s,%s)' % (host, port)
+while True:
+    msg = raw_input('> ')
+    if msg:         # msg is not empty
+        s.send(msg) 
+        data = s.recv(size)
+        print data
+    else:          # msg is empty
+        s.close() 
+        break      # exit loop            
+
+Most students did something like this, notice that the connect call
+comes inside the loop so it happens again and again:
+
+# ... from students' recho_client.py ...
+while True:
+    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    s.connect((host,port))
+    inputdata = raw_input("Prompt:\> ")
+    if inputdata == "": break
+    s.send('%s' % inputdata)
+    data = s.recv(size)
+    s.close()
+    print 'from (%s,%s) %s' % (host, port, data)
+
+This students' client works with the original echo server (that was
+posted in week 1).  The instructor's client requires a new server as
+well.  Since the instructor's client might send many messages before
+closing, the instructor's server must keep the client socket open and
+keep receiving messages until the client sends an empty message.  This
+server has two (nested) loops. The outer loop accepts connections
+from different clients and makes a client socket for each one, and
+the inner loop receives/sends to a single client socket:
+
+# ... from instructor's recho_server.py ...
+while True: 
+    client, address = s.accept()
+    print 'accepted connection from ', address
+    while True:
+        data = client.recv(size) 
+        if data:
+            client.send('uw-student: %s' % data) 
+        else:  # no data, client sent empty message or closed socket
+            client.close()
+            print 'closed connection'
+            break
+
+The original echo server, which was used by most students, just has
+one loop, where the loop body accepts a connection, creatas a client
+socket, receives and sends one message, and closes the socket:
+
+# ... from student's echo server ...
+while True: 
+    client, address = s.accept()
+    data = client.recv(size) 
+    if data: 
+        client.send('uw-student: %s' % data) 
+    print 'from %s: %s' % (address, data)
+    client.close()
+
+The instructor's solution is more typical (and better) because it only
+makes one connection per client session.  This is better because
+accept and close are slower, and require more computational effort,
+than send and receive.  It is better to create a single socket and
+keep it oppen through the whole session, than to create and close a
+socket for each line.  That would not scale up for a server that had
+to handle lots of clients.
