@@ -1,16 +1,15 @@
 Lab, week 3:
 
-Write the 'Hello world' web application.  In our git repository create
-a subdirectory hello_www.  Write a python program hello_www.py that
-listens on port 8081, then when a client connects to that port and
-sends a valid HTTP GET request for hello.html, your program sends an
+Write the minimal 'Hello world' web application.  Write a python
+program hello_www.py that listens on port 8081, then when a client
+connects to that port and sends an HTTP request, your program sends an
 HTTP response including the HTML for a web page that contains your
 github username and the text 'Hello, world'.
 
 Test your program on localhost, point your browser at 
-http://localhost:8081/hello.html.  Then run your program on your VM,
+http://localhost:8081/  Then run your program on your VM,
 and test it by pointing your browser at 
 
- http://block335026-fa5.blueboxgrid.com:8081/hello.html
+ http://block335026-fa5.blueboxgrid.com:8081
 
 (but with your vm host name).
