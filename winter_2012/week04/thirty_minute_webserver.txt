@@ -1,0 +1,12 @@
+thirty_minute_webserver.txt
++--
+
+Assignment: modify the thirty minute webserver, try one or both:
+
+Easier: Support a date-time url, so .../date.html causes the server
+to send a page that shows the current date and time.
+
+Harder: Support .py urls, so .../foo.py causes the server to execute
+foo.py and send a page that shows its output.  Test it with print_time.py
+that outputs a page that shows the current date and time.
+

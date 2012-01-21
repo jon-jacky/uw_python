@@ -1,0 +1,14 @@
+echo_www.txt
++--
+
+Lab: echo server: web version
+
+Copy hello_www.py to echo_www.py. Revise echo_www.py to echo the path
+part of the URL to the browser, preceded by your github username.  Run
+it on port 8082, so pointing your browser at
+
+ http://localhost:8082/hello
+
+causes something like this to appear in your browser:
+
+ uw-student: hello
