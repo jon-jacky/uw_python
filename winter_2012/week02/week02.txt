@@ -1,0 +1,22 @@
+week02.txt
++---
+
+Week 2 - Jan 10, 2012
+
+ Course web page: announcements, students.html and .sh, readings
+ 
+  recall if you clone uw_python at github, can get updates by  git pull
+
+ Lecture 1: Begin to explain what we did last week!  Internet fundamentals
+            Explain sockets and echo
+
+ Lab 1: echo and recho
+
+ Lecture 2: Explain select
+
+ Lab 2: continue echo, begin assignment: chat
+
+ No due dates - just work through assignments in sequence
+  If you get stuck with git or VM work on localhost
+
+ In all labs - cope with git, linux, VMs, etc. etc. etc.

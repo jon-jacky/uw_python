@@ -1,0 +1,6 @@
+scrape.txt
++--
+
+Lab exercise: screen scraping
+
+Write a script that prints every http url in a page at a given url

@@ -1,0 +1,10 @@
+http.txt
++--
+
+Lab: View HTTP traffic
+
+Use your browser's developer tools (from last week's assignment) to 
+view HTTP traffic as you visit some of your favorite web sites.
+
+Optional: download web pages and view the HTTP headers using the
+curl -i <url> command.  Experiment with other curl command options.

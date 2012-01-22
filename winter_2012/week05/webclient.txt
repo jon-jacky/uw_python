@@ -1,0 +1,22 @@
+webclient.txt
++--
+
+Assignment: choose one or more
+
+1. File downloader: write a script that scrapes our Python Winter 2012
+course page for the URLs of all the Python source files, then
+downloads them all.
+
+WARNING: When testing any automated web client, take care not to
+overdo it -- don't overload the server.  In this case the server is
+github; each run of your program imposes a similar load as cloning the
+repository.  Test your program progressively: first, confirm you are
+scraping the Python URLs correctly before testing any code to download
+them.  Then, test downloading from a local cloned (by hand) copy of
+the repository, using file: urls (not http:).  When that's working,
+try downloading from github.  See the github terms of service at
+http://help.github.com/terms-of-service/
+
+
+2.  ... use web api ...
+
