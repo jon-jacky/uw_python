@@ -1,0 +1,63 @@
+recho.txt
++--
+
+Sockets again
+
+ Tonight: the internals of internet services - sockets and select
+  culminating in chat server and client
+ Most services have clients and server - asymmetric
+  server always available, handles many clients who come and go
+  each client connects for short-lived session
+ sockets - basic API for connecting to services
+  Berkeley sockets ca 1980, Unix and C, now similar in most OS and languages
+  universal glue for connecting diverse programs on same or different hosts
+   good exercise: code client, server in different languages
+ Server and Client socket work differently
+
+
+
+
++--
+
+recho Server and Client
+
+ Service identified by host (name or number) and socket number
+ Server has single persistent listener socket, possibly many client sockets
+ accept call returns a new client socket for each client session
+ Each client session may have many send/receive 
+
+ Server's listener socket: 
+  socket, bind, listen, [  accept                      ]  close
+                            |
+                            | returns client socket
+                            V
+   server's client socket: [     receive, send, ... ] close
+                            :      :       :
+                            :      :       :
+ Client:         socket, connect [send, receive  ] close
+ 
+ [...] indicates loop, : indicates synchronization
+
+
+
++--
+
+Socket behaviors
+
+  Server accept blocks (waits) until a client connects
+  Client connect fails (raises exception) if no server etc. etc.
+  send, recv communicate via buffers and intermediate hosts
+
+    send -->  [...] --> [...] --> [...] --> [...] --> recv
+
+   send blocks until *some* room available in output buffer
+    send might not send whole arg, returns n of bytes sent
+   recv(bufsize) specifies maximum amount to receive
+    recv blocks until *some* data available in input buffer
+    sent data might not appear in recv buffer all at once,
+    recv returns data actually read, may be less than bufsize
+      http://docs.python.org/howto/sockets.html
+      http://blogs.oracle.com/jag/resource/Fallacies.html
+   recv returns 0 when partner executes close 
+
+

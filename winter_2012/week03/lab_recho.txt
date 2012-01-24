@@ -1,0 +1,20 @@
+lab_recho.txt
++--
+
+Download instructor's recho client and server on local machine
+ (git pull or browser save as ...) - or use your own
+
+Run them in two terminal windows in on local host
+  python recho_server.py (one session)
+  python recho_client.py (repeat several session)
+Try to start another client in third window before
+ the other exits
+
+ssh to your Blue Box VM, run server there, connect
+from client on your local machine
+
+run client, server sessions interactively,
+experiment with send message size and recv bufsize,
+locally and with VM.
+
+

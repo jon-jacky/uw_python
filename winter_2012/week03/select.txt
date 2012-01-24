@@ -1,0 +1,37 @@
+select.txt
++---
+
+select - manage several sockets (or files) at once - in a single thread
+
+  like socket, select API is from Unix + C ca 1980
+   now similar in most OS and languages
+
+  Socket accept, send, recv are blocking operations
+   program stops and waits for awaited event to occur
+   other events are ignored while program is waiting
+  How can we handle several sockets?
+   would like to recv from whichever socket as data
+  select can wait for several sockets (and/or files) at once
+   recall the keyboard is also a "file" - sys.stdin
+
+
+
++--
+
+select - how it works
+
+  server = socket. ...
+  ...
+  input = [server,sys.stdin] # list of sockets and file-like objects
+  ... 
+  while running:
+     inputready,outputready,exceptready = select.select(input,[],[],timeout)
+
+  Args are lists of sockets (files) where we are waiting for input,
+    output, and exception
+  Waits for *all* at once.  Returns when awaited input (etc) appears on *any*
+  Returns lists of sockets (etc.) where input (etc) actually is ready
+  Optional timeout arg, returns when timer expires - periodic heartbeat
+   (see echo_server_select.py)
+
+
