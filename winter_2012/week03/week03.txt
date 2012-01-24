@@ -1,0 +1,19 @@
+week03.txt
++--
+
+Week 3 - Jan 24, 2012
+
+6:00 Introduce Brian Dorsey
+
+6:01 Lecture 1: Review recho client and server
+
+6:30 Lab 1: Experiment with recho client and server on localhost and VM
+
+7:00 Lecture 2: Select and echo server with multiple clients
+
+7:45 Lab 2: Experiment with echo_server_select, work on chat server
+            - OR - begin working with web developer tools
+
+Both labs - help with GitHub, VMs, etc. as needed
+
+9:00 Dismissed

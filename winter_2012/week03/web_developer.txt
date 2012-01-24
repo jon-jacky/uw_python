@@ -1,0 +1,27 @@
+web_developer.txt
++--
+
+Assignment: web developer tools, view HTTP traffic
+
+Learn how to use your browser's web developer tools to view HTTP
+traffic between your browser and a web server.  
+
+If you use Firefox, you must download and install Firebug.  For other
+browsers, the tools are built in.   Instructions for each browser are here:
+
+Firefox, Firebug Net Panel
+http://getfirebug.com/wiki/index.php/Net_Panel
+
+Google Chrome Developer Tools
+http://code.google.com/chrome/devtools/docs/network.html
+
+Safari Web Developer Tools
+http://developer.apple.com/library/safari/#documentation/appleapplications/Conceptual/Safari_Developer_Guide/2SafariDeveloperTools/SafariDeveloperTools.html
+
+IE9 Developer Tools (also works for IE8 -?)
+http://msdn.microsoft.com/en-us/library/gg130952%28v=vs.85%29.aspx
+
+Optional: learn how to use the curl tool to download web pages and view
+HTTP headers from the command line.  curl comes installed on the Mac,
+you may have to download and install it on Windows and some Linux
+distributions.  Downloads and documentation at: http://curl.haxx.se/
