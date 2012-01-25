@@ -16,6 +16,10 @@ select - manage several sockets (or files) at once - in a single thread
 
 
 
+
+
+
+
 +--
 
 select - how it works
@@ -35,3 +39,13 @@ select - how it works
    (see echo_server_select.py)
 
 
+
+
+
+
++--
+
+Select - limitations
+
+ Doesn't scale to thousands of connections - "c10k"
+ Alternatives: epoll, kqueue, asyncore, gevent, twisted, greenlets, ...
