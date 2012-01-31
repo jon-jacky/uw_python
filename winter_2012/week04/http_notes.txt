@@ -1,0 +1,112 @@
+http_notes.txt
++--
+
+HTTP - the protocol of the web
+
+ One of hundreds of Internet protocols -- possibly the most popular
+ Another client/server protocol
+  web browser is typical client, Google et al are servers
+
+ Simple - client sends a request, server sends a response
+  Simpler than our chat assignment
+  We'll write our own servers and clients!
+ Protocol itself is simple but content makes it seem complex
+  loading a single page can generate a lot of traffic
+ Demo Firebug...
+
+
+
++---
+
+HTTP Requests
+
+ Example:  GET index.html HTTP/1.0
+
+ Sent by client
+ Required first line 
+ Optional headers - name: value (like Python dictionary
+ “Blank” line (CRLF) 
+ Optional data
+
+
+
+
++---
+
+HTTP Requests 
+
+ GET index.html HTTP/1.0
+ 
+ Nouns: resources  index.html etc.  
+   BUT resources != files can be programs, database queries...
+ Verbs: GET, POST, PUT DELETE
+
+ "Crud" - verbs correspond to database-like operations
+ POST   Create
+ GET    Read 
+ PUT    Update
+ DELETE Delete
+
+ GET: safe, PUT, POST, DELETE: side effects
+
+ GET, PUT, DELETE:  idempotent, POST: changes after each request
+
+
++--
+
+HTTP Responses
+
+Example: HTTP/1.0 200 OK
+
+Version, status code, reason phrase
+
+. 1xx indicates an informational message 
+• 2xx indicates success of some kind
+• 3xx redirects the client to another URL
+• 4xx indicates an error on the client's part 
+• 5xx indicates an error on the server's part
+
+Examples:
+
+. 200 OK
+• 404 Not Found
+• 301 Moved Permanently
+• 302 Moved Temporarily
+• 303 See Other (HTTP 1.1 only)
+• 500 Server Error
+
++---
+
+HTTP Request / Response cycle
+
+ GET /path/file.html HTTP/1.0
+ User-Agent: HTTPTool/1.0
+ [blank line here]
+                              Request
+----------------------------------------
+                              Response
+HTTP/1.0 200 OK
+Date: Fri, 31 Dec 1999 23:59:59 GMT
+Content-Type: text/html
+Content-Length: 1354
+
+<html>
+<body>
+<h1>Happy New Millennium!</h1>
+(more file contents)
+￼... 
+</body> 
+</html>
+
+
++---
+
+Thirty-minute webserver
+
+  Talk through code
+  Standard library module Similar to our 30 min server:
+
+   python ‐m SimpleHTTPServer 8000
+
+
+

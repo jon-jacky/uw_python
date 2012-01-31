@@ -1,0 +1,14 @@
+week04.txt
++---
+
+Week 4 - January 30, 2012
+
+ 6:00 Lecture 1: Chat exercise review, HTTP introduction
+
+ 6:45 Lab 1: View browser HTTP traffic using developer tools (http.txt)
+         modify hello_www.py to make echo_www.py (echo_www.txt)
+
+ 7:30 Lecture 2: HTTP continued: thirty minute webserver
+
+ 8:15 Lab 2: Continue lab 1 exercises, revise thirty minute webserver 
+         (thirty minute webserver.txt)
