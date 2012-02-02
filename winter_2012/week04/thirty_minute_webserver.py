@@ -13,11 +13,13 @@
 #   3 hours making it prettier & more pythonic
 #
 # updated for UW Internet Programming in Python, by Brian Dorsey
+# updated by Jon Jacky: in defaults, replace '127.0.0.1' with ''
+#  to allow connection from other hosts besides localhost
 #
 
 import os, socket, sys
 
-defaults = ['127.0.0.1', '8080']
+defaults = ['', '8080']  # '127.0.0.1' here limits connections to localhost
 mime_types = {'.jpg' : 'image/jpg', 
              '.gif' : 'image/gif', 
              '.png' : 'image/png',
