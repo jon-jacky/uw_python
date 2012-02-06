@@ -1,7 +1,7 @@
 webclient.txt
 +--
 
-Assignment: choose one or both. I suspect 2 is a lot harder, but 
+Assignment: choose one or both or all three. I suspect 2 is a lot harder, but 
 then you would have learned a lot about the GitHub API and JSON.
 
 1. File downloader using screen scraping: write a script that scrapes
@@ -14,8 +14,12 @@ https://github.com/jon-jacky/uw_python/tree/gh-pages, not the web
 pages.  Git calls the files in a repository "blobs", see the "get all blobs"
 example about halfway down this page: http://develop.github.com/p/object.html
 
+3. Write any web client of your choosing, email me about it and post
+the code on github.  The point here is to create something that you find
+interesting or useful -- don't worry about using a lot of tools and technique.
+
 WARNING: When testing any automated web client, take care not to
-overdo it -- don't overload the server.  In this case the server is
+overdo it -- don't overload the server.  In 1. and 2. above, the server is
 github; each run of your program imposes a similar load as cloning the
 repository.  Test your program progressively: first, confirm you are
 scraping the Python URLs correctly before testing any code to download

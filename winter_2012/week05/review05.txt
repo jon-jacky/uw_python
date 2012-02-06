@@ -1,0 +1,19 @@
+review05.txt
+
+ hello_www.txt
+   A web server/application can be trivial
+   Listen on socket as usual, port number 80 is the official HTTP port
+   To serve a fixed page, just send HTTP header, blank line, page text 
+
+ echo_www.txt
+   Server uses data in HTTP request (URL here) to build customized page
+   Fill in placeholder in page template with computed data
+
+ thirty_minute_webserver.txt (ws30.txt for short)
+   0. Read and understand server code
+   1. Server can include code to generate page from computed data
+   2. Server can invoke another program
+       separate general purpose server from specialized application
+      
+
+ 

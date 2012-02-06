@@ -1,0 +1,15 @@
+week05.txt
++--
+
+Week 5: Feb 7 2010
+
+ Web clients - programs that use the web
+
+ 6:00  Review web servers, last week's lab, assignment
+       Lecture: web clients, downloading and scraping web pages
+
+ 6:45  Lab 1: Screen scraping
+
+ 7:30  Lecture: Web APIs and data formats, especially REST and JSON
+
+ 8:15  Lab 2: Web APIs

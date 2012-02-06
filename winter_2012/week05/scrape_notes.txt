@@ -1,0 +1,53 @@
+scrape_notes.txt
++--
+
+Web Clients - programs that use the web
+
+  We could easily have a 10 week course on this!  
+
+  The browser is just one kind of web client.
+  
+  A program can use a web site as if it were a library.
+
+  Screen scraping - write a program that processes the same HTML you see.
+
+  Web API - write a program that calls functions provided by the site 
+             (that you don't usually see in the browser).
+  
+
+
+  
+
++--
+
+Getting web page contents
+
+  In your browser:  Show source (menu item) 
+ 
+  At the command line:  curl -i ... ( -i option also shows headers)
+
+  In Python: urllib2.urlopen(...) from the standard library
+              OR requests library - 
+
+
+
+
+
+
++---
+
+Screen scraping 
+
+ Write a program that processes the same HTML you see
+
+ Very fragile because web sites change screen designs all the time
+ 
+ Three approaches (at least)
+   String library
+   Regular expressions
+   Specialized library that knows HTML syntax
+     "Parse" - turn HTML string into Python data structures
+     BUT many pages have "broken" HTML (don't obey official syntax)
+     Beautiful Soup to the rescue!
+
+ (demo)

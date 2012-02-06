@@ -1,0 +1,88 @@
+web_api.txt
++--
+
+Web APIs 
+
+  Use a web site AS IF it were a Python library
+   HTTP request is a like a function call
+   HTTP response is like a return value
+  Write a program that calls functions provided by the site
+   (that you don't usually see in the browser)
+  The site must design and publish an API
+   many sites do these days  
+  Much more robust than screen scraping
+   APIs are not affected by cosmetic changes in site design
+   APIs change too, but sites often support old APIs also
+
+
+
+
++--
+
+Two styles of Web API
+
+  XML RPC, SOAP, WS-xxx etc. etc. etc.
+   complicated, unfashionable
+   still lots of examples in the wild   
+
+  REST with JSON 
+   sometimes simpler, considered very cool
+  
+
+
+ 
+
+
++--
+
+Web API calls - XML RPC (etc) vs REST
+
+ How to express function call/return in HTTP?
+
+ XML RPC (also SOAP, WS-XXX etc. )
+  Call is encoded in XML in request body
+  Return value is encoded in XML in response body
+
+ REST 
+  Call is encoded in the URL itself
+  Return value is encoded in JSON in response body
+
+
+
++--
+
+Data formats - HTTP responses
+
+ HTTP response need not be HTML, can be any data
+  Response header identifies what kind
+    Content-type: text/html   
+  is typical but could also be
+   image/gif  text/javascript application/json ... etc. ...
+
+ Some response types are designed to represent data for web APIs
+  XML
+  JSON
+
+ Python standard libraries for parsing both formats
+  Convert strings in XML (etc.) to Python lists, dictionaries...
+
+
+
++--
+
+Data formats - XML and JSON
+
+ XML - looks like HTML - braketed tags, nesting
+  but tags can be customized
+
+  <foo>
+    ....
+   <bar> ... 
+   </bar>
+  </foo> 
+
+ JSON - Javascript dictionaries and arrays, much like in Python
+
+
+
+
