@@ -15,4 +15,6 @@ review05.txt
    2. Server can invoke another program
        separate general purpose server from specialized application
       
+ Python standard library has web server similar to ws30.py:
 
+   python -m SimpleHTTPServer 8080  

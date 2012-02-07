@@ -14,9 +14,10 @@ https://github.com/jon-jacky/uw_python/tree/gh-pages, not the web
 pages.  Git calls the files in a repository "blobs", see the "get all blobs"
 example about halfway down this page: http://develop.github.com/p/object.html
 
-3. Write any web client of your choosing, email me about it and post
-the code on github.  The point here is to create something that you find
-interesting or useful -- don't worry about using a lot of tools and technique.
+3. Write any web client of your choosing.  The point here is to create
+something that you find interesting or useful -- don't worry about
+using a lot of tools and technique.  When you have something to show,
+post the code on github and email me about it.
 
 WARNING: When testing any automated web client, take care not to
 overdo it -- don't overload the server.  In 1. and 2. above, the server is

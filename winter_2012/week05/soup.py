@@ -2,7 +2,7 @@
 Demonstrate screen scraping with BeautifulSoup 
 
 Installed from http://www.crummy.com/software/BeautifulSoup/#Download/ 
-Explained at 
+Explained at http://www.crummy.com/software/BeautifulSoup/documentation.html
 """
 
 import urllib2

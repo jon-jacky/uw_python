@@ -26,8 +26,8 @@ Getting web page contents
  
   At the command line:  curl -i ... ( -i option also shows headers)
 
-  In Python: urllib2.urlopen(...) from the standard library
-              OR requests library - 
+  In Python: page = urllib2.urlopen(...) # from the standard library
+                                          OR requests library - 
 
 
 

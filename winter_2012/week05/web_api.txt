@@ -44,7 +44,7 @@ Web API calls - XML RPC (etc) vs REST
   Return value is encoded in XML in response body
 
  REST 
-  Call is encoded in the URL itself
+  Call is encoded in the method (GET, POST, ...) + URL itself
   Return value is encoded in JSON in response body
 
 
@@ -82,6 +82,31 @@ Data formats - XML and JSON
   </foo> 
 
  JSON - Javascript dictionaries and arrays, much like in Python
+
+
+
+
+
++--
+
+Notable Web APIs
+
+  Google - http://code.google.com/more/table/
+  Freebase - http://wiki.freebase.com/wiki/What_is_Freebase%3F
+
+  others in "zoo" linked to course web page
+
+  Huge data + programs you couldn't install on your own computer  
+
+
+
+
++--
+
+Mashups
+
+ A web site made of data from other websites
+ example: <whatever> on Google maps
 
 
 
