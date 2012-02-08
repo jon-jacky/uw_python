@@ -16,6 +16,10 @@ Web Clients - programs that use the web
   
 
 
+
+
+
+
   
 
 +--
@@ -28,6 +32,13 @@ Getting web page contents
 
   In Python: page = urllib2.urlopen(...) # from the standard library
                                           OR requests library - 
+
+
+
+
+
+
+
 
 
 

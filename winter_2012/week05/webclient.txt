@@ -19,9 +19,15 @@ something that you find interesting or useful -- don't worry about
 using a lot of tools and technique.  When you have something to show,
 post the code on github and email me about it.
 
-WARNING: When testing any automated web client, take care not to
-overdo it -- don't overload the server.  In 1. and 2. above, the server is
-github; each run of your program imposes a similar load as cloning the
+
++--
+
+Warning!
+
+
+When testing any automated web client, take care not to overdo it --
+don't overload the server.  In 1. and 2. above, the server is github;
+each run of your program imposes a similar load as cloning the
 repository.  Test your program progressively: first, confirm you are
 scraping the Python URLs correctly before testing any code to download
 them.  Then, test downloading from a local cloned (by hand) copy of

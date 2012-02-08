@@ -17,6 +17,10 @@ Web APIs
 
 
 
+
+
+
+
 +--
 
 Two styles of Web API
@@ -28,6 +32,13 @@ Two styles of Web API
   REST with JSON 
    sometimes simpler, considered very cool
   
+
+
+
+
+
+
+
 
 
  
@@ -46,6 +57,13 @@ Web API calls - XML RPC (etc) vs REST
  REST 
   Call is encoded in the method (GET, POST, ...) + URL itself
   Return value is encoded in JSON in response body
+
+
+
+
+
+
+
 
 
 
@@ -68,11 +86,15 @@ Data formats - HTTP responses
 
 
 
+
+
+
+
 +--
 
 Data formats - XML and JSON
 
- XML - looks like HTML - braketed tags, nesting
+ XML - looks like HTML - bracketed tags, nesting
   but tags can be customized
 
   <foo>
@@ -82,6 +104,9 @@ Data formats - XML and JSON
   </foo> 
 
  JSON - Javascript dictionaries and arrays, much like in Python
+
+
+
 
 
 
@@ -97,6 +122,15 @@ Notable Web APIs
   others in "zoo" linked to course web page
 
   Huge data + programs you couldn't install on your own computer  
+
+
+
+
+
+
+
+
+
 
 
 
