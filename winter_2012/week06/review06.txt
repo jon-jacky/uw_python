@@ -1,0 +1,28 @@
+review06.txt
++--
+
+Web client assignment: download all the .py files form course web site at github
+
+ Hardest, biggest assignment yet - build a real tool - must solve several problems 
+  Took me 4-5 hours to do lab + both options, most (?) spent reading and experimenting
+  3+ pages, 186 lines - lab + assignment options 1 and 2 + comments and white space
+
+ Guts of the problem: get the collection of files at the site and filter them
+  Two options: 1. scrape the course page  2. use an API
+  Two very different storage models: 
+    1. urls with tags and attributes, files with directory paths
+    2. git repo with hashes and blobs
+  Both core solutions are 5 lines of code -- each after 1+ hour reading, experimenting
+
+ BUT lots of twine and duct tape too: 5 line core, but 90 lines more in each solution
+  I use lots of Python idioms, less experienced coder might write twice as much
+
+ Some of the idioms
+  Put everything in one module, including tests - main block selects what to run
+  Work interactively in the interpreter: comment out main block, use python -i ..
+  ...find... core function
+    soup: filter with lambda, list comprehension and dict lookup, str(...) conversion
+    api:  dictionary comprehension in Python 2.7+ and 3.x
+  url_download is boilerplate from memory
+  url_download_many - requires surgery on URLs, filenames (paths)
+   Use Python standard libraries: urlparse, os.path
