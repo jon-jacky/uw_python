@@ -1,0 +1,18 @@
+week06.txt
++--
+
+Week 6: Feb 14 2010
+
+ After a week on web clients, back to web servers for the rest of the course
+
+ Put your Python program on the web: CGI and WSGI
+
+ 6:00  Review web clients, last week's assignment
+
+       Lecture: Web servers vs. applications, system and server administration
+
+ 6:45  Lab 1: Get web server running on your VM
+
+ 7:30  Lecture: CGI and WSGI
+
+ 8:15  Lab 2: CGI demo, start on books database assignment

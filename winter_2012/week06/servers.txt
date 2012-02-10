@@ -1,0 +1,19 @@
+servers.txt
++--
+
+Web servers vs. applications, system and server administration
+
+  Examples so far: web server and web application are the SAME program
+  Typical organization SEPARATES web server from web application
+  Web server handles generic services needed by any web site
+   Serves many applications (programs), in different programming languages
+   Managing sockets, multiple connections (like our chat example, but many more)
+   Access, permissions, authorization
+   Redirection, proxies
+   etc.
+  Small servers used for development: ws30, SimpleHTTPServer, Django etc. ..
+  Industrial strength servers for big sites: Apache, Nginx, Twisted, IIS (MS), ...
+   configuring and running these is a job, a career path ...
+  Servers seen by Python devs usually run on Linux
+
+
