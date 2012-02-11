@@ -10,10 +10,45 @@ Web servers vs. applications, system and server administration
    Managing sockets, multiple connections (like our chat example, but many more)
    Access, permissions, authorization
    Redirection, proxies
-   etc.
+   etc. ... See docs on how to configure Apache etc.
   Small servers used for development: ws30, SimpleHTTPServer, Django etc. ..
   Industrial strength servers for big sites: Apache, Nginx, Twisted, IIS (MS), ...
    configuring and running these is a job, a career path ...
   Servers seen by Python devs usually run on Linux
 
+
+
+
+
++--
+
+CGI - Common Gateway Interface 
+
+ A way to put almost ANY program on the web (not just Python)
+  "almost any", no socket wrangling needed, all handled by server
+ The ORIGINAL way to put programs on the web, influence is still pervasive 
+
+  1. Put myprogram.py in cgi-bin directory on server, (say) www.acme.com
+  2. Point client at http://www.acme.com/cgi-bin/myprogram.py
+  3. Server runs myprogram.py, collects its output, serves to client
+
+ myprogram.py starts up and runs to completion EACH TIME a client connects.
+ Much like our ws30.py exercise.  BUT - how to you get INPUTS to myprogram.py?
+
+
+
+
++--
+
+ CGI program gets its inputs from ENVIRONMENT VARIABLES
+
+   Environment variables similar to program variables but system-wide
+    A way for programs to communicate with each other
+    Can be read, set at command line:
+     Unix (Linux, Mac):  echo $VAR       export VAR=value   printenv
+     Windows:            echo %VAR%      set VAR value      set
+    In Python, environment variables are in a dictionary
+     import os
+     os.environ['VAR']           # to read, look up in dictionary
+     os.environ['VAR'] = ....    # to set, assign in dictionary
 
