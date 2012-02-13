@@ -27,6 +27,7 @@ CGI - Common Gateway Interface
  A way to put almost ANY program on the web (not just Python)
   "almost any", no socket wrangling needed, all handled by server
  The ORIGINAL way to put programs on the web, influence is still pervasive 
+   simple, supported everywhere, always works as a last resort
 
   1. Put myprogram.py in cgi-bin directory on server, (say) www.acme.com
   2. Point client at http://www.acme.com/cgi-bin/myprogram.py
@@ -36,11 +37,19 @@ CGI - Common Gateway Interface
  Much like our ws30.py exercise.  BUT - how to you get INPUTS to myprogram.py?
 
 
++--
 
+CGI - sources of input
+
+  All data must come from HTTP request: URL, headers, POST body
+  HTML forms are the typical way for user to provide data
+  HTML forms contents can be encoded in URL or POST body  
+
+  (demo? lab?  provide sample HTML forms with both URLS and POST)
 
 +--
 
- CGI program gets its inputs from ENVIRONMENT VARIABLES
+CGI program can get its inputs from ENVIRONMENT VARIABLES
 
    Environment variables similar to program variables but system-wide
     A way for programs to communicate with each other
@@ -52,3 +61,26 @@ CGI - Common Gateway Interface
      os.environ['VAR']           # to read, look up in dictionary
      os.environ['VAR'] = ....    # to set, assign in dictionary
 
++--
+
+CGI environment variables
+
+  Server reads HTTP request, assigns environment variables
+  CGI program can then read the environment variables 
+  CGI standard defines which environment variables must be set
+
+  http://www.citycat.ru/doc/CGI/overview/env.html
+  http://tools.ietf.org/html/draft-robinson-www-interface-00
+
+  Particularly important, used to store forms data: 
+   REQUEST_METHOD (GET, POST etc.) CONTENT_LENGTH, QUERY_STRING
+  
+  Not just Python - environment variables can be read by any language
+
+
++--
+
+CGI Python library
+  
+  Higher-level alternative to getting forms data
+  Deals with GET and POST

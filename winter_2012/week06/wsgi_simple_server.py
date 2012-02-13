@@ -6,6 +6,9 @@ Usage: python simple_wsgi_server.py <application> <port>
 Example: python simple_wsgi_server.py test.wsgi 8080
 
 Default application is wsgi_test, default port is 8000
+
+The application module can be named anything, but the 
+application callable it provides MUST be named 'application'
 """
 
 import sys

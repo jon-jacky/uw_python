@@ -1,0 +1,18 @@
+<!--
+Minimal CGI + forms demo
+
+Set action="cgi-bin/echo_cgi.py" to echo HTML page with submitted message
+or set action="cgi-bin/cgi_test.py" to see what the CGI program gets
+-->
+
+<html>
+<head>
+<title>Echo request</title>
+</head>
+<body>
+<form method="GET" action="cgi-bin/echo_cgi.py">
+Message: <input type="text" name="message" size="40">
+<input type="submit" value="Submit">
+</form>
+</body>
+</html>
