@@ -1,0 +1,19 @@
+layers.txt
++----
+
+Python web frameworks - layering
+
+
+
+                                                                Flask ...
+                                                                ----------
+                                       web.py Bottle Django ...  Werkzeug
+                           -----------------------------------------------
+                               CGI                  WSGI           
+                   -------------------------------------------------------
+echo_www.py ...    ws30.py SimpleHTTPServer CGIHTTPServer Apache Nginx ...
+--------------------------------------------------------------------------
+                                 socket
+
+
+
