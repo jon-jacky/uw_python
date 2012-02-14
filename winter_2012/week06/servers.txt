@@ -7,14 +7,17 @@ Web servers vs. applications, system and server administration
   Typical organization SEPARATES web server from web application
   Web server handles generic services needed by any web site
    Serves many applications (programs), in different programming languages
-   Managing sockets, multiple connections (like our chat example, but many more)
+   Manages sockets, multiple connections (like chat example, but many more)
    Access, permissions, authorization
    Redirection, proxies
    etc. ... See docs on how to configure Apache etc.
   Small servers used for development: ws30, SimpleHTTPServer, Django etc. ..
-  Industrial strength servers for big sites: Apache, Nginx, Twisted, IIS (MS), ...
+  Industrial strength servers for big sites: Apache, Nginx, Twisted, IIS (MS)
    configuring and running these is a job, a career path ...
   Servers seen by Python devs usually run on Linux
+   our VMs provide Apache and Nginx
+
+
 
 
 
@@ -31,10 +34,20 @@ CGI - Common Gateway Interface
 
   1. Put myprogram.py in cgi-bin directory on server, (say) www.acme.com
   2. Point client at http://www.acme.com/cgi-bin/myprogram.py
-  3. Server runs myprogram.py, collects its output, serves to client
+  3. Server collects data from HTTP request
+      passes data to myprogram.py and runs it
+     myprogram.py writes output, usually HTML
+     Server collects myprogram.py output, serves it back to client
 
- myprogram.py starts up and runs to completion EACH TIME a client connects.
- Much like our ws30.py exercise.  BUT - how to you get INPUTS to myprogram.py?
+ Much like our ws30.py exercise.  
+  BUT - how to you get INPUTS to myprogram.py?
+
+
+
+
+
+
+
 
 
 +--
@@ -44,22 +57,53 @@ CGI - sources of input
   All data must come from HTTP request: URL, headers, POST body
   HTML forms are the typical way for user to provide data
   HTML forms contents can be encoded in URL or POST body  
+  
+ 
 
-  (demo? lab?  provide sample HTML forms with both URLS and POST)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 +--
 
 CGI program can get its inputs from ENVIRONMENT VARIABLES
 
-   Environment variables similar to program variables but system-wide
+   CGI program does not (can not) read HTTP request itself
+    Only server can see HTTP request - must then communicate to CGI program
+
+   Environment variables are similar to program variables but system-wide
     A way for programs to communicate with each other
     Can be read, set at command line:
      Unix (Linux, Mac):  echo $VAR       export VAR=value   printenv
      Windows:            echo %VAR%      set VAR value      set
+
     In Python, environment variables are in a dictionary
-     import os
+ 
+    import os
      os.environ['VAR']           # to read, look up in dictionary
      os.environ['VAR'] = ....    # to set, assign in dictionary
+
+
+
+
+
+
+
+
+
+
+
 
 +--
 
@@ -78,9 +122,77 @@ CGI environment variables
   Not just Python - environment variables can be read by any language
 
 
+
+
+
+
+
+
+
+
 +--
 
 CGI Python library
   
   Higher-level alternative to getting forms data
-  Deals with GET and POST
+  Deals with GET and POST, treats form items as a dictionary
+  Deals with error reporting
+
+  (demo echo_cgi.html, .py)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+ WSGI - Web Server Gateway Interface
+
+  CGI Program starts up and runs to completion EACH TIME client connects
+   Poor performance
+   Like HTTP itself - no memory beyond single request/response
+
+  WSGI can support long-running programs
+   Each HTTP request invokes a function call
+   Much much better performance
+   WSGI program can remember data from all previous requests
+ 
+  WSGI is Python-only (unlike language-independent CGI)
+   A WSGI application must provide a callable (function, class, ...)
+    that the WSGI-enabled server can call.  
+   Server provides args, application body uses them
+   
+     application(environ, start_response)
+  
+      environ - Python dictionary of CGI-style environment variables
+      start-response - function that sends headers
+
+
++--
+
+ WSGI applications - layering
+
+  A WSGI application body can itself call another WSGI application
+
+    Server <--> WSGI <--> Application
+
+    Server <--> WSGI <--> WSGI <--> ... <--> Application
+
+ WSGI toolkits: Werkzeug, Paste, ...
+  for error handling, authentication, ....
+
+ Supports layering in traditional Internet fashion
+  interposed layers are sometimes called "shims"
+
+
+   

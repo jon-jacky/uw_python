@@ -5,14 +5,14 @@ Python web frameworks - layering
 
 
 
-                                                                Flask ...
-                                                                ----------
-                                       web.py Bottle Django ...  Werkzeug
+                                                              Flask ...
+                                                              ----------
+                                    web.py Bottle Django ...  Werkzeug Paste..
                            -----------------------------------------------
                                CGI                  WSGI           
                    -------------------------------------------------------
-echo_www.py ...    ws30.py SimpleHTTPServer CGIHTTPServer Apache Nginx ...
---------------------------------------------------------------------------
+ echo_www.py ...    ws30.py SimpleHTTPServer CGIHTTPServer Apache Nginx ...
+ --------------------------------------------------------------------------
                                  socket
 
 
