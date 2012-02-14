@@ -168,7 +168,7 @@ CGI Python library
    WSGI program can remember data from all previous requests
  
   WSGI is Python-only (unlike language-independent CGI)
-    analogous to Java 
+    analogous to Servlet for Java
 
 
 +--
@@ -186,7 +186,7 @@ WSGI - How it works
 
    WSGI application (not server) does URL routing
 
-
+    (demo echo_wsgi.py)
 
 
 +--
