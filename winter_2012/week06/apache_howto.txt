@@ -1,0 +1,106 @@
+apache_howto.txt
++---
+
+Configure Apache on your BlueBox VM to run CGI and WSGI applications
+
+Based on Brian Dorsey's notes, 
+http://briandorsey.info/uwpython/week05/week05_slides.pdf
+slides 38-49 on CGI and 104-110 on WSGI
+
+These instructions are for Apache.  Find out if your VM is running
+Nginx or Apache
+
+In browser, go to your vm:
+
+ http://block3350nn-xxx.blueboxgrid.com/
+ 
+Welcome to nginx! (Nginx)
+
+-or=
+
+It works! (Apache)
+
+If Nginx is running, stop it:
+
+$ ps ax
+...
+18291 ?        Ss     0:00 nginx: master process /usr/sbin/nginx
+...
+
+$ sudo kill -QUIT 18291  # use the nginx PID 
+
+Then start apache
+
+$ /usr/sbin/apachectl configtest
+Syntax OK
+
+$ sudo /usr/sbin/apachectl start
+$ ps ax
+... several apache2 processes
+
+
+To make sure Apache runs on VM restarts
+
+$ sudo update-rc.d nginx disable
+$ sudo update-rc.d apache2 enable
+
+Can test by rebooting VM
+
+ $ sudo shutdown -r now
+
+Now that Apache is running, prepare to run CGI scripts
+
+
+To run CGI scripts
+
+Put cgi scripts cgi_test.py and echo_cgi.py in /usr/lib/cgi-bin
+Put echo_cgi.html in /var/www.
+
+Look in /etc/apache2/sites/available/default  , confirm it contains this, if not, edit.
+
+<VirtualHost *:80>
+   ServerAdmin webmaster@localhost
+   DocumentRoot /var/www
+   <Directory />
+      Options FollowSymLinks
+      AllowOverride None
+   </Directory>
+   <Directory /var/www/>
+      Options Indexes FollowSymLinks MultiViews
+      AllowOverride None
+      Order allow,deny
+      allow from all
+   </Directory>
+
+ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+<Directory "/usr/lib/cgi-bin">
+   AllowOverride None
+   Options +ExecCGI -­‐MultiViews +SymLinksIfOwnerMatch
+   Order allow,deny
+   Allow from all
+</Directory>
+
+After edit, must restart apache
+
+$ sudo /usr/sbin/apachectl start
+
+
+To prepare to run WSGI scripts
+
+Install WSGI support
+
+$ sudo apt-get install libapache2-mod-wsgi
+
+Make directory for WSGI scripts
+
+$ cd /usr/local
+
+$ sudo mkdir wsgi-scripts
+
+Now copy (for example) wsgi_test.py etc. into here.
+
+Edit /etc/apache2/sites-available/default to add this line:
+
+WSGIScriptAlias /wsgi_test /usr/local/wsgi-scripts/wsgi_test.py
+
+and similar lines for any other scripts like echo_wsgi.py

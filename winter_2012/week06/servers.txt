@@ -168,6 +168,13 @@ CGI Python library
    WSGI program can remember data from all previous requests
  
   WSGI is Python-only (unlike language-independent CGI)
+    analogous to Java 
+
+
++--
+
+WSGI - How it works
+
    A WSGI application must provide a callable (function, class, ...)
     that the WSGI-enabled server can call.  
    Server provides args, application body uses them
@@ -177,19 +184,24 @@ CGI Python library
       environ - Python dictionary of CGI-style environment variables
       start-response - function that sends headers
 
+   WSGI application (not server) does URL routing
+
+
+
 
 +--
 
  WSGI applications - layering
 
   A WSGI application body can itself call another WSGI application
+   environ is a passed parameter, NOT global, each layer can customize   
 
     Server <--> WSGI <--> Application
 
     Server <--> WSGI <--> WSGI <--> ... <--> Application
 
  WSGI toolkits: Werkzeug, Paste, ...
-  for error handling, authentication, ....
+  for error handling, URL routing, sessions and authentication
 
  Supports layering in traditional Internet fashion
   interposed layers are sometimes called "shims"

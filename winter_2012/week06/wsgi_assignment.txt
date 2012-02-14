@@ -1,0 +1,20 @@
+wsgi_assignment.txt
++--
+
+Assignment Week 6 - WSGI
+
+  Download wsgi_simple_server.py and echo_wsgi.py into the same director
+  Execute the command
+
+     python wsgi_simple_server.py echo_wsgi 8080
+
+  Point your browser at http://localhost:8080/echo_wsgi.html
+  Fill in the form, submit, and observe the results
+
+  Revise echo_wsgi.py so that it displays all the messages 
+  that have been entered on the form since it was started.
+
+  If you are interested in system and server administration, 
+  configure Apache on your VM to run WSGI applications 
+  and run your echo_wsgi. See apache_hwoto.txt
+

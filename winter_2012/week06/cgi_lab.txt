@@ -1,0 +1,20 @@
+cgi_lab.txt
++--
+
+Lab - CGI
+
+ Download echo_cgi.html and in same directory, create cgi-bin directory
+ Download cgi_test.py, echo_cgi.py into cgi-bin directory.
+  (git pull from uw_python will do all this automatically)
+
+ In same directory as echo_cgi.html and cgi-bin directory, execute this:
+
+   python -m CGIHTTPServer
+
+ Point your browser at http://localhost:8000/cgi_test.py and observe the result
+  then http://localhost:8000/cgi_test.py?message=Hello  and observe the result
+  then http://localhost:8000/echo_cgi.html fill out the form, submit, observe...
+
+ If you have time, do the same on your VM
+ If you dare, configure Apache on your VM to run CGI, try cgi_test and echo_cgi
+  see apache_howto.txt

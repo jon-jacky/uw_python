@@ -3,17 +3,20 @@ layers.txt
 
 Python web frameworks - layering
 
-
-
-                                                              Flask ...
-                                                              ----------
-                                    web.py Bottle Django ...  Werkzeug Paste..
-                           -----------------------------------------------
-                               CGI                  WSGI           
-                   -------------------------------------------------------
- echo_www.py ...    ws30.py SimpleHTTPServer CGIHTTPServer Apache Nginx ...
+                                            (applications..)
+                                                 ---------
+                                                  Flask..  (applications..)
+                              (echo_cgi,_wsgi)  ---------   ------------
+                              (applications..)  Werkzeug..  Bottle .. Django ..
+                            -----------------------------------------------
+             (static pages..)   CGI         WSGI
+ (echo_www)         -----------------------------------------------------------------
+ (applic..) ws30 SimpleHTTPServer CGIHTTPServer wsgiref.simple_server Nginx Apache ..
  --------------------------------------------------------------------------
                                  socket
 
-
+ ^  more layers       more, larger are not necessarily better
+ |                      can build applications on any layer, at any scale 
+ |                   
+ +-----> larger, more complex
 
