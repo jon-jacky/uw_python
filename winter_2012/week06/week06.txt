@@ -9,10 +9,10 @@ Week 6: Feb 14 2010
 
  6:00  Review web clients, last week's assignment
 
-       Lecture: Web servers vs. applications, system and server administration
+       Lecture: Web servers vs. applications, system and server administration, CGI
 
- 6:45  Lab 1: Get web server running on your VM
+ 6:45  Lab 1: Experiment with CGI, maybe get web server running with CGI on your VM
 
- 7:30  Lecture: CGI and WSGI
+ 7:30  Lecture: WSGI
 
- 8:15  Lab 2: CGI demo, start on books database assignment
+ 8:15  Lab 2: Get started on the WSGI assignment

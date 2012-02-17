@@ -7,6 +7,8 @@ Based on Brian Dorsey's notes,
 http://briandorsey.info/uwpython/week05/week05_slides.pdf
 slides 38-49 on CGI and 104-110 on WSGI
 
+Now includes corrections suggested by Ted Stern, Feb 16 2012
+
 These instructions are for Apache.  Find out if your VM is running
 Nginx or Apache
 
@@ -31,10 +33,10 @@ $ sudo kill -QUIT 18291  # use the nginx PID
 
 Then start apache
 
-$ /usr/sbin/apachectl configtest
+$ /usr/sbin/apache2ctl configtest
 Syntax OK
 
-$ sudo /usr/sbin/apachectl start
+$ sudo /usr/sbin/apache2ctl start
 $ ps ax
 ... several apache2 processes
 
@@ -56,7 +58,7 @@ To run CGI scripts
 Put cgi scripts cgi_test.py and echo_cgi.py in /usr/lib/cgi-bin
 Put echo_cgi.html in /var/www.
 
-Look in /etc/apache2/sites/available/default  , confirm it contains this, if not, edit.
+Look in /etc/apache2/sites-available/default  , confirm it contains this, if not, edit.
 
 <VirtualHost *:80>
    ServerAdmin webmaster@localhost
@@ -82,8 +84,7 @@ ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
 
 After edit, must restart apache
 
-$ sudo /usr/sbin/apachectl start
-
+$ sudo /usr/sbin/apache2ctl restart
 
 To prepare to run WSGI scripts
 
