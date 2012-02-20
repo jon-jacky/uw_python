@@ -1,0 +1,85 @@
+frameworks.txt
++--
+
+Web application frameworks - history, motivation
+
+  web.py for Reddit, Django for newspaper site
+  Thousands of pages
+  New pages appear all the time
+  Hand-coding each page is not feasible
+
+
++--
+
+Web application frameworks - what are they?
+
+  Frameworks ddd no magic, no new mechanisms beyond familiar HTTP, URLs, ...
+  Merely add convenient, specialized alternatives to standard Python libraries
+   (or separate libraries in PyPI etc.)
+  Useful to compare standard Python/library way to framework alternative
+  Framework alternatives are optional, can always use standard Python instead
+  For small number of hand-crafted pages, maybe more trouble than they're worth
+ 
+
++-- 
+
+Web Application frameworks - features
+
+  URL routing
+  Templates
+  Testing
+  ORM - Object-Relational Mapper
+  Components
+  
+
++--
+
+ Framework features - URL routing
+
+  URL routing: call pertinent Python function based on URL contents
+  Standard: CGI/WSGI PATH_INFO, QUERY_STRING, urlparse, os.path
+  Framework: URL placeholders whose matching segments become function args
+
+
+
++--
+
+ Framework features - Templates
+
+ HTML Templates: define reusable page layouts with placeholders to fill in 
+  Standard: string formatting with triple-quoted text block format strings
+  Framework: placeholders are variable names (not just %s with position)
+   (BUT Python also has string format with dictionary instead of position)
+   HTML escape (translate raw text to safe HTML:  < becomes &langle; etc. )
+   program-like logic in template pages (appearance depends on content)
+   Template inheritance for recurring design elements (headers, footers...)
+
++--
+
+ Framework features - testing
+
+  Test without browser or server, automated test execution
+   Standard: Execute application functions "by hand" or with unittest...
+    BUT application functions depend on HTTP requests/responses via server
+   Framework: simulate HTTP request/reponse without server
+
+
++--
+
+ Framework features - ORM 
+
+ ORM: Object-Relational Mapper layer over database
+  Standard: no extra layer, program in database library: sqlite, pyscopg, ...
+  Framework: program in objects layer, objects call database library
+
++--
+
+ Framework features - components
+
+ Components for authentication (login), sessions (cookies), administration ...
+  Standard: WSGI middleware, libraries, DIY, ...
+  Framework: suite of matched components included, one-stop shopping
+
+
+
+

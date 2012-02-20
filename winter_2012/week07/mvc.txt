@@ -1,0 +1,25 @@
+mvc.txt
++--
+
+Web applications are projects
+
+  Multiple files, packages, etc.
+  Advanced coding idioms: decorators etc.
+  Systematic testing
+
+  Would like some organizing principles, "design patterns"
+
+
++--
+
+MVC architecure - Model, View, Controller
+
+ Separate content from (visual) design
+    might have lots of different ways to view the same data
+ Keep the model (application data) and the views (web pages) independent
+
+ model: application data, Python global variables, database ...
+ view: web pages, templates ...
+ controller: URL routing ...
+
+ Flask "view functions": decorated with @app.route, generate pages

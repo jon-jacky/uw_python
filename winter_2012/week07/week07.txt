@@ -1,0 +1,16 @@
+week07.txt
++--
+
+Week 7:  Feb 21 2010
+
+ Web application microframeworks: Flask
+
+ 6:00  Review WSGI, last week's assignment
+
+       Lecture: Introduction to web application frameworks, Flask
+
+ 6:45  Lab 1: Install Flask, experiment, extend echo_flask.py
+
+ 7:30  Lecture: MVC architecture 
+
+ 8:15  Lab 2: Get started with books web site assignment

@@ -1,0 +1,11 @@
+books.txt
++--
+
+Week 7 Assignment: Books web site 
+
+- Write a multi page website, using bookdb.py 
+- Index page is a list of books, link to a detail page per book
+- Each detail page displays info about one book
+- Use any Python tech you’d like
+
+(from Brian Dorsey's Internet Programming in Python, Winter 2011)

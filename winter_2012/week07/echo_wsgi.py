@@ -1,7 +1,9 @@
 """
 Minimal WSGI + forms demo, with persistence
 
-Send HTML page that echoes message from HTTP request
+Send HTML page that echoes message from HTTP request,
+also shows all messages received since startup.
+
 To get started, point browser at echo_wsgi.html
 
 Based on example in PEP 333, then add path and query processing
@@ -29,7 +31,7 @@ message_template = """
 <title>Echo response</title>
 </head>
 <body>
-Message: %s
+Message %s
 </body>
 </html>
 """
@@ -46,8 +48,12 @@ notfound_template = """
 </html>
 """
 
+# global variable stores string containing all messages, most recent first
+messages = ""
+
 # must be named 'application' to work with our wsgi simple server
-def application(environ, start_response): 
+def application(environ, start_response):
+    global messages
     status = '200 OK'
     response_headers = [('Content_type', 'text/HTML')]
     start_response(status, response_headers)
@@ -57,8 +63,10 @@ def application(environ, start_response):
         page = form_page
     elif path == '/echo_wsgi.py':
         # get message from URL query string, parse_qs returns a list for each key
-        page = message_template % (
-            urlparse.parse_qs(environ['QUERY_STRING'])['message'][0])
+        message = \
+            urlparse.parse_qs(environ['QUERY_STRING'])['message'][0]
+        messages = ('%s<br>\n' % message) + messages # insert at head
+        page = message_template % messages
     else:
         page = notfound_template % path
     return [ page ] # list of strings - must return iterable, not just a string

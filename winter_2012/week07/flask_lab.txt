@@ -1,0 +1,15 @@
+flask_lab.txt
++--
+
+Week 7 Lab: Flask
+
+ Install Flask on your computer
+
+ Revise echo_flask.py to show all the messages received since startup.
+  Suggestion: experiment with formatting the output page.  What if 
+  you return a big string?  HTML?  Does the templating system help?  
+
+ To install, consult http://flask.pocoo.org/docs/installation/ 
+  -- but I didn't take their advice.  I do not recommend virtualenv
+  I do not have pip installed so I tried  sudo easy_install Flask
+   worked for me, installed Flask 0.8, Jinja2 2.6, Werkzeug 0.8.3
