@@ -168,7 +168,7 @@ CGI Python library
    WSGI program can remember data from all previous requests
  
   WSGI is Python-only (unlike language-independent CGI)
-    analogous to Servlet for Java
+    analogous to Servlet for Java, Rack for Ruby
 
 
 +--
