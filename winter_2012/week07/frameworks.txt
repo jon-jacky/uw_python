@@ -8,18 +8,97 @@ Web application frameworks - history, motivation
   New pages appear all the time
   Hand-coding each page is not feasible
 
+  These are similar to "content management systems" (CMS) 
+   Many web applications are NOT like this
+   Contrast to computation-heavy sites like Freebase    
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Web application frameworks - an incomplete list
+ 
+ from
+ http://pyrseas.wordpress.com/2011/12/26/python-web-frameworks-candidates/
+
+ Django, Twisted Web, Pyramid, CherryPy, Werkzeug, Web2py, Web.py,
+ Flask, WebOb, Bottle, Pesto, Diva, Aspen, Bobo, CubicWeb, Grok, Itty,
+ Milla, Nagare, Nevow, Pump, Pyjamas, Pylons, Python Paste, Quixote,
+ Spyce, Tornado, TurboGears, Webware, Zope 2 and Zope 3 (Bluebream)
+
+ ... and that's just Python!  This year!  Brian's list last year was different
+
+ Ruby has Rails, Sinatra, ...  etc etc 
+
+
+
+
+
+
+
+
+
+
+
+
+
++-- 
+
+Why Flask?
+
+ Try something different than last year (CherryPy)
+ Good documentation including design rationale
+ Nice design based on WSGI middleware (Werkzeug)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 +--
 
 Web application frameworks - what are they?
 
-  Frameworks ddd no magic, no new mechanisms beyond familiar HTTP, URLs, ...
+  Frameworks do no magic, no new mechanisms beyond familiar HTTP, URLs, ...
   Merely add convenient, specialized alternatives to standard Python libraries
    (or separate libraries in PyPI etc.)
   Useful to compare standard Python/library way to framework alternative
   Framework alternatives are optional, can always use standard Python instead
   For small number of hand-crafted pages, maybe more trouble than they're worth
  
+
+
+
+
+
+
+
+
+
+
+
+
 
 +-- 
 
@@ -28,9 +107,22 @@ Web Application frameworks - features
   URL routing
   Templates
   Testing
-  ORM - Object-Relational Mapper
-  Components
+  ORM - Object-Relational Mapper for database
+  Components for Sessions, Authentication ...
   
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 +--
 
@@ -39,6 +131,21 @@ Web Application frameworks - features
   URL routing: call pertinent Python function based on URL contents
   Standard: CGI/WSGI PATH_INFO, QUERY_STRING, urlparse, os.path
   Framework: URL placeholders whose matching segments become function args
+
+  (show example in echo_flask.py, more complex example from Quickstart)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -54,6 +161,19 @@ Web Application frameworks - features
    program-like logic in template pages (appearance depends on content)
    Template inheritance for recurring design elements (headers, footers...)
 
+   (show example in echo_flask.py, more complex example from Quickstart)
+
+
+
+
+
+
+
+
+
+
+
+
 +--
 
  Framework features - testing
@@ -62,6 +182,20 @@ Web Application frameworks - features
    Standard: Execute application functions "by hand" or with unittest...
     BUT application functions depend on HTTP requests/responses via server
    Framework: simulate HTTP request/reponse without server
+
+   (more later tonight)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 +--
@@ -72,6 +206,22 @@ Web Application frameworks - features
   Standard: no extra layer, program in database library: sqlite, pyscopg, ...
   Framework: program in objects layer, objects call database library
 
+  (more next week)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 +--
 
  Framework features - components
@@ -79,6 +229,8 @@ Web Application frameworks - features
  Components for authentication (login), sessions (cookies), administration ...
   Standard: WSGI middleware, libraries, DIY, ...
   Framework: suite of matched components included, one-stop shopping
+
+  (more in two weeks)
 
 
 

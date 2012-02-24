@@ -5,12 +5,14 @@ Week 7:  Feb 21 2010
 
  Web application microframeworks: Flask
 
- 6:00  Review WSGI, last week's assignment
-
+ 6:00  Thanks for your assignments - will try to review Wed PM
+       Review WSGI, last week's assignment: persistence
        Lecture: Introduction to web application frameworks, Flask
 
  6:45  Lab 1: Install Flask, experiment, extend echo_flask.py
 
- 7:30  Lecture: MVC architecture 
+ 7:30  Lecture: Project organization, MVC architecture, testing
+        (week 8: Databases, ORMs  week 9: Sessions, authentication
+         week 10: Hosting, Amazon AWC, Google App Engine, ...)
 
  8:15  Lab 2: Get started with books web site assignment

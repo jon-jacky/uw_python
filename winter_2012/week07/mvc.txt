@@ -8,18 +8,77 @@ Web applications are projects
   Systematic testing
 
   Would like some organizing principles, "design patterns"
+   MVC to the rescue
+
+
+
+
+
+
+
+
+
+
+
+
+
+
++--
+
+Flask "project organization" (actually files and directories)
+
+ ...
+   echo_flask/
+     echo_flask.py
+     echo_tests.py
+     templates/
+       form.html
+   
+ echo_flask/ here is NOT a Python package, does not contain __init__.py
+
+
+
+
+
+
+
+
+
+
 
 
 +--
 
 MVC architecure - Model, View, Controller
 
- Separate content from (visual) design
+ Motivation: separate content from (visual) design
     might have lots of different ways to view the same data
- Keep the model (application data) and the views (web pages) independent
+  Keep the model (application data) and the views (web pages) independent
 
- model: application data, Python global variables, database ...
- view: web pages, templates ...
- controller: URL routing ...
+ Model: application data, Python global variables, database ...
+ View: web pages, templates ...
+ Controller: URL routing ...
 
  Flask "view functions": decorated with @app.route, generate pages
+
+
+
+
+
+
+
+
+
+
+
+
++-- 
+
+Testing 
+
+  Test without browser or server, automated test execution
+   Standard: Execute application functions "by hand" or with unittest...
+    BUT application functions depend on HTTP requests/responses via server
+   Framework: simulate HTTP request/reponse without server
+
+   (demo echo_tests.py)
