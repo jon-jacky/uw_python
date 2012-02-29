@@ -11,9 +11,16 @@ Week 8  Feb 28 2007
 
 7:30  Lecture - Django and databases
 
-8:15  Lab assignment - Do the book exercise in Django, using a Django model
+8:15  Lab, assignment - Do the book exercise in Django, using a Django model
 
 9:00  Adjourn
+
+
+
+
+
+
+
 
 
 
