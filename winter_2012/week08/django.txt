@@ -1,0 +1,197 @@
+django.txt
++--
+
+Django web framework
+
+ "Full stack" framework, provides:
+
+  URL routing
+  Templates
+  Testing
+  ORM - Object-Relational Mapper for database
+  Components for Sessions, Authentication ...
+
+ Flask "microframework" provided all this too, what's the difference?
+
++--
+
+Django web framework philosophy - contast to microframeworks
+
+  More prescriptive - makes more decisions for you
+   One-stop shopping, not boutiques 
+   Their decisions/choices are just DEFAULTS, they are not REQUIRED
+  
+  It is possible to do a single file Django site - like in Flask (readings)
+  
+  What must you know?
+   URLs, HTML, relational database, regexp, Python, files and directories...
+   But NOT HTTP, Apache, WSGI, CGI, environment variables, ...
+   Also, supports division of labor
+    server/system experts vs. application experts
+    database experts vs. HTML/template experts
+
++--
+
+Django tools
+
+ Administration and management are centralized
+  in a few programs and files
+
+ django-admin.py - run this to get started
+ manage.py - run this for many different functions
+ settings.py - edit this to configure
+ 
+ python manage.py shell - instead of just python
+ python manage.py dbshell - instead of sqlite3 or ...
+
+
++-- 
+
+Django development cycle - summary
+
+  "What do I do next?" - Django to the rescue!
+
+   django-admin.py startproject <project>
+   while in <project> directory:
+     (edit settings.py: choose database, INSTALLED_APPS)
+     python manage.py syncdb
+     python manage.py startapp <app>
+     (edit settings.py: add <app>)
+     (edit url.py with routes to <app>)
+     while in <app> subdirectory:
+       (edit <app>/models.py to define database)
+       (optionally add and edit urls.py)
+       (optionally edit views.py, other .py)
+       python manage.py syncdb 
+       python manage.py runserver <port>
+
+
++--
+
+Django: create a site (project)
+
+   django-admin.py startproject mysite
+
+ creates your project, a directory with contents
+
+   mysite/
+    __init__.py  # the site is a Python package
+    manage.py
+    settings.py
+    urls.py
+
+ (mysite is just a directory name, can be anything)
+
+ A project can contain multiple apps
+ 
++--
+
+Django projects: applications
+
+ python manage.py startapp polls
+ 
+creates an app, a subdirectory with contents
+
+ polls/
+    __init__.py  # each app is a package - dotted names
+    models.py
+    tests.py
+    views.py
+    urls.py      # not created by startup but recommended
+
+(polls is just a name, can be anything)
+
+Edit ../settings.py to add the app, polls
+
++--
+
+Django: URL dispatching and views
+
+Recall in Flask the URL decorates the view method
+
+@app.route("/")
+def index():
+    return render_template('index.html', ....)
+
+Django breaks them up - separates urls.py from views.py
+Good idea to separate site urls.py from each app urls.py
+
+In site directory:
+
+urlpatterns = patterns('',
+    url(r'^polls/', include('polls.urls')),  # include arg quoted
+    url(r'^mailing_list/', include('mailing_list.urls')),
+    url(r'^admin/', include(admin.site.urls)), # include arg NOT quoted
+    url(r'^databrowse/(.*)', databrowse.site.root),
+)
+
+In app directory:
+
+urlpatterns = patterns('mailing_list.views',
+    url(r'^$', 'index'),
+    url(r'^name_list/$', 'name_list'), # mailing_list is name of app
+    url(r'^phone_numbers/$', 'phone_numbers'),
+    url(r'^query/$', 'query'),
+    # more to come?
+)
+
++--
+
+Relational database
+
+ Data is represented in a collection of tables with columns
+  related by keys - columns of same data appears in multiple tables
+ SQL language for defining tables and making queries
+ Lots of systems: sqlite, MySQL, PostgreSQL, Oracle, ... 
+
+create table mailing_list (
+        email           varchar(100) not null primary key,
+        name            varchar(100)
+);
+
+create table phone_numbers (
+        email           varchar(100) not null references mailing_list(email),
+        number_type     varchar(15) check (number_type in ('work','home','cell','beeper')),
+        phone_number    varchar(20) not null
+);
+
+sqlite> select * from phone_numbers;
+ogrady@fastbuck.com|work|(800) 555-1212
+ogrady@fastbuck.com|home|(617) 495-6000
+philg@mit.edu|work|(617) 253-8574
+
+
++--
+
+Django models
+
+ ORM "object-relational mapper"
+ Define tables and make queries in Python
+ Underneath it's still SQL and sqlite or MySQL or ...
+ Class for each table
+ Attributes of the class are the columns
+
+class MailingList(models.Model):
+    email = models.CharField(max_length=100, primary_key=True)
+    name = models.CharField(max_length=100)
+
+class PhoneNumbers(models.Model):
+    NUMBER_TYPE = ((u'work', u'work'), (u'home', u'home'), ...)
+    email = models.ForeignKey(MailingList)
+    number_type = models.CharField(max_length=6, choices=NUMBER_TYPE)
+    phone_number = models.CharField(max_length=20) 
+
++--
+
+Django database support
+
+  .../admin/ provides web GUI for entering data
+
+  .../databrowse/ provides web GUI for browsing data
+
+  You can generate models from already-existing database!  
+ 
+     # first point to database in settings.py
+     python manage.py inspectdb > models.py 
+
+  You can still bypass models, use SQL-in-Python 

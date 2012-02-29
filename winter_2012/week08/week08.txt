@@ -1,0 +1,40 @@
+week08.txt
++--
+
+Week 8  Feb 28 2007
+
+6:00  Announcement: make-up class Tues Mar 13, same time, same place
+      Homework solution - book assignment 
+      Lecture - Django introduction
+
+6:45  Lab - install Django, work through Django tutorial, make up a database
+
+7:30  Lecture - Django and databases
+
+8:15  Lab assignment - Do the book exercise in Django, using a Django model
+
+9:00  Adjourn
+
+
+
++--
+
+Books assignment - a Flask solution
+
+from Conor Ryan, https://github.com/ctryan3/uw_python/tree/master/bookdb
+
+from flask import Flask, render_template
+from bookdb import BookDB
+
+app = Flask(__name__)
+db  = BookDB()
+
+@app.route("/")
+def index():
+    return render_template('index.html', books=db.titles(), num_books=len(db.titles()))
+
+@app.route("/detail/<id>")
+def detail(id=None):
+    return render_template('detail.html', book=db.title_info(id))
+
+if __name__ == '__main__': app.run()

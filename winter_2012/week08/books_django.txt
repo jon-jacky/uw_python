@@ -1,0 +1,12 @@
+books_django.txt
++--
+
+Week 8 Assignment: Books web site 
+
+- Write a multi page website, using data from bookdb.py 
+- Index page is a list of books, link to a detail page per book
+- Each detail page displays info about one book
+ 
+- Use Django. Put the data from Brian's bookdb.py in a Django model.
+
+    
