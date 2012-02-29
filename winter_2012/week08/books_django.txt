@@ -9,4 +9,8 @@ Week 8 Assignment: Books web site
  
 - Use Django. Put the data from Brian's bookdb.py in a Django model.
 
-    
+  Options for making the Django model and putting in the data
+   - define it in Django models.py, use admin interface to add data
+   - define and load database all in SQL, then python manage.py inspectdb ...
+   - etc. ...
+  
