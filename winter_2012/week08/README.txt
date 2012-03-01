@@ -37,3 +37,21 @@ the database, you can use the Django admin interface.  Just point your
 browser at 
 
  http://localhost:8000/admin/
+
+To browse the database contents (after you have entered some), use this 
+path (prefixed by http://localhost:8000/ or wherever the server is running).
+
+ databrowse/
+
+These other paths are defined also:
+
+ mailing_list/
+ mailing_list/name_list/
+ mailing_list/phone_numbers/
+ mailing_list/query/
+
+Most of these are just placeholders, but name_list/ shows the list of 
+email addresses in MailingList.
+
+At this time there are no templates.
+
