@@ -1,0 +1,7 @@
+-- from http://philip.greenspun.com/sql/introduction.html
+
+select * from mailing_list;
+select * from phone_numbers;
+select * from mailing_list, phone_numbers
+ where mailing_list.email = phone_numbers.email;
+

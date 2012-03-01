@@ -1,0 +1,14 @@
+-- from http://philip.greenspun.com/sql/introduction.html
+
+insert into mailing_list (name, email)
+values ('Philip Greenspun','philg@mit.edu');
+insert into mailing_list (name, email)
+values ('Michael O''Grady','ogrady@fastbuck.com');
+
+insert into phone_numbers values ('ogrady@fastbuck.com','work','(800) 555-1212');
+insert into phone_numbers values ('ogrady@fastbuck.com','home','(617) 495-6000');
+insert into phone_numbers values ('philg@mit.edu','work','(617) 253-8574'); 
+
+-- this line is rejected because 'beeper' is misspelled
+-- see number_type in create table phone_numbers in mailing_list script
+insert into phone_numbers values ('ogrady@fastbuck.com','beper','(617) 222-3456');
