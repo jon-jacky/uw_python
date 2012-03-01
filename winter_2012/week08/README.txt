@@ -22,7 +22,9 @@ To build and view the SQL database in sql_samples:
  sqlite> .read mailing_list_queries
  ... shows formatted database contents ...
 
-To build and view the Django site, including its database, in django_site:
+To build and view the Django site, including its database, in
+django_site, you will first have to edit settings.py to change the
+paths in DATABASES NAME and TEMPLATE_DIRS for your system.  Then:
 
  python manage.py syncdb
  ...
@@ -55,3 +57,10 @@ email addresses in MailingList.
 
 At this time there are no templates.
 
+You can use the sqlite shell to browse the database created by django, 
+with this command:
+
+  python manage.py dbshell
+
+Use the sqlite .tables command to see what tables django created, then
+the .dump command to view their definitions and contents.
