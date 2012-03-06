@@ -5,6 +5,52 @@ Testing Web Applications
 
   Like testing any application - uses the same tools: unittest etc.
   To get started: try it in the browser, see if it works
-  BUT - labor intensive and difficult to reproduce
+  BUT - that's labor intensive and difficult to reproduce
+  Should repeat tests frequently - before every commit
+   must make it easy
+  Can easily automate test execution, checking (but not creation)
 
-  
+
+
+
+
++---
+
+unittest
+
+ Test tool included in Python standard library
+ Similar to Java JUnit, C# NUnit, ... 
+ Many similar alternatives: unittest2, pytest, nose, ...
+ Create a class Test...(unittest.TestCase)
+ with methods test_...
+ each test... calls functions/methods in module(s) under test
+ each test... checks results with assertEqual, other assert...
+ Test runner finds and runs Test classes, test methods
+
+
+
+
++--
+
+django.test
+
+  Same philosophy as unittest - Test class, test methods, assertions
+  Test client bypasses browser, web server, calls app code
+   distinguishes your code behavior from browser, server quirks
+  Put tests in tests.py in same directory with models.py, views.py
+  Run with python manage.py test
+
+
+
+
++--
+
+You should know...
+
+  Testing + other QA is about half the effort on serious projects
+   Microsoft has about as many testers (SDET) as devs (SDE)
+  TDD - Test-Driven Development - write the tests first 
+   can be helpful sometimes, helps focus thinking
+  unittest etc. only automate test execution - make it reproducible
+  some tools partially automate test creation - still experimental
+   quickcheck, PyModel,... 

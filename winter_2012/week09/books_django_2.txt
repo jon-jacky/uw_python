@@ -14,5 +14,8 @@ Extend the site any way you wish.  Some suggestions:
 - Add shopping cart (collection of books for each user)
 - ... etc. ...
 
+OR - Do something fun and interesting: build another website on any
+  subject of your choice, using any technology (Django, Flask, WSGI,...),
+   or build a client or ...  maybe start on Spring your quarter project
 
 

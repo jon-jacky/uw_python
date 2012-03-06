@@ -4,4 +4,56 @@ sessions.txt
 Sessions and Authorization in Web Applications
 
  HTTP has no memory!  Each request/response stands alone
-  so how can we have persistent sessions with ongoing work?
+  each request/response may interleave with many others
+   (from other clients)
+  so how can we have persistent sessions for ongoing work?
+ Server sends unique session ID ("cookie") back with first response
+  in HTTP response header
+ Client includes that session ID with subsequent requests
+  in HTTP request header
+ Server maintains dictionary of session ID : session data
+  looks up each client's session data each time request appears
+
+
++--  
+
+Authorization in Django (users and logins)
+
+  This is Real Programming: complicated, unobvious details ... 
+   see Bookshop/books/views.py: many imports, decorators, ...
+
+  Starting from a simple app without users or authorization - 
+
+  1. In settings.py INSTALLED_APPS uncomment auth, sessions, contenttypes
+      python manage.py syncdb
+  2. authorize users in database auth_user table, for example:
+      user = User.objects.create_user('jon', 'jon@uw.edu', 'mypasswd')
+  3. In views.py, decorate pertient views with @login_required(login_url='/books/login/')
+  4. In templates/ add login.html form, must include csrf_token (for security)
+  5. In urls.py add login/ path
+  6. In views.py define class LoginForm and 
+      define login view that uses login.html formn and LoginForm class
+        must decorate view with @csrf_protect and use RequestContext (for security)
+  7. In views.py define login_user view, invoked when login POST arrives
+      calls authenticate on username and password in POST
+       if success, logs in user and redirects to index page 
+        OR  if failure, redirects back to login page, or to error page
+  ...
+  X0. In templates, add Logout links where appropriate
+  X1. In views.py, create logout view that calls django logout() then redirects
+
++-- 
+
+Sessions in Django 
+
+  Persistent data across multiple HTTP request/reponse
+   Each client (identified by cookie) has different data
+   Example: shopping cart 
+  Django sessions use cookies but hides them from application programmer
+  Enable session middleware in settings.py (this is the default)
+  Every request object (first arg to every view function) contains
+   request.session, a dictionary-like object you can read, write
+   to store data about the session.
+   request.session persists through multiple views, "remembers"
+  Can set request.session to persist after user exits browser
+   writes cookie in a file on the user's computer
