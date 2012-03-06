@@ -1,3 +1,17 @@
+"""
+views.py for bookshop sample including authorization (users and logins)
+
+Prepare settings.py per https://docs.djangoproject.com/en/1.3/topics/auth/
+
+To authorize users: python manage.py shell  then
+>>> from django.contrib.auth.models import User
+>>> user = User.objects.create_user('jon', 'jon@uw.edu', 'jacky')
+>>> user.save()
+... etc. ...
+
+NOT WORKING - LOGIN NEVER SUCCEEDS
+"""
+
 from books.models import Books
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
