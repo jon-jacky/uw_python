@@ -1,0 +1,8 @@
+-- based on Brian Dorsey's booksdb.py
+
+create table books (
+       isbn varchar(20) not null primary key,
+       author varchar(80),
+       title varchar(160),
+       publisher varchar(80)
+);

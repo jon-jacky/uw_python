@@ -1,0 +1,19 @@
+<!-- 
+Based on Conor Ryan's Flask exercise, but comment remove .css 
+Also based on first template example in Django tutorial03
+-->
+<!doctype html>
+<head>
+<title>Book Database</title>
+</head>
+<body>
+    <div class="main container">
+        <h3>{{ book.title }}</h3>
+        <ul>
+            <li><strong>ISBN</strong>: {{ book.isbn }}</li>
+            <li><strong>Publisher</strong>: {{ book.publisher }}</li>
+            <li><strong>Author</strong>: {{ book.author }}</li>
+        </ul>
+        <a href="/books/">Back</a>
+    </div>
+</body>

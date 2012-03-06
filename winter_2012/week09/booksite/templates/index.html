@@ -1,0 +1,21 @@
+<!-- 
+Based on Conor Ryan's Flask exercise, but remove .css 
+Also based on first template example in Django tutorial03
+-->
+<!doctype html>
+<head>
+    <title>Book Database</title>
+</head>
+<body>
+    <div class="main container">
+        <h3>Books</h3>
+        <!-- <h3>There are {{ num_books }} titles.</h3> -->
+        <p>
+        <ul>
+            {% for book in books %}
+            <li><a href="/books/detail/{{ book.isbn }}">{{ book.title }}</a></li>
+            {% endfor %}
+        </ul>
+        </p>
+    </div>
+</body>

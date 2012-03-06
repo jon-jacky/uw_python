@@ -1,0 +1,18 @@
+-- data from Brian Dorsey's booksdb.py
+ 
+insert into books (isbn, author, title, publisher)
+values ('978-1904811848', 'Sylvain Hellegouarch',
+       'CherryPy Essentials: Rapid Python Web Application Development',
+       'Packt Publishing (March 31, 2007)');
+
+insert into books (isbn, author, title, publisher)
+values ('978-0521725965', 'Allen B. Downey',
+       'Python for Software Design: How to Think Like a Computer Scientist',
+       'Cambridge University Press; 1 edition (March 16, 2009)');
+
+insert into books (isbn, author, title, publisher)
+values ('978-1430230038', 'John Goerzen', 
+        'Foundations of Python Network Programming',
+        'Apress; 2 edition (December 21, 2010)');
+
+-- booksdb.py had more but this is enough to get started
