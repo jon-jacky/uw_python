@@ -1,7 +1,7 @@
 week08.txt
 +--
 
-Week 8  Feb 28 2007
+Week 8  Feb 28 2012
 
 6:00  Announcement: make-up class Tues Mar 13, same time, same place
       Homework solution - book assignment 

@@ -1,0 +1,18 @@
+books_django_2.txt
++--
+
+Week 9 Assignment: Books web site (continued)
+
+Continue working on the books web site begun in week 8.
+Extend the site any way you wish.  Some suggestions:
+
+- Make it pretty - add style sheet, .css file in books/static/
+- Figure out unittest and django.test, add more tests in tests.py
+- Add admin interface for adding books, authorizing users
+- Add search (add search form page, return index page of all books that match)
+- Get logins working in bookshop
+- Add shopping cart (collection of books for each user)
+- ... etc. ...
+
+
+

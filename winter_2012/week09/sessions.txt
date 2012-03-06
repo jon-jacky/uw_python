@@ -1,0 +1,7 @@
+sessions.txt
++--
+
+Sessions and Authorization in Web Applications
+
+ HTTP has no memory!  Each request/response stands alone
+  so how can we have persistent sessions with ongoing work?
