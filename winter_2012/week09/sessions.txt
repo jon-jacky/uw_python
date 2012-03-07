@@ -15,6 +15,13 @@ Sessions and Authorization in Web Applications
   looks up each client's session data each time request appears
 
 
+
+
+
+
+
+
+
 +--  
 
 Authorization in Django (users and logins)

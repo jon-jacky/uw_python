@@ -14,6 +14,14 @@ Testing Web Applications
 
 
 
+
+
+
+
+
+
+
+
 +---
 
 unittest
@@ -30,6 +38,14 @@ unittest
 
 
 
+
+
+
+
+
+
+
+
 +--
 
 django.test
@@ -39,6 +55,17 @@ django.test
    distinguishes your code behavior from browser, server quirks
   Put tests in tests.py in same directory with models.py, views.py
   Run with python manage.py test
+
+
+
+
+
+
+
+
+
+
+
 
 
 

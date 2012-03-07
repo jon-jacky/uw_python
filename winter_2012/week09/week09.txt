@@ -4,13 +4,13 @@ week09.txt
 Week 9 Mar 6 2012
 
 6:00  Homework solution - book assignment in Django
-      Lecture - Sessions and authentication in Django
+      Lecture - Testing Django, sessions and authentication in Django
 
 6:45  Lab - Continue working on, extending, Django book assignment
 
 7:30  Guest lecture - Peter Conerly 
 
-8:15  Lab, assignment - Extend Django book assignment
+8:15  Lab, assignment - Extend Django book assignment - or begin project!
 
 9:00  Adjourn
 
