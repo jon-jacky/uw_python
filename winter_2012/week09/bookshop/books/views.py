@@ -20,12 +20,12 @@ def index(request):
     # based on first example in Django tutorial03
     books = Books.objects.all()
     t = loader.get_template('index.html')
-    c = Context({'books':books})
+    c = Context({'books':books, 'username':request.user.username})
     return HttpResponse(t.render(c))
 
 @login_required
 def detail(request, isbn):
     book = Books.objects.get(pk=isbn)
     t = loader.get_template('detail.html')
-    c = Context({'book':book})
+    c = Context({'book':book, 'username':request.user.username})
     return HttpResponse(t.render(c))    

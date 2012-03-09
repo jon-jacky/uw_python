@@ -8,7 +8,8 @@ Also based on first template example in Django tutorial03
 </head>
 <body>
     <div class="main container">
-        <h3>Books</h3>
+       <p><strong>User:</strong> {{ username }}</p>
+       <h3>Books</h3>
         <!-- <h3>There are {{ num_books }} titles.</h3> -->
         <p>
         <ul>
@@ -17,5 +18,6 @@ Also based on first template example in Django tutorial03
             {% endfor %}
         </ul>
         </p>
+	<p><a href="/accounts/logout/">Logout</a></p>
     </div>
 </body>
