@@ -24,30 +24,52 @@ Sessions and Authorization in Web Applications
 
 +--  
 
-Authorization in Django (users and logins)
+Authorization in Django: users and logins
 
-  This is Real Programming: complicated, unobvious details ... 
-   see Bookshop/books/views.py: many imports, decorators, ...
+  The machinery is provided in django.contrib.auth, but is unobvious
+  
+   https://docs.djangoproject.com/en/1.3/topics/auth/
+   http://www.djangobook.com/en/2.0/chapter14/
 
-  Starting from a simple app without users or authorization - 
+  Starting from a simple app without users or authorization
+   (for example, starting from booksite.py, how to make bookshop.py):
 
-  1. In settings.py INSTALLED_APPS uncomment auth, sessions, contenttypes
-      python manage.py syncdb
-  2. authorize users in database auth_user table, for example:
+  1. In settings.py INSTALLED_APPS uncomment auth, sessions,
+      contenttypes, then: python manage.py syncdb 
+
+  2. Authorize users in the database auth_user table, for example:
       user = User.objects.create_user('jon', 'jon@uw.edu', 'mypasswd')
-  3. In views.py, decorate pertient views with @login_required(login_url='/books/login/')
-  4. In templates/ add login.html form, must include csrf_token (for security)
-  5. In urls.py add login/ path
-  6. In views.py define class LoginForm and 
-      define login view that uses login.html formn and LoginForm class
-        must decorate view with @csrf_protect and use RequestContext (for security)
-  7. In views.py define login_user view, invoked when login POST arrives
-      calls authenticate on username and password in POST
-       if success, logs in user and redirects to index page 
-        OR  if failure, redirects back to login page, or to error page
-  ...
-  X0. In templates, add Logout links where appropriate
-  X1. In views.py, create logout view that calls django logout() then redirects
+
+  3. In your top-level urls.py add these three lines at the appropriate
+      locations: 
+
+      from django.contrib.auth.views import login, logout
+        ...  
+        url(r'^accounts/login/$', login),
+        url(r'^accounts/logout/$', logout), 
+        ...
+
+  4. In views.py, decorate pertinent views with @login_required.  This
+      will redirect to the login page when needed.  You do NOT have to
+      add any other code in views.py to support login/logout, that is already
+      provided by django.contrib.auth.views.login,logout referenced in
+      urls.py
+
+  5. In your templates directory, add a registration/ directory
+      containing the forms login.html and logged_out.html.  You can
+      copy a sample login.html from the references linked above.
+      Your login.html must include {% csrf_token %} for security.
+      
+  6. In your templates, add Logout links where appropriate:
+      <a href="/accounts/logout/">Logout</a>
+
+  7. Add a Login link to /accounts/login where appropriate.  It is not
+      needed on pages whose views are decorated with @login_required,
+      but it is often helpful to put a Login link on the
+      logged_out.html page.  The Login link should include a
+      next?... query string to indicate the page to show after a
+      successful login.  The bookshop sample uses this Login link:
+       <a href="/accounts/login?next=/books/">Login</a>
 
 +-- 
 
