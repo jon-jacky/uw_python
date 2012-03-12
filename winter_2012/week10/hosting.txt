@@ -1,0 +1,135 @@
+hosting.txt
++--
+
+I made a  web application.  Where can I run it?  What will it cost?
+ Can I turn it into a business?
+
+ Almost nobody runs their own servers.  Use a hosting service instead.
+  Very low startup costs - then pay for only what you use
+
+ Class projects, hobby projects, product prototypes and demos
+   Free or "pennies a day" - literally!
+
+ Serious business sites with lots of traffic - don't cost all that much
+  Example: Pinboard bookmarking service (see links on course page)
+   25,000 registered users (up to $9.50 each at signup), 18,000 active
+   $250,000 revenue over two years
+   costs ~$2,000 / month to operate
+   (leaves ~$100,000/year for salaries, benefits, tax prep services etc.)
+   One guy with a laptop full-time + two others help (doesn't say how much)
+
+ "It costs little more to start a startup than to hang around doing
+   nothing." - Paul Graham http://www.paulgraham.com/web20interview.html
+    
+  wordnik.com ($12.5M VC funding) until recently looked like a hobby project 
+
+
+
+
+
++--
+
+Hosting services - Ceglow's classification from "Five Stages of Hosting"
+ in decreasing order of "cloudiness"
+
+ 1 "Monastery" - Application Platform:  Google App Engine, Heroku, ...
+ 2 "Dorm Room" - VPS: Blue Box, Amazon AWS, Linode, Slicehost ...
+ 3 "Apartment" - lease dedicated servers: WebFaction, Leaseweb, ServerBeach 
+ 4 "Condo" - colocation: buy your own servers, rent space, power at datacenter
+ 5 "Stately Manor" - Datacenter a la Google
+
+
++--- 
+
+Two different philosophies:
+
+ 1. Application Platform
+    - Examples: Google App Engine, Heroku
+    - Must use their languages, libraries, restrictions (no files or sockets)
+    - No installation/configuration effort, tools already built in
+
+ 2. VPS - Virtual Private Server, Virtual Machine
+    - Examples: Blue Box, Amazon AWS,EC2,S3
+    - General-purpose computer is at your disposal
+    - Software installation and configuration is mostly up to you
+
+ 1 and 2.  Virtual (not real) computers
+    - Can't accurately control/diagnose performance (only add more VPS)
+
+
++-- 
+
+Google App Engine - GAE  
+
+See Brian's 
+http://briandorsey.info/uwpython/week10/week10_slides.pdf
+
+"magic CGI or WSGI host"
+locked down environment for no sysadmin
+no filesystem - use their datastore
+no C installing C extensions (no numpy)
+no remote services, except theirs
+HTTP in/out only
+They offer automatic process management and datastore
+good: magic scaling goodness, free for small projects, no admin
+bad: unpredicatable latency both spin-up and datastore,
+ no recourse when things go wrong, quotas
+Summary: http://en.wikipedia.org/wiki/Google_App_Engine
+ http://code.google.com/appengine/docs/quotas.html
+Your own domain or yourapp.appspot.com
+SDK, local dev server with emulated environment
+ you make app.yaml, appcfg.py
+then push to GAE, there's an admin UI
+ supports Django - BUT WHAT ABOUT models.py DB vs. Datastore?
+
+Free for 1 GB storage and 5 million page views/month - "small!"
+
++--
+
+Heroku 
+
+ Another application platform sort of like GAE
+ 
+ Originally Ruby + Rails only, now "polyglot"
+
+ Workflow looks sort of like GitHub
+  - but they run your application, too!
+  - uses pip and virtualenv
+
++--
+
+PiCloud 
+
+ Another application platform BUT different emphasis:
+  scientific computing, High Performance Computing (HPC)
+ No need to build your own cluster, use theirs
+ Runs on Amazon EC2 - but they do the setup for you
+
+from http://www.picloud.com/
+
+ def func():
+   # do something ...
+
+ import cloud
+
+ cloud.call(func)  # run in their cloud
+
+
++--
+
+Amazon Web Services, AWS
+ 
+  Includes - 
+    Elastic Computing Cloud EC2 (VPS like Blue Box)
+    S3 (storage )
+
++--
+
+General web hosting
+
+ For your personal web site, blog, pictures
+  GitHub Pages free for static sites including Jekyll CMS, Octopress blog
+  GitHub does NOT offer execution - can't run your web app 
+  Many low cost hosts do let you install, run software - small projects
+   for example WebFaction $9.50/mo monthly, $5.50/mo 3yrs advance
+   "pennies a day"

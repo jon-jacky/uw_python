@@ -1,0 +1,83 @@
+logins.txt
++--
+
+Django - book database with users, logins, redirects
+
+  The machinery is provided in django.contrib.auth, but is unobvious
+  
+   https://docs.djangoproject.com/en/1.3/topics/auth/
+   http://www.djangobook.com/en/2.0/chapter14/
+
+  Starting from a simple app without users or authorization
+   (for example, starting from booksite.py, how to make bookshop.py):
+
+  1. In settings.py INSTALLED_APPS uncomment auth, sessions,
+      contenttypes, then: python manage.py syncdb 
+
+  2. Authorize users in the database auth_user table, for example:
+      user = User.objects.create_user('jon', 'jon@uw.edu', 'mypasswd')
+
+  3. In your top-level urls.py add these three lines at the appropriate
+      locations: 
+
+      from django.contrib.auth.views import login, logout
+        ...  
+        url(r'^accounts/login/$', login),
+        url(r'^accounts/logout/$', logout), 
+        ...
+
+  4. In views.py, decorate pertinent views with @login_required.  This
+      will redirect to the login page when needed.  You do NOT have to
+      add any other code in views.py to support login/logout, that is already
+      provided by django.contrib.auth.views.login,logout referenced in
+      urls.py
+
+  5. In your templates directory, add a registration/ directory
+      containing the forms login.html and logged_out.html.  You can
+      copy a sample login.html from the references linked above.
+      Your login.html must include {% csrf_token %} for security.
+      
+  6. In your templates, add Logout links where appropriate:
+      <a href="/accounts/logout/">Logout</a>
+
+  7. Add a Login link to /accounts/login where appropriate.  It is not
+      needed on pages whose views are decorated with @login_required,
+      but it is often helpful to put a Login link on the
+      logged_out.html page.  The Login link should include a
+      next?... query string to indicate the page to show after a
+      successful login.  The bookshop sample uses this Login link:
+       <a href="/accounts/login?next=/books/">Login</a>
+
+
++---
+
+HTTP Redirects - in general
+
+ Browser sends HTTP GET request with URL1
+ Server replies HTTP reponse code 302, with header Location: URL2
+ Browser sends HTTP GET request with URL2
+
+ Can program redirects in web applications for control and navigation 
+
+
+
++--
+
+HTTP Redirects - control and navigation in bookshop
+
+ @login_required on some views redirects to login page
+ then successful login redirects back to view originally requested
+
+...
+> [12/Mar/2012 16:00:02] "GET /books/ HTTP/1.1" 302 0
+  [12/Mar/2012 16:00:03] "GET /accounts/login/?next=/books/ HTTP/1.1" 200 564
+> [12/Mar/2012 16:00:19] "POST /accounts/login/?next=/books/ HTTP/1.1" 302 0
+  [12/Mar/2012 16:00:19] "GET /books/ HTTP/1.1" 200 868
+  [12/Mar/2012 16:00:52] "GET /books/detail/978-1904811848 HTTP/1.1" 200 688
+  [12/Mar/2012 16:00:59] "GET /books/ HTTP/1.1" 200 868
+  [12/Mar/2012 16:01:05] "GET /accounts/logout/ HTTP/1.1" 200 205
+
+ Looks convoluted to this old-school programmer
+ Web programming involves intricate division of labor between
+  your code, framework, server, browser
+   - must understand HTTP protocol (what's a redirect?)
