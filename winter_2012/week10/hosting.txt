@@ -81,8 +81,12 @@ SDK, local dev server with emulated environment
  you make app.yaml, appcfg.py
 then push to GAE, there's an admin UI
  supports Django - BUT WHAT ABOUT models.py DB vs. Datastore?
+ Also supports webapp, its own micro-framework
 
 Free for 1 GB storage and 5 million page views/month - "small!"
+
+Worried about lockin?  Appscale and Typhoon AE are APIs that allow you
+to run GAE apps on any Linux - including Amazon or BlueBox or ...
 
 +--
 
@@ -122,12 +126,16 @@ Amazon Web Services, AWS
   Includes - 
     Elastic Computing Cloud EC2 (VPS like Blue Box)
     S3 (storage )
+    ... much more ...
+
+  boto: a Python API to AWS (start, stop VMs etc.)
+   http://boto.cloudhackers.com/en/latest/
 
 +--
 
 General web hosting
 
- For your personal web site, blog, pictures
+ For your personal web site, blog, pictures - but also programming experiments
   GitHub Pages free for static sites including Jekyll CMS, Octopress blog
   GitHub does NOT offer execution - can't run your web app 
   Many low cost hosts do let you install, run software - small projects
