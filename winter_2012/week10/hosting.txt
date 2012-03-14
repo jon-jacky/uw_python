@@ -32,11 +32,24 @@ I made a  web application.  Where can I run it?  What will it cost?
 Hosting services - Ceglow's classification from "Five Stages of Hosting"
  in decreasing order of "cloudiness"
 
- 1 "Monastery" - Application Platform:  Google App Engine, Heroku, ...
+ 1 "Monastery" - PaaS Application Platform:  Google App Engine, Heroku, ...
  2 "Dorm Room" - VPS: Blue Box, Amazon AWS, Linode, Slicehost ...
  3 "Apartment" - lease dedicated servers: WebFaction, Leaseweb, ServerBeach 
  4 "Condo" - colocation: buy your own servers, rent space, power at datacenter
  5 "Stately Manor" - Datacenter a la Google
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 +--- 
@@ -55,6 +68,14 @@ Two different philosophies:
 
  1 and 2.  Virtual (not real) computers
     - Can't accurately control/diagnose performance (only add more VPS)
+
+
+
+
+
+
+
+
 
 
 +-- 
@@ -100,6 +121,19 @@ Heroku
   - but they run your application, too!
   - uses pip and virtualenv
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 +--
 
 PiCloud 
@@ -119,7 +153,14 @@ from http://www.picloud.com/
  cloud.call(func)  # run in their cloud
 
 
-+--
+
+
+
+
+
+
+
++-l-
 
 Amazon Web Services, AWS
  
@@ -130,6 +171,19 @@ Amazon Web Services, AWS
 
   boto: a Python API to AWS (start, stop VMs etc.)
    http://boto.cloudhackers.com/en/latest/
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 +--
 

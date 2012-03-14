@@ -3,13 +3,15 @@ week10.txt
 
 Week 10  Mar 13 2012
 
-6:00  Announcements
+6:00  Announcements:
+       (Re)Introducing Michalis Avram - Spring quarter instructor
        Blue Box VMs are going away!  Copy your files, including Apache config.
        Seattle Python Interest Group, Thu Mar 15, PyCon reports, seapig.org
+
       Review Django - book database with users, logins, redirects
       PyCon 2012 report by Brian Dorsey
 
-6:45  Lab - sign up for GAE
+6:45  Lab - sign up for GAE, or consider the confection, or ...
 
 7:30  Lecture - Python in the cloud: Google App Engine, Amazon AWS etc.
 
